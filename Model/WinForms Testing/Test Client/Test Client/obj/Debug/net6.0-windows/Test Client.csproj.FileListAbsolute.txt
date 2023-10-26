@@ -1,0 +1,39 @@
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.exe
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.deps.json
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.runtimeconfig.json
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.dll
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.pdb
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test_Client.frm_ClientPingTest.resources
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.csproj.GenerateResource.cache
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.AssemblyInfoInputs.cache
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.AssemblyInfo.cs
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.csproj.CoreCompileInputs.cache
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.dll
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\refint\Test Client.dll
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.pdb
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.genruntimeconfig.cache
+C:\Users\dylan\Desktop\NEA\Model\Test Client\Test Client\obj\Debug\net6.0-windows\ref\Test Client.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.exe
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.deps.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.runtimeconfig.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Test Client.pdb
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Grpc.Core.Api.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Grpc.Net.Client.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Grpc.Net.Common.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.csproj.AssemblyReference.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test_Client.frm_ClientPingTest.resources
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.csproj.GenerateResource.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.AssemblyInfoInputs.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.AssemblyInfo.cs
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.csproj.CoreCompileInputs.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.csproj.CopyComplete
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\refint\Test Client.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.pdb
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\Test Client.genruntimeconfig.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Client\Test Client\obj\Debug\net6.0-windows\ref\Test Client.dll

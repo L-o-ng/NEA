@@ -1,0 +1,34 @@
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\appsettings.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Test Server.exe
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Test Server.deps.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Test Server.runtimeconfig.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Test Server.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Test Server.pdb
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Grpc.AspNetCore.Server.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Grpc.Core.Api.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Grpc.Net.Client.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Grpc.Net.ClientFactory.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\bin\Debug\net6.0\Grpc.Net.Common.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.csproj.AssemblyReference.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.AssemblyInfoInputs.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.AssemblyInfo.cs
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.csproj.CoreCompileInputs.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\staticwebassets\msbuild.Test Server.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\staticwebassets\msbuild.build.Test Server.props
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Test Server.props
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Test Server.props
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\scopedcss\bundle\Test Server.styles.css
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.csproj.CopyComplete
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\refint\Test Server.dll
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.pdb
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\Test Server.genruntimeconfig.cache
+C:\Users\dylan\Desktop\NEA\Model\WinForms Testing\Test Server\Test Server\obj\Debug\net6.0\ref\Test Server.dll
