@@ -30,6 +30,10 @@
         {
             btn_PingServer = new Button();
             lbl_PingServer = new Label();
+            txt_num1 = new TextBox();
+            txt_num2 = new TextBox();
+            btn_add = new Button();
+            lbl_sum = new Label();
             SuspendLayout();
             // 
             // btn_PingServer
@@ -50,11 +54,49 @@
             lbl_PingServer.Size = new Size(0, 15);
             lbl_PingServer.TabIndex = 1;
             // 
+            // txt_num1
+            // 
+            txt_num1.Location = new Point(12, 60);
+            txt_num1.Name = "txt_num1";
+            txt_num1.Size = new Size(87, 23);
+            txt_num1.TabIndex = 2;
+            txt_num1.Text = "Enter a number";
+            // 
+            // txt_num2
+            // 
+            txt_num2.Location = new Point(105, 60);
+            txt_num2.Name = "txt_num2";
+            txt_num2.Size = new Size(87, 23);
+            txt_num2.TabIndex = 3;
+            txt_num2.Text = "Enter a number";
+            // 
+            // btn_add
+            // 
+            btn_add.Location = new Point(198, 59);
+            btn_add.Name = "btn_add";
+            btn_add.Size = new Size(41, 23);
+            btn_add.TabIndex = 4;
+            btn_add.Text = "Add";
+            btn_add.UseVisualStyleBackColor = true;
+            btn_add.Click += btn_add_Click;
+            // 
+            // lbl_sum
+            // 
+            lbl_sum.AutoSize = true;
+            lbl_sum.Location = new Point(261, 63);
+            lbl_sum.Name = "lbl_sum";
+            lbl_sum.Size = new Size(0, 15);
+            lbl_sum.TabIndex = 5;
+            // 
             // frm_ClientPingTest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(347, 48);
+            ClientSize = new Size(347, 104);
+            Controls.Add(lbl_sum);
+            Controls.Add(btn_add);
+            Controls.Add(txt_num2);
+            Controls.Add(txt_num1);
             Controls.Add(lbl_PingServer);
             Controls.Add(btn_PingServer);
             Name = "frm_ClientPingTest";
@@ -67,5 +109,9 @@
 
         private Button btn_PingServer;
         private Label lbl_PingServer;
+        private TextBox txt_num1;
+        private TextBox txt_num2;
+        private Button btn_add;
+        private Label lbl_sum;
     }
 }

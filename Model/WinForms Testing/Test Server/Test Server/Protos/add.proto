@@ -1,0 +1,16 @@
+syntax = "proto3";
+option csharp_namespace = "Test_Server";
+package greet;
+
+service Add {
+	rpc AddNums (Numbers) returns (Sum);
+}
+
+message Numbers{
+	int64 num1 = 1;
+	int64 num2 = 2;
+}
+
+message Sum{
+	int64 sum = 1;
+}

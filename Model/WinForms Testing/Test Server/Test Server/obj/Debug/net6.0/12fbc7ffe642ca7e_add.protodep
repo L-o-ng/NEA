@@ -1,0 +1,2 @@
+obj\Debug\net6.0\Protos/Add.cs \
+obj\Debug\net6.0\Protos/AddGrpc.cs: Protos/add.proto
