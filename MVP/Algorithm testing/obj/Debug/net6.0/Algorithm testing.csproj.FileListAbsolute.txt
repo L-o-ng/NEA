@@ -1,0 +1,15 @@
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\bin\Debug\net6.0\Algorithm testing.exe
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\bin\Debug\net6.0\Algorithm testing.deps.json
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\bin\Debug\net6.0\Algorithm testing.runtimeconfig.json
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\bin\Debug\net6.0\Algorithm testing.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\bin\Debug\net6.0\Algorithm testing.pdb
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\Algorithm testing.csproj.AssemblyReference.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\Algorithm testing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\Algorithm testing.AssemblyInfoInputs.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\Algorithm testing.AssemblyInfo.cs
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\Algorithm testing.csproj.CoreCompileInputs.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\Algorithm testing.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\refint\Algorithm testing.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\Algorithm testing.pdb
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\Algorithm testing.genruntimeconfig.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Algorithm testing\obj\Debug\net6.0\ref\Algorithm testing.dll
