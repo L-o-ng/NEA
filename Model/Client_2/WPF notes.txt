@@ -1,0 +1,1 @@
+Margin takes 4 arguements corresponding to the direction of the margin: Margin="{left}, {top}, {right}, {bottom}", with numbers measured in px.
