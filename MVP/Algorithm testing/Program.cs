@@ -5,7 +5,7 @@ while (true) {
     maze.InitMaze();
     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
     maze.MazeWalls[1, 0] = false;
-    maze.MazeWalls[maze.MazeActualHeight - 2, maze.MazeActualWidth - 1] = false;
+    maze.Maze​Walls[maze.MazeActualHeight - 2, maze.MazeActualWidth - 1] = false;
     PrintMaze(maze);
 
     Console.ReadKey(true);
