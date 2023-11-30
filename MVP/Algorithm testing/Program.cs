@@ -4,8 +4,11 @@ while (true) {
     Maze maze = new DepthFirstGeneration(20, 19);
     maze.InitMaze();
     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
-    maze.MazeWalls[1, 0] = false;
-    maze.Maze​Walls[maze.MazeActualHeight - 2, maze.MazeActualWidth - 1] = false;
+    maze.CreateEntranceExit();
+
+    SolvingAlgorithm solver = new DepthFirstSolve();
+    List<Coordinate> solution = solver.SolveMaze(maze);
+
     PrintMaze(maze);
 
     Console.ReadKey(true);
@@ -15,4 +18,18 @@ while (true) {
 
 
 
-static void PrintMaze(Maze maze) { for (int i = 0; i < maze.MazeActualHeight; i++) { for (int j = 0; j < maze.MazeActualWidth; j++) { Console.Write(maze.MazeWalls[i, j] ? "\u2588\u2588" : "  "); } Console.WriteLine(); } }
+static void PrintMaze(Maze maze) { 
+    for (int i = 0; i < maze.MazeActualHeight; i++) { 
+        for (int j = 0; j < maze.MazeActualWidth; j++) { 
+            if (maze.MazeEntranceCoordinate.Xpos == j && maze.MazeEntranceCoordinate.Ypos == i)
+                Console.BackgroundColor = ConsoleColor.Green;
+
+            else if (maze.MazeExitCoordinate.Xpos == j && maze.MazeExitCoordinate.Ypos == i)
+                Console.BackgroundColor = ConsoleColor.Red;
+
+            Console.Write(maze.MazeWalls[i, j] ? "\u2588\u2588" : "  ");
+            Console.BackgroundColor = ConsoleColor.Black;
+        } 
+        Console.WriteLine(); 
+    } 
+}

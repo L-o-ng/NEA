@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Algorithm_testing
 {
-    internal class SolvingAlgorithm
+    internal abstract class SolvingAlgorithm
     {
-
+        protected Random rgen = new();
+        public abstract List<Coordinate> SolveMaze(Maze maze);
     }
 }

@@ -34,11 +34,15 @@
         #endregion
 
         #region Methods
-        public Tuple<int, int> GetCartesianCoordinates(Maze maze) {
-            return Tuple.Create(xPos + 1, (maze.MazeActualHeight - yPos) + 1);
+        public (int x, int y) GetCartesianCoordinates(Maze maze) {
+            return (xPos + 1, (maze.MazeActualHeight - yPos) + 1);
         }
         public float GetManhattanDistance(Coordinate endPoint) {
             throw new NotImplementedException();
+        }
+
+        public bool Equals(Coordinate target) {
+            return xPos == target.xPos && yPos == target.yPos;
         }
         #endregion
     }
