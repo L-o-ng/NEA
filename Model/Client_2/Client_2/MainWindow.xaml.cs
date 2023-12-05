@@ -9,16 +9,13 @@ namespace Client_2
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel(20, 20);
+            (DataContext as MainViewModel)?.Initialize();
         }
 
-        private unsafe void btn_hello_Click(object sender, RoutedEventArgs e)
-        {
-            txb_hello.Text = "Hello World";
-            ThreadPool.QueueUserWorkItem((state) =>
-            {
-                Thread.Sleep(1000);
-                Dispatcher.Invoke(() => txb_hello.Text = string.Empty);
-            });
+        private void btn_drawMaze_Click(object sender, RoutedEventArgs e) {
+            
+            
             
         }
     }

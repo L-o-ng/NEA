@@ -26,7 +26,7 @@ static void PrintMaze(Maze maze) {
 
             else if (maze.MazeExitCoordinate.Xpos == j && maze.MazeExitCoordinate.Ypos == i)
                 Console.BackgroundColor = ConsoleColor.Red;
-
+            //implement solution path colour
             Console.Write(maze.MazeWalls[i, j] ? "\u2588\u2588" : "  ");
             Console.BackgroundColor = ConsoleColor.Black;
         } 

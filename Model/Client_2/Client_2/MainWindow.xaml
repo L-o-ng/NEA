@@ -5,9 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Maze Window" Height="400" Width="550"
+        DataContext="{Binding MainViewModel}">
     <Grid>
-        <TextBlock Name="txb_hello" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0, 0, 0, 0"/>
-        <Button Name="btn_hello" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Content="Say Hello" Click="btn_hello_Click"/>
+        <UniformGrid Rows="{Binding MazeHeight}" Columns="{Binding MazeWidth}" 
+                     HorizontalAlignment="Right" VerticalAlignment="Center"
+                     Margin="50">
+            <ItemsControl ItemsSource="{Binding MazeCells}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="x:Type local:MazeCellViewModel">
+                        <Rectangle Fill="{Binding Colour}" Width="5" Height="5" Stroke="Black"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </UniformGrid>
+
+        <Button Name="btn_drawMaze" Width="100" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50"
+                Content="Draw Maze" Click="btn_drawMaze_Click"></Button>
     </Grid>
 </Window>
