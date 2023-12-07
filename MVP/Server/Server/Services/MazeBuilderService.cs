@@ -21,13 +21,7 @@ namespace Server.Services
             maze.BuildMaze(maze.MazeCoordinates[1, 1]);
             maze.CreateEntranceExit();
 
-            string jsonMaze;
-            using (MemoryStream memoryStream = new MemoryStream())
-            using (JsonWriter jsonWriter = new JsonTextWriter(new StreamWriter(memoryStream))) {
-                JsonSerializer.CreateDefault().Serialize(jsonWriter, maze);
-                jsonWriter.Flush();
-                jsonMaze = Encoding.UTF8.GetString(memoryStream.ToArray());
-            }
+            string jsonMaze = JsonConvert.SerializeObject(maze);
 
             
             return Task.FromResult(new BuiltMaze { Maze = jsonMaze });

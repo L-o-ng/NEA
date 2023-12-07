@@ -1,7 +1,14 @@
-﻿namespace Algorithm_testing
+﻿using Newtonsoft.Json;
+
+namespace Algorithm_testing
 {
     internal class Coordinate
     {
+        [JsonConstructor]
+        public Coordinate()
+        {
+            
+        }
         public Coordinate(int xPos, int yPos) {
             this.xPos = xPos;
             this.yPos = yPos;
@@ -17,13 +24,13 @@
         private int xPos;
         public int Xpos {
             get { return xPos; }
-            private set { xPos = value; }
+            set { xPos = value; }
         }
 
         private int yPos;
         public int Ypos {
             get { return yPos; }
-            private set { yPos = value; }
+            set { yPos = value; }
         }
 
         private bool visited;

@@ -62,7 +62,7 @@ namespace Client
         }
 
         private void ChangeForm(string maze) {
-            Form mazeDisplay = new MazeDisplay(maze);
+            Form mazeDisplay = new frm_mazeDisplay(maze, cbx_algorithm.Text);
             mazeDisplay.ShowDialog();
         }
 
