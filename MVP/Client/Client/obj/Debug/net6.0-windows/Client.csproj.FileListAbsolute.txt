@@ -32,7 +32,6 @@ C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Common.dll
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
-C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.MazeClient.resources
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.GenerateResource.cache
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
@@ -44,3 +43,6 @@ C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.pdb
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.MazeDisplay.resources
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeClient.resources
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

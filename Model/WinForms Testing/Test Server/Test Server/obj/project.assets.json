@@ -721,11 +721,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\Model\\WinForms Testing\\Test Server\\Test Server\\Test Server.csproj",
+      "projectUniqueName": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\Model\\WinForms Testing\\Test Server\\Test Server\\Test Server.csproj",
       "projectName": "Test Server",
-      "projectPath": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\Model\\WinForms Testing\\Test Server\\Test Server\\Test Server.csproj",
+      "projectPath": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\Model\\WinForms Testing\\Test Server\\Test Server\\Test Server.csproj",
       "packagesPath": "C:\\Users\\dylan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\Model\\WinForms Testing\\Test Server\\Test Server\\obj\\",
+      "outputPath": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\Model\\WinForms Testing\\Test Server\\Test Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dylan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -778,7 +778,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,45 +1,73 @@
+using Grpc.Net.Client;
+using Server;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace Client
 {
-    public partial class MazeClient : Form
+    public partial class frm_mazeClient : Form
     {
-        public MazeClient() {
+        private CancellationTokenSource cts = new CancellationTokenSource();
+
+        public frm_mazeClient() {
             InitializeComponent();
         }
 
         private void MazeClient_Load(object sender, EventArgs e) {
-            //tlp_maze.Parent = pnl_mazeBorder;
-            //tlp_maze.Dock = DockStyle.Fill;
+            btn_requestMaze.Enabled = false;
+
+            ThreadPool.QueueUserWorkItem(async (state) => {
+                while (!cts.Token.IsCancellationRequested) {
+
+                    using var channel = GrpcChannel.ForAddress("https://localhost:7178");
+                    var client = new Greeter.GreeterClient(channel);
+                    try {
+                        var reply = await client.SayHelloAsync(new HelloRequest { Name = Environment.MachineName });
+                        Invoke(() => {
+                            lbl_connectionError.Text = "Connected to server!";
+                            lbl_connectionError.ForeColor = Color.Green;
+                            btn_requestMaze.Enabled = true;
+                        });
+
+                    }
+                    catch (Exception) {
+                        Invoke(() => {
+                            lbl_connectionError.Text = "Not connected to server!";
+                            lbl_connectionError.ForeColor = Color.Red;
+                            btn_requestMaze.Enabled = false;
+                        });
+                    }
+
+                    Thread.Sleep(10000);
+                }
+            });
         }
 
-        private void btn_requestMaze_Click(object sender, EventArgs e) {
-            while (tlp_maze.Controls.Count > 0) {
-                tlp_maze.Controls[0].Dispose();
-            }
-            tlp_maze.RowStyles.Clear();
-            tlp_maze.ColumnStyles.Clear();
-
-            //tlp_maze.RowCount = 2 * (int)nud_mazeHeight.Value + 1;
-            //tlp_maze.ColumnCount = 2 * (int)nud_mazeWidth.Value + 1;
-            tlp_maze.RowCount = (int)nud_mazeHeight.Value;
-            tlp_maze.ColumnCount = (int)nud_mazeWidth.Value;
-
-
-            for (int i = 0; i < tlp_maze.RowCount; i++) {
-                tlp_maze.RowStyles.Add(new RowStyle(SizeType.Absolute, (tlp_maze.Height / tlp_maze.RowCount) + ((tlp_maze.Height % tlp_maze.RowCount) / tlp_maze.RowCount)));
-            }
-            for (int i = 0; i < tlp_maze.ColumnCount; i++) {
-                tlp_maze.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, (tlp_maze.Width / tlp_maze.ColumnCount) + ((tlp_maze.Width % tlp_maze.ColumnCount) / tlp_maze.ColumnCount)));
-            }
+        private async void btn_requestMaze_Click(object sender, EventArgs e) {
+            string mazeToDisplay = await RequestMaze();
+            ChangeForm(mazeToDisplay);
         }
 
-        private void tlp_maze_CellPaint(object sender, TableLayoutCellPaintEventArgs e) {
-            if ((e.Column + e.Row) % 2 == 1)
-                e.Graphics.FillRectangle(Brushes.Black, e.CellBounds);
-            else
-                e.Graphics.FillRectangle(Brushes.White, e.CellBounds);
+        private async Task<string> RequestMaze() {
+            using var channel = GrpcChannel.ForAddress("https://localhost:7178");
+            var client = new MazeBuilder.MazeBuilderClient(channel);
+            var reply = await client.BuildMazeAsync(new MazeRequest {
+                Algorithm = cbx_algorithm.Text,
+                Width = (int)nud_mazeWidth.Value,
+                Height = (int)nud_mazeHeight.Value,
+                RemoveWalls = (int)nud_removeWalls.Value,
+                ExitLocation = cbx_whereExit.Text
+            });
+            return reply.Maze;
+        }
+
+        private void ChangeForm(string maze) {
+            Form mazeDisplay = new MazeDisplay(maze);
+            mazeDisplay.ShowDialog();
+        }
+
+        private void frm_mazeClient_FormClosing(object sender, FormClosingEventArgs e) {
+            cts.Cancel();
         }
     }
 }

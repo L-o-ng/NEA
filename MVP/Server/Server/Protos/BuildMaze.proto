@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+package greet;
+
+service MazeBuilder {
+	rpc BuildMaze (MazeRequest) returns (BuiltMaze);
+}
+
+message MazeRequest {
+	string algorithm = 1;
+	int64 width = 2;
+	int64 height = 3;
+	int64 removeWalls = 4;
+	string exitLocation = 5;
+}
+
+message BuiltMaze {
+	string maze = 1;
+}

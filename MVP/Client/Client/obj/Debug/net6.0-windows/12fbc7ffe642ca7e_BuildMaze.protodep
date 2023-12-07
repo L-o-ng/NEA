@@ -1,0 +1,2 @@
+obj\Debug\net6.0-windows\Protos/BuildMaze.cs \
+obj\Debug\net6.0-windows\Protos/BuildMazeGrpc.cs: Protos/BuildMaze.proto
