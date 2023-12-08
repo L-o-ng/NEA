@@ -20,7 +20,6 @@ namespace Client
         const int cellHeight = 10;
         public frm_mazeDisplay(string mazeToDisplay, string mazeType) {
             InitializeComponent();
-            Debug.WriteLine(mazeToDisplay);
             switch (mazeType) {
                 case "Recursive Backtrack":
                     maze = JsonConvert.DeserializeObject<DepthFirstGeneration>(mazeToDisplay);
