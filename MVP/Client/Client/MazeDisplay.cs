@@ -15,15 +15,23 @@ namespace Client
 {
     public partial class frm_mazeDisplay : Form
     {
-        Maze maze;
+        readonly Maze maze;
         Coordinate player;
         const int cellWidth = 10;
         const int cellHeight = 10;
-        public frm_mazeDisplay(string mazeToDisplay, string mazeType)
-        {
+
+        //forces form to fully render before displaying, removing flickering.
+        protected override CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x2000000;
+                return cp;
+            }
+        }
+
+        public frm_mazeDisplay(string mazeToDisplay, string mazeType) {
             InitializeComponent();
-            switch (mazeType)
-            {
+            switch (mazeType) {
                 case "Recursive Backtrack":
                     maze = JsonConvert.DeserializeObject<DepthFirstGeneration>(mazeToDisplay);
                     break;
@@ -35,8 +43,7 @@ namespace Client
 
 
 
-        private void SetDisplaySize()
-        {
+        private void SetDisplaySize() {
             Width = (45 + cellWidth * maze.MazeActualWidth > 235) ? 45 + cellWidth * maze.MazeActualWidth : 235;
             Height = 145 + cellHeight * maze.MazeActualHeight;
             pnl_mazeContainer.Width = cellWidth * maze.MazeActualWidth + 5;
@@ -44,8 +51,7 @@ namespace Client
             pnl_mazeContainer.Location = new Point(10, 80);
         }
 
-        private void tlp_MazeDisplay_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
-        {
+        private void tlp_MazeDisplay_CellPaint(object sender, TableLayoutCellPaintEventArgs e) {
             if (player.Equals(new Coordinate(e.Column, e.Row)))
                 e.Graphics.FillRectangle(Brushes.Blue, e.CellBounds);
             else if (maze.MazeEntranceCoordinate.Equals(new Coordinate(e.Column, e.Row)))
@@ -58,8 +64,7 @@ namespace Client
                 e.Graphics.FillRectangle(Brushes.White, e.CellBounds);
         }
 
-        private void frm_mazeDisplay_Load(object sender, EventArgs e)
-        {
+        private void frm_mazeDisplay_Load(object sender, EventArgs e) {
             SetDisplaySize();
 
             tlp_MazeDisplay.ColumnStyles.Clear();
@@ -75,9 +80,70 @@ namespace Client
 
         }
 
-        private void frm_mazeDisplay_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
+
+        private bool IsWall(Coordinate player, string direction) {
+            try {
+                return direction switch {
+                    "Up" => !maze.MazeWalls[player.Ypos - 1, player.Xpos],
+                    "Down" => !maze.MazeWalls[player.Ypos + 1, player.Xpos],
+                    "Left" => !maze.MazeWalls[player.Ypos, player.Xpos - 1],
+                    "Right" => !maze.MazeWalls[player.Ypos, player.Xpos + 1],
+                    _ => true
+                };
+            }
+            catch { return false; }
+        }
+        private void frm_mazeDisplay_KeyDown(object sender, KeyEventArgs e) {
+            switch (e.KeyCode) {
+                case Keys.W:
+                    if (IsWall(player, "Up"))
+                        player = new Coordinate(player.Xpos, player.Ypos - 1);
+                    break;
+
+                case Keys.S:
+                    if (IsWall(player, "Down"))
+                        player = new Coordinate(player.Xpos, player.Ypos + 1);
+                    break;
+
+                case Keys.A:
+                    if (IsWall(player, "Left"))
+                        player = new Coordinate(player.Xpos - 1, player.Ypos);
+                    break;
+
+                case Keys.D:
+                    if (IsWall(player, "Right"))
+                        player = new Coordinate(player.Xpos + 1, player.Ypos);
+                    break;
+
+                default:
+                    break;
+            }
+            tlp_MazeDisplay.Refresh();
+        }
+
+        private void btn_left_Click(object sender, EventArgs e) {
+            if (IsWall(player, "Left"))
+                player = new Coordinate(player.Xpos - 1, player.Ypos);
+            tlp_MazeDisplay.Refresh();
+        }
+
+        private void btn_right_Click(object sender, EventArgs e) {
+            if (IsWall(player, "Right"))
+                player = new Coordinate(player.Xpos + 1, player.Ypos);
+            tlp_MazeDisplay.Refresh();
+        }
+
+        private void btn_up_Click(object sender, EventArgs e) {
+            if (IsWall(player, "Up"))
+                player = new Coordinate(player.Xpos, player.Ypos - 1);
+            tlp_MazeDisplay.Refresh();
+        }
+
+        private void btn_down_Click(object sender, EventArgs e) {
+            if (IsWall(player, "Down"))
+                player = new Coordinate(player.Xpos, player.Ypos + 1);
+            tlp_MazeDisplay.Refresh();
         }
     }
 }
