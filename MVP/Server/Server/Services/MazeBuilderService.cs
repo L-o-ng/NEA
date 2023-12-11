@@ -15,6 +15,7 @@ namespace Server.Services
                 case "Recursive Backtrack":
                     maze = new DepthFirstGeneration((int)request.Width, (int)request.Height);
                     break;
+                    
             }
 
             maze.InitMaze();
