@@ -66,6 +66,7 @@
         public abstract void InitMaze();
         public abstract void BuildMaze(Coordinate startCell);
         public abstract void CreateEntranceExit();
+        public abstract void RemoveWalls(int wallsToRemove);
         protected virtual bool CellVisited(Coordinate cellPos)
         {
             return cellPos.Visited;

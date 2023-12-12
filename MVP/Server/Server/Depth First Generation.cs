@@ -51,6 +51,17 @@
             }
         }
 
+        public override void RemoveWalls(int wallsToRemove)
+        {
+            int wallsRemoved = 0;
+
+            while (wallsRemoved < wallsToRemove)
+            {
+                
+            }
+            
+        }
+
         private List<Coordinate> GetUnvisitedNeighbours(Coordinate cell)
         {
 
