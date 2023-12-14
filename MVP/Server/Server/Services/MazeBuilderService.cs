@@ -20,6 +20,7 @@ namespace Server.Services
 
             maze.InitMaze();
             maze.BuildMaze(maze.MazeCoordinates[1, 1]);
+            maze.RemoveWalls((int)request.RemoveWalls);
             maze.CreateEntranceExit();
 
             string jsonMaze = JsonConvert.SerializeObject(maze);

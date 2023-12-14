@@ -19,6 +19,7 @@ namespace Client
         Coordinate player;
         const int cellWidth = 10;
         const int cellHeight = 10;
+        bool solved = false;
 
         //forces form to fully render before displaying, removing flickering.
         protected override CreateParams CreateParams
@@ -43,13 +44,9 @@ namespace Client
             player = new Coordinate(maze.MazeEntranceCoordinate.Xpos, maze.MazeEntranceCoordinate.Ypos);
         }
 
-
-
-
-
         private void SetDisplaySize()
         {
-            Width = (45 + cellWidth * maze.MazeActualWidth > 235) ? 45 + cellWidth * maze.MazeActualWidth : 235;
+            Width = (45 + cellWidth * maze.MazeActualWidth > 325) ? 45 + cellWidth * maze.MazeActualWidth : 325;
             Height = 145 + cellHeight * maze.MazeActualHeight;
             pnl_mazeContainer.Width = cellWidth * maze.MazeActualWidth + 5;
             pnl_mazeContainer.Height = cellHeight * maze.MazeActualHeight + 5;
@@ -63,7 +60,7 @@ namespace Client
             else if (maze.MazeEntranceCoordinate.Equals(new Coordinate(e.Column, e.Row)))
                 e.Graphics.FillRectangle(Brushes.Red, e.CellBounds);
             else if (maze.MazeExitCoordinate.Equals(new Coordinate(e.Column, e.Row)))
-                e.Graphics.FillRectangle(Brushes.LightGreen, e.CellBounds);
+                e.Graphics.FillRectangle(Brushes.LawnGreen, e.CellBounds);
             else if (maze.MazeWalls[e.Row, e.Column])
                 e.Graphics.FillRectangle(Brushes.Black, e.CellBounds);
             else
@@ -86,8 +83,24 @@ namespace Client
                 tlp_MazeDisplay.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, cellWidth));
 
         }
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
-
+        private void CheckSolved()
+        {
+            if (!player.Equals(maze.MazeExitCoordinate)) return;
+            solved = true;
+            lbl_solved.ForeColor = Color.Green;
+            lbl_solved.Text = "Solved!";
+            btn_close.Enabled = true;
+            btn_requestSolve.Enabled = false;
+            btn_left.Enabled = false;
+            btn_right.Enabled = false;
+            btn_up.Enabled = false;
+            btn_down.Enabled = false;
+        }
 
         private bool IsWall(Coordinate player, string direction)
         {
@@ -106,6 +119,8 @@ namespace Client
         }
         private void frm_mazeDisplay_KeyDown(object sender, KeyEventArgs e)
         {
+            if (solved) return;
+
             switch (e.KeyCode)
             {
                 case Keys.W:
@@ -132,39 +147,54 @@ namespace Client
                     break;
             }
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
 
         private void btn_left_Click(object sender, EventArgs e)
         {
+            if (solved) return;
+
             if (IsWall(player, "Left"))
                 player = new Coordinate(player.Xpos - 1, player.Ypos);
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
 
         private void btn_right_Click(object sender, EventArgs e)
         {
+            if (solved) return;
+
             if (IsWall(player, "Right"))
                 player = new Coordinate(player.Xpos + 1, player.Ypos);
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
 
         private void btn_up_Click(object sender, EventArgs e)
         {
+            if (solved) return;
+
             if (IsWall(player, "Up"))
                 player = new Coordinate(player.Xpos, player.Ypos - 1);
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
 
         private void btn_down_Click(object sender, EventArgs e)
         {
+            if (solved) return;
+
             if (IsWall(player, "Down"))
                 player = new Coordinate(player.Xpos, player.Ypos + 1);
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
 
         #region Extra WASD input listeners
         private void btn_left_KeyDown(object sender, KeyEventArgs e)
         {
+            if (solved) return;
+
             switch (e.KeyCode)
             {
                 case Keys.W:
@@ -191,10 +221,13 @@ namespace Client
                     break;
             }
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
 
         private void btn_right_KeyDown(object sender, KeyEventArgs e)
         {
+            if (solved) return;
+
             switch (e.KeyCode)
             {
                 case Keys.W:
@@ -221,10 +254,13 @@ namespace Client
                     break;
             }
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
 
         private void btn_up_KeyDown(object sender, KeyEventArgs e)
         {
+            if (solved) return;
+
             switch (e.KeyCode)
             {
                 case Keys.W:
@@ -251,10 +287,13 @@ namespace Client
                     break;
             }
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
 
         private void btn_down_KeyDown(object sender, KeyEventArgs e)
         {
+            if (solved) return;
+
             switch (e.KeyCode)
             {
                 case Keys.W:
@@ -281,7 +320,76 @@ namespace Client
                     break;
             }
             tlp_MazeDisplay.Refresh();
+            CheckSolved();
+        }
+        private void btn_requestSolve_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (solved) return;
+
+            switch (e.KeyCode)
+            {
+                case Keys.W:
+                    if (IsWall(player, "Up"))
+                        player = new Coordinate(player.Xpos, player.Ypos - 1);
+                    break;
+
+                case Keys.S:
+                    if (IsWall(player, "Down"))
+                        player = new Coordinate(player.Xpos, player.Ypos + 1);
+                    break;
+
+                case Keys.A:
+                    if (IsWall(player, "Left"))
+                        player = new Coordinate(player.Xpos - 1, player.Ypos);
+                    break;
+
+                case Keys.D:
+                    if (IsWall(player, "Right"))
+                        player = new Coordinate(player.Xpos + 1, player.Ypos);
+                    break;
+
+                default:
+                    break;
+            }
+            tlp_MazeDisplay.Refresh();
+            CheckSolved();
+        }
+
+        private void cbx_solveType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (solved) return;
+
+            switch (e.KeyCode)
+            {
+                case Keys.W:
+                    if (IsWall(player, "Up"))
+                        player = new Coordinate(player.Xpos, player.Ypos - 1);
+                    break;
+
+                case Keys.S:
+                    if (IsWall(player, "Down"))
+                        player = new Coordinate(player.Xpos, player.Ypos + 1);
+                    break;
+
+                case Keys.A:
+                    if (IsWall(player, "Left"))
+                        player = new Coordinate(player.Xpos - 1, player.Ypos);
+                    break;
+
+                case Keys.D:
+                    if (IsWall(player, "Right"))
+                        player = new Coordinate(player.Xpos + 1, player.Ypos);
+                    break;
+
+                default:
+                    break;
+            }
+            tlp_MazeDisplay.Refresh();
+            CheckSolved();
         }
         #endregion
+
+
+
     }
 }

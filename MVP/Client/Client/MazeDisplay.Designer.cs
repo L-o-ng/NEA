@@ -37,6 +37,9 @@
             btn_up = new Button();
             btn_down = new Button();
             lbl_notice = new Label();
+            cbx_solveType = new ComboBox();
+            btn_close = new Button();
+            lbl_solved = new Label();
             pnl_mazeContainer.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,10 +47,10 @@
             // 
             pnl_mazeContainer.BorderStyle = BorderStyle.Fixed3D;
             pnl_mazeContainer.Controls.Add(tlp_MazeDisplay);
-            pnl_mazeContainer.Location = new Point(8, 44);
+            pnl_mazeContainer.Location = new Point(8, 99);
             pnl_mazeContainer.Margin = new Padding(0);
             pnl_mazeContainer.Name = "pnl_mazeContainer";
-            pnl_mazeContainer.Size = new Size(685, 288);
+            pnl_mazeContainer.Size = new Size(685, 233);
             pnl_mazeContainer.TabIndex = 0;
             // 
             // tlp_MazeDisplay
@@ -62,7 +65,7 @@
             tlp_MazeDisplay.RowCount = 2;
             tlp_MazeDisplay.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlp_MazeDisplay.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlp_MazeDisplay.Size = new Size(681, 284);
+            tlp_MazeDisplay.Size = new Size(681, 229);
             tlp_MazeDisplay.TabIndex = 0;
             tlp_MazeDisplay.CellPaint += tlp_MazeDisplay_CellPaint;
             // 
@@ -76,6 +79,7 @@
             btn_requestSolve.TabStop = false;
             btn_requestSolve.Text = "Request Solve";
             btn_requestSolve.UseVisualStyleBackColor = true;
+            btn_requestSolve.KeyDown += btn_requestSolve_KeyDown;
             // 
             // btn_left
             // 
@@ -134,11 +138,44 @@
             lbl_notice.TabIndex = 6;
             lbl_notice.Text = "Or keyboard controls";
             // 
+            // cbx_solveType
+            // 
+            cbx_solveType.FormattingEnabled = true;
+            cbx_solveType.Items.AddRange(new object[] { "Depth First" });
+            cbx_solveType.Location = new Point(8, 41);
+            cbx_solveType.Name = "cbx_solveType";
+            cbx_solveType.Size = new Size(97, 23);
+            cbx_solveType.TabIndex = 7;
+            cbx_solveType.TabStop = false;
+            cbx_solveType.KeyDown += cbx_solveType_KeyDown;
+            // 
+            // btn_close
+            // 
+            btn_close.Enabled = false;
+            btn_close.Location = new Point(227, 12);
+            btn_close.Name = "btn_close";
+            btn_close.Size = new Size(75, 23);
+            btn_close.TabIndex = 8;
+            btn_close.Text = "Close";
+            btn_close.UseVisualStyleBackColor = true;
+            btn_close.Click += btn_close_Click;
+            // 
+            // lbl_solved
+            // 
+            lbl_solved.AutoSize = true;
+            lbl_solved.Location = new Point(243, 38);
+            lbl_solved.Name = "lbl_solved";
+            lbl_solved.Size = new Size(0, 15);
+            lbl_solved.TabIndex = 9;
+            // 
             // frm_mazeDisplay
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+            Controls.Add(lbl_solved);
+            Controls.Add(btn_close);
+            Controls.Add(cbx_solveType);
             Controls.Add(lbl_notice);
             Controls.Add(btn_down);
             Controls.Add(btn_up);
@@ -149,6 +186,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "frm_mazeDisplay";
             Text = "MazeClient v1.0";
             Load += frm_mazeDisplay_Load;
@@ -168,5 +206,8 @@
         private Button btn_up;
         private Button btn_down;
         private Label lbl_notice;
+        private ComboBox cbx_solveType;
+        private Button btn_close;
+        private Label lbl_solved;
     }
 }
