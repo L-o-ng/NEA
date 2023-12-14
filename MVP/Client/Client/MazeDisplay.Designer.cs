@@ -79,6 +79,7 @@
             btn_requestSolve.TabStop = false;
             btn_requestSolve.Text = "Request Solve";
             btn_requestSolve.UseVisualStyleBackColor = true;
+            btn_requestSolve.Click += btn_requestSolve_Click;
             btn_requestSolve.KeyDown += btn_requestSolve_KeyDown;
             // 
             // btn_left

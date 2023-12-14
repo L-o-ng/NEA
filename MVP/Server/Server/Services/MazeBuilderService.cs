@@ -8,7 +8,7 @@ namespace Server.Services
     {
         public override Task<BuiltMaze> BuildMaze(MazeRequest request, ServerCallContext context) {
 
-            //exitLocation and removeWalls are still unused which i need to add
+            //exitLocation is still unused which i need to add
             Maze maze = null;
 
             switch (request.Algorithm) {

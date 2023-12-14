@@ -1,15 +1,5 @@
 ﻿using Algorithm_testing;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Client
 {
@@ -42,6 +32,12 @@ namespace Client
                     break;
             }
             player = new Coordinate(maze.MazeEntranceCoordinate.Xpos, maze.MazeEntranceCoordinate.Ypos);
+        }
+
+        private void btn_requestSolve_Click(object sender, EventArgs e)
+        {
+            string mazeToSolve = JsonConvert.SerializeObject(maze);
+
         }
 
         private void SetDisplaySize()
@@ -391,5 +387,6 @@ namespace Client
 
 
 
+        
     }
 }

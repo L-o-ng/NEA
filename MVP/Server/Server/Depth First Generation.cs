@@ -10,9 +10,6 @@
             rgen = new();
         }
 
-
-
-
         public override void InitMaze()
         {
             MazeActualHeight = 2 * MazeCellHeight + 1;

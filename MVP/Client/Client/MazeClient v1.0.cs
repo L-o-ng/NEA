@@ -1,7 +1,5 @@
 using Grpc.Net.Client;
 using Server;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace Client
 {
