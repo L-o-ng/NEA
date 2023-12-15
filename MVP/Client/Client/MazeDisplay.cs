@@ -1,5 +1,7 @@
 ﻿using Algorithm_testing;
+using Grpc.Net.Client;
 using Newtonsoft.Json;
+using Server;
 using System.Diagnostics;
 
 namespace Client
@@ -36,9 +38,22 @@ namespace Client
             player = new Coordinate(maze.MazeEntranceCoordinate.Xpos, maze.MazeEntranceCoordinate.Ypos);
         }
 
-        private void btn_requestSolve_Click(object sender, EventArgs e)
+        private async void btn_requestSolve_Click(object sender, EventArgs e)
         {
             string mazeToSolve = JsonConvert.SerializeObject(maze);
+            using var channel = GrpcChannel.ForAddress("https://localhost:7178");
+            var client = new MazeSolver.MazeSolverClient(channel);
+            var reply = await client.SolveMazeAsync(new SolveRequest
+            {
+                Maze = mazeToSolve
+            });
+
+            HandleSolveRender();
+        }
+
+        private void HandleSolveRender()
+        {
+            throw new NotImplementedException();
         }
 
         private void SetDisplaySize()
@@ -113,7 +128,6 @@ namespace Client
             {
                 try
                 {
-
                     while (!solved)
                         Invoke(() => lbl_timer.Text = sw.Elapsed.ToString());
                 }
