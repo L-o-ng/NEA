@@ -1,5 +1,6 @@
 ﻿using Algorithm_testing;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Client
 {
@@ -10,6 +11,8 @@ namespace Client
         const int cellWidth = 10;
         const int cellHeight = 10;
         bool solved = false;
+        bool startedManualSolve = false;
+        Stopwatch sw = new Stopwatch();
 
         //forces form to fully render before displaying, removing flickering.
         protected override CreateParams CreateParams
@@ -37,7 +40,6 @@ namespace Client
         private void btn_requestSolve_Click(object sender, EventArgs e)
         {
             string mazeToSolve = JsonConvert.SerializeObject(maze);
-
         }
 
         private void SetDisplaySize()
@@ -86,6 +88,11 @@ namespace Client
 
         private void CheckSolved()
         {
+            if (!startedManualSolve)
+            {
+                startedManualSolve = true;
+                HandleTimer();
+            }
             if (!player.Equals(maze.MazeExitCoordinate)) return;
             solved = true;
             lbl_solved.ForeColor = Color.Green;
@@ -96,6 +103,16 @@ namespace Client
             btn_right.Enabled = false;
             btn_up.Enabled = false;
             btn_down.Enabled = false;
+        }
+
+        private void HandleTimer()
+        {
+            sw.Start();
+            ThreadPool.QueueUserWorkItem((state) =>
+            {
+                while (!solved)
+                    Invoke(() => lbl_timer.Text = sw.Elapsed.ToString());
+            });
         }
 
         private bool IsWall(Coordinate player, string direction)
@@ -387,6 +404,6 @@ namespace Client
 
 
 
-        
+
     }
 }

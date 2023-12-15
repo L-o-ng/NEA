@@ -40,6 +40,7 @@
             cbx_solveType = new ComboBox();
             btn_close = new Button();
             lbl_solved = new Label();
+            lbl_timer = new Label();
             pnl_mazeContainer.SuspendLayout();
             SuspendLayout();
             // 
@@ -169,11 +170,20 @@
             lbl_solved.Size = new Size(0, 15);
             lbl_solved.TabIndex = 9;
             // 
+            // lbl_timer
+            // 
+            lbl_timer.AutoSize = true;
+            lbl_timer.Location = new Point(111, 53);
+            lbl_timer.Name = "lbl_timer";
+            lbl_timer.Size = new Size(0, 15);
+            lbl_timer.TabIndex = 10;
+            // 
             // frm_mazeDisplay
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+            Controls.Add(lbl_timer);
             Controls.Add(lbl_solved);
             Controls.Add(btn_close);
             Controls.Add(cbx_solveType);
@@ -210,5 +220,6 @@
         private ComboBox cbx_solveType;
         private Button btn_close;
         private Label lbl_solved;
+        private Label lbl_timer;
     }
 }

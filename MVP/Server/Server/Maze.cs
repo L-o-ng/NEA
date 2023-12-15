@@ -65,7 +65,7 @@
         #region Methods
         public abstract void InitMaze();
         public abstract void BuildMaze(Coordinate startCell);
-        public abstract void CreateEntranceExit();
+        public abstract void CreateEntranceExit(bool atBorder);
         public abstract void RemoveWalls(int wallsToRemove);
         protected virtual bool CellVisited(Coordinate cellPos)
         {

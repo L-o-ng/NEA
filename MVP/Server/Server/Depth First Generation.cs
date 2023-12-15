@@ -1,4 +1,6 @@
-﻿namespace Server
+﻿using static Grpc.Core.Metadata;
+
+namespace Server
 {
     internal class DepthFirstGeneration : Maze
     {
@@ -112,13 +114,25 @@
             MazeWalls[midY, midX] = false;
         }
 
-        public override void CreateEntranceExit()
-        { //need to implement entrance/exit randomization and positioning parameters
+        public override void CreateEntranceExit(bool atBorder)
+        {
             MazeWalls[1, 0] = false; //entrance
             MazeEntranceCoordinate = new Coordinate(0, 1);
 
-            Maze​Walls[MazeActualHeight - 2, MazeActualWidth - 1] = false; //exit
-            MazeExitCoordinate = new Coordinate(MazeActualWidth - 1, MazeActualHeight - 2);
+            if (atBorder) //border exit
+            {
+                Maze​Walls[MazeActualHeight - 2, MazeActualWidth - 1] = false; //exit
+                MazeExitCoordinate = new Coordinate(MazeActualWidth - 1, MazeActualHeight - 2);
+            }
+            else //central exit
+            {
+                int centerX, centerY;
+                centerX = MazeActualWidth / 2;
+                centerY = MazeActualHeight / 2;
+                MazeWalls[centerY, centerX] = false;
+                MazeExitCoordinate = new Coordinate(centerX, centerY);
+            }
+            
 
             ResetVisited();
         }

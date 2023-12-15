@@ -8,7 +8,6 @@ namespace Server.Services
     {
         public override Task<BuiltMaze> BuildMaze(MazeRequest request, ServerCallContext context) {
 
-            //exitLocation is still unused which i need to add
             Maze maze = null;
 
             switch (request.Algorithm) {
@@ -21,7 +20,7 @@ namespace Server.Services
             maze.InitMaze();
             maze.BuildMaze(maze.MazeCoordinates[1, 1]);
             maze.RemoveWalls((int)request.RemoveWalls);
-            maze.CreateEntranceExit();
+            maze.CreateEntranceExit(request.ExitLocation == "Border");
 
             string jsonMaze = JsonConvert.SerializeObject(maze);
 
