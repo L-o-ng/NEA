@@ -18,7 +18,7 @@ namespace Client
 
             ThreadPool.QueueUserWorkItem(async (state) =>
             {
-                while (!cts.Token.IsCancellationRequested)
+                while (true)
                 {
 
                     using var channel = GrpcChannel.ForAddress("https://localhost:7178");
@@ -46,7 +46,7 @@ namespace Client
 
                     Thread.Sleep(10000);
                 }
-            });
+            }, cts.Token);
         }
 
         private async void btn_requestMaze_Click(object sender, EventArgs e)
@@ -79,6 +79,7 @@ namespace Client
         private void frm_mazeClient_FormClosing(object sender, FormClosingEventArgs e)
         {
             cts.Cancel();
+            cts.Dispose();
         }
     }
 }

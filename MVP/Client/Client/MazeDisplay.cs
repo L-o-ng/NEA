@@ -6,14 +6,13 @@ namespace Client
 {
     public partial class frm_mazeDisplay : Form
     {
-        readonly Maze maze;
-        Coordinate player;
-        const int cellWidth = 10;
-        const int cellHeight = 10;
-        bool solved = false;
-        bool startedManualSolve = false;
-        Stopwatch sw = new Stopwatch();
-
+        private readonly Maze maze;
+        private Coordinate player;
+        private const int cellWidth = 10;
+        private const int cellHeight = 10;
+        private bool solved = false;
+        private bool startedManualSolve = false;
+        private Stopwatch sw = new();
         //forces form to fully render before displaying, removing flickering.
         protected override CreateParams CreateParams
         {
@@ -108,10 +107,17 @@ namespace Client
         private void HandleTimer()
         {
             sw.Start();
+
+
             ThreadPool.QueueUserWorkItem((state) =>
             {
-                while (!solved)
-                    Invoke(() => lbl_timer.Text = sw.Elapsed.ToString());
+                try
+                {
+
+                    while (!solved)
+                        Invoke(() => lbl_timer.Text = sw.Elapsed.ToString());
+                }
+                catch { }
             });
         }
 
@@ -401,9 +407,5 @@ namespace Client
             CheckSolved();
         }
         #endregion
-
-
-
-
     }
 }

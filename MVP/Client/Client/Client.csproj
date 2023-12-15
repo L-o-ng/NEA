@@ -21,10 +21,7 @@
   <ItemGroup>
 	<Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
 	<Protobuf Include="Protos\BuildMaze.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\SolveMaze.proto" GrpcServices="Client" />
   </ItemGroup>
-  <ItemGroup>
-	
-  </ItemGroup>
-
 
 </Project>
