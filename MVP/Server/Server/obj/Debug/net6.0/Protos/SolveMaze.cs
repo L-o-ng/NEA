@@ -24,14 +24,15 @@ namespace Server {
     static SolveMazeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZQcm90b3MvU29sdmVNYXplLnByb3RvEgVncmVldCIcCgxTb2x2ZVJlcXVl",
-            "c3QSDAoEbWF6ZRgBIAEoCSIUCgRQYXRoEgwKBHBhdGgYASABKAkyOwoKTWF6",
-            "ZVNvbHZlchItCglTb2x2ZU1hemUSEy5ncmVldC5Tb2x2ZVJlcXVlc3QaCy5n",
-            "cmVldC5QYXRoQgmqAgZTZXJ2ZXJiBnByb3RvMw=="));
+            "ChZQcm90b3MvU29sdmVNYXplLnByb3RvEgVncmVldCJQCgxTb2x2ZVJlcXVl",
+            "c3QSDAoEbWF6ZRgBIAEoCRIRCglhbGdvcml0aG0YAiABKAkSHwoXbWF6ZUdl",
+            "bmVyYXRpb25BbGdvcml0aG0YAyABKAkiFAoEUGF0aBIMCgRwYXRoGAEgASgJ",
+            "MjsKCk1hemVTb2x2ZXISLQoJU29sdmVNYXplEhMuZ3JlZXQuU29sdmVSZXF1",
+            "ZXN0GgsuZ3JlZXQuUGF0aEIJqgIGU2VydmVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Server.SolveRequest), global::Server.SolveRequest.Parser, new[]{ "Maze" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Server.SolveRequest), global::Server.SolveRequest.Parser, new[]{ "Maze", "Algorithm", "MazeGenerationAlgorithm" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Server.Path), global::Server.Path.Parser, new[]{ "Path_" }, null, null, null, null)
           }));
     }
@@ -69,6 +70,8 @@ namespace Server {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SolveRequest(SolveRequest other) : this() {
       maze_ = other.maze_;
+      algorithm_ = other.algorithm_;
+      mazeGenerationAlgorithm_ = other.mazeGenerationAlgorithm_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -88,6 +91,28 @@ namespace Server {
       }
     }
 
+    /// <summary>Field number for the "algorithm" field.</summary>
+    public const int AlgorithmFieldNumber = 2;
+    private string algorithm_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Algorithm {
+      get { return algorithm_; }
+      set {
+        algorithm_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mazeGenerationAlgorithm" field.</summary>
+    public const int MazeGenerationAlgorithmFieldNumber = 3;
+    private string mazeGenerationAlgorithm_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string MazeGenerationAlgorithm {
+      get { return mazeGenerationAlgorithm_; }
+      set {
+        mazeGenerationAlgorithm_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SolveRequest);
@@ -102,6 +127,8 @@ namespace Server {
         return true;
       }
       if (Maze != other.Maze) return false;
+      if (Algorithm != other.Algorithm) return false;
+      if (MazeGenerationAlgorithm != other.MazeGenerationAlgorithm) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -109,6 +136,8 @@ namespace Server {
     public override int GetHashCode() {
       int hash = 1;
       if (Maze.Length != 0) hash ^= Maze.GetHashCode();
+      if (Algorithm.Length != 0) hash ^= Algorithm.GetHashCode();
+      if (MazeGenerationAlgorithm.Length != 0) hash ^= MazeGenerationAlgorithm.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -129,6 +158,14 @@ namespace Server {
         output.WriteRawTag(10);
         output.WriteString(Maze);
       }
+      if (Algorithm.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Algorithm);
+      }
+      if (MazeGenerationAlgorithm.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(MazeGenerationAlgorithm);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -142,6 +179,14 @@ namespace Server {
         output.WriteRawTag(10);
         output.WriteString(Maze);
       }
+      if (Algorithm.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Algorithm);
+      }
+      if (MazeGenerationAlgorithm.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(MazeGenerationAlgorithm);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -153,6 +198,12 @@ namespace Server {
       int size = 0;
       if (Maze.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Maze);
+      }
+      if (Algorithm.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Algorithm);
+      }
+      if (MazeGenerationAlgorithm.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MazeGenerationAlgorithm);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -167,6 +218,12 @@ namespace Server {
       }
       if (other.Maze.Length != 0) {
         Maze = other.Maze;
+      }
+      if (other.Algorithm.Length != 0) {
+        Algorithm = other.Algorithm;
+      }
+      if (other.MazeGenerationAlgorithm.Length != 0) {
+        MazeGenerationAlgorithm = other.MazeGenerationAlgorithm;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -186,6 +243,14 @@ namespace Server {
             Maze = input.ReadString();
             break;
           }
+          case 18: {
+            Algorithm = input.ReadString();
+            break;
+          }
+          case 26: {
+            MazeGenerationAlgorithm = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -202,6 +267,14 @@ namespace Server {
             break;
           case 10: {
             Maze = input.ReadString();
+            break;
+          }
+          case 18: {
+            Algorithm = input.ReadString();
+            break;
+          }
+          case 26: {
+            MazeGenerationAlgorithm = input.ReadString();
             break;
           }
         }

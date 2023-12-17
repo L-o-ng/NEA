@@ -11,10 +11,8 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -26,8 +24,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mazeDisplay));
             pnl_mazeContainer = new Panel();
             tlp_MazeDisplay = new TableLayoutPanel();
@@ -149,6 +146,7 @@
             cbx_solveType.Size = new Size(97, 23);
             cbx_solveType.TabIndex = 7;
             cbx_solveType.TabStop = false;
+            cbx_solveType.SelectedIndexChanged += cbx_solveType_SelectedIndexChanged;
             cbx_solveType.KeyDown += cbx_solveType_KeyDown;
             // 
             // btn_close

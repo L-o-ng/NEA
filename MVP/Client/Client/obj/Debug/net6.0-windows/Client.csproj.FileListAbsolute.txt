@@ -20,7 +20,6 @@ C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\r
 C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.pdb
 C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
 C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\ref\Client.dll
-C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.MazeClient.resources
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.exe
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.deps.json
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
@@ -71,3 +70,6 @@ C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-wi
 C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.pdb
 C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
 C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeClient.resources
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeDisplay.resources

@@ -1,10 +1,14 @@
 ﻿using static Grpc.Core.Metadata;
+using Newtonsoft.Json;
 
 namespace Server
 {
     internal class DepthFirstGeneration : Maze
     {
+        [JsonConstructor]
+        public DepthFirstGeneration() {
 
+        }
         public DepthFirstGeneration(int cellWidth, int cellHeight)
         {
             MazeCellWidth = cellWidth;

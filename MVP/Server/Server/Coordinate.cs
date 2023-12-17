@@ -1,7 +1,13 @@
-﻿namespace Server
+﻿using Newtonsoft.Json;
+
+namespace Server
 {
     internal class Coordinate
     {
+        [JsonConstructor]
+        public Coordinate() {
+
+        }
         public Coordinate(int xPos, int yPos)
         {
             this.xPos = xPos;
@@ -20,14 +26,14 @@
         public int Xpos
         {
             get { return xPos; }
-            private set { xPos = value; }
+            set { xPos = value; }
         }
 
         private int yPos;
         public int Ypos
         {
             get { return yPos; }
-            private set { yPos = value; }
+            set { yPos = value; }
         }
 
         private bool visited;

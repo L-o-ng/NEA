@@ -8,7 +8,6 @@ namespace Algorithm_testing
 {
     internal abstract class SolvingAlgorithm
     {
-        protected Random rgen = new();
         public abstract List<Coordinate> SolveMaze(Maze maze);
     }
 }

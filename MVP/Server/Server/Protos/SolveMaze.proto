@@ -10,6 +10,8 @@ service MazeSolver {
 
 message SolveRequest {
 	string maze = 1;
+	string algorithm = 2;
+	string mazeGenerationAlgorithm = 3;
 }
 
 message Path {

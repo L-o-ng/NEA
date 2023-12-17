@@ -1,4 +1,5 @@
 ﻿using Grpc.Core;
+using Newtonsoft.Json;
 
 namespace Server.Services
 {
@@ -6,8 +7,28 @@ namespace Server.Services
     {
         public override Task<Path> SolveMaze(SolveRequest request, ServerCallContext context)
         {
+            SolvingAlgorithm solver = null;
+            Maze maze = null;
 
-            return Task.FromResult(new Path());
+            switch (request.MazeGenerationAlgorithm) {
+                case "Recursive Backtrack":
+                    maze = JsonConvert.DeserializeObject<DepthFirstGeneration>(request.Maze);
+                    break;
+            }
+            
+
+            switch (request.Algorithm) {
+                case "Depth First":
+                    solver = new DepthFirstSolve();
+                    break;
+            }
+
+            List<Coordinate> path = solver.SolveMaze(maze);
+            foreach (Coordinate coordinate in path) {
+                Console.WriteLine($"({coordinate.Xpos},{coordinate.Ypos}), ");
+            }
+
+            return Task.FromResult(new Path { Path_ = JsonConvert.SerializeObject(path) });
         }
     }
 }
