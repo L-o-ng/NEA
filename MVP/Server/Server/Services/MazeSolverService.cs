@@ -24,9 +24,6 @@ namespace Server.Services
             }
 
             List<Coordinate> path = solver.SolveMaze(maze);
-            foreach (Coordinate coordinate in path) {
-                Console.WriteLine($"({coordinate.Xpos},{coordinate.Ypos}), ");
-            }
 
             return Task.FromResult(new Path { Path_ = JsonConvert.SerializeObject(path) });
         }

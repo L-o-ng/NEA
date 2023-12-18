@@ -195,8 +195,12 @@ namespace Client
                 default:
                     break;
             }
-            tlp_MazeDisplay.Refresh();
-            CheckSolved();
+
+            if (!new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode))
+            {
+                tlp_MazeDisplay.Refresh();
+                CheckSolved();
+            }
         }
 
         private void btn_left_Click(object sender, EventArgs e) {
