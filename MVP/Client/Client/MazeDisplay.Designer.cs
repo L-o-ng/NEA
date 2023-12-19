@@ -11,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -24,7 +26,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mazeDisplay));
             pnl_mazeContainer = new Panel();
             tlp_MazeDisplay = new TableLayoutPanel();
@@ -86,7 +89,6 @@
             btn_left.Name = "btn_left";
             btn_left.Size = new Size(23, 23);
             btn_left.TabIndex = 2;
-            btn_left.TabStop = false;
             btn_left.Text = "←";
             btn_left.UseVisualStyleBackColor = true;
             btn_left.Click += btn_left_Click;
@@ -98,7 +100,6 @@
             btn_right.Name = "btn_right";
             btn_right.Size = new Size(23, 23);
             btn_right.TabIndex = 3;
-            btn_right.TabStop = false;
             btn_right.Text = "→";
             btn_right.UseVisualStyleBackColor = true;
             btn_right.Click += btn_right_Click;
@@ -110,7 +111,6 @@
             btn_up.Name = "btn_up";
             btn_up.Size = new Size(23, 23);
             btn_up.TabIndex = 4;
-            btn_up.TabStop = false;
             btn_up.Text = "↑";
             btn_up.UseVisualStyleBackColor = true;
             btn_up.Click += btn_up_Click;
@@ -122,7 +122,6 @@
             btn_down.Name = "btn_down";
             btn_down.Size = new Size(23, 23);
             btn_down.TabIndex = 5;
-            btn_down.TabStop = false;
             btn_down.Text = "↓";
             btn_down.UseVisualStyleBackColor = true;
             btn_down.Click += btn_down_Click;

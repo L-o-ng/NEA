@@ -16,6 +16,9 @@ namespace Client
         {
             btn_requestMaze.Enabled = false;
 
+            cbx_algorithm.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbx_whereExit.DropDownStyle = ComboBoxStyle.DropDownList;
+
             ThreadPool.QueueUserWorkItem(async (state) =>
             {
                 while (true)
@@ -74,6 +77,7 @@ namespace Client
         {
             Form mazeDisplay = new frm_mazeDisplay(maze, cbx_algorithm.Text);
             mazeDisplay.ShowDialog();
+            mazeDisplay.Focus();
         }
 
         private void frm_mazeClient_FormClosing(object sender, FormClosingEventArgs e)
