@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+package greet;
+
+service CheckerIfUserExists {
+  rpc CheckUser (Query) returns (Exists);
+}
+
+message Query {
+  string username = 1;
+}
+
+message Exists {
+  bool userExists = 1;
+}

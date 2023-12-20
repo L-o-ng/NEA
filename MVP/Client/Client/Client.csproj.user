@@ -4,7 +4,13 @@
     <Compile Update="MazeDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MazeClient v1.0.cs">
+    <Compile Update="MazeParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MazeLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MazeRegister.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

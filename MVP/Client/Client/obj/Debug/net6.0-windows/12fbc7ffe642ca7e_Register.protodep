@@ -1,0 +1,2 @@
+obj\Debug\net6.0-windows\Protos/Register.cs \
+obj\Debug\net6.0-windows\Protos/RegisterGrpc.cs: Protos/Register.proto

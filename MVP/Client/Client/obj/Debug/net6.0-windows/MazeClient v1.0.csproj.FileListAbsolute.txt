@@ -1,0 +1,10 @@
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\MazeClient v1.0.csproj.AssemblyReference.cache
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeDisplay.resources
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeLogin.resources
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeClient.resources
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeRegister.resources
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\MazeClient v1.0.csproj.GenerateResource.cache
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\MazeClient v1.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\MazeClient v1.0.AssemblyInfoInputs.cache
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\MazeClient v1.0.AssemblyInfo.cs
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\MazeClient v1.0.csproj.CoreCompileInputs.cache

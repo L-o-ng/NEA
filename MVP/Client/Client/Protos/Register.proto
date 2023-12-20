@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+package greet;
+
+service Registerer {
+  rpc Register (Account) returns (Acknowledgement);
+}
+
+message Account {
+  string username = 1;
+  string password = 2;
+  string salt = 3;
+}
+
+message Acknowledgement {
+  bool success = 1;
+}

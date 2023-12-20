@@ -8,7 +8,7 @@ namespace Client
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new frm_mazeClient());
+            Application.Run(new frm_mazeLogin());
         }
     }
 }
