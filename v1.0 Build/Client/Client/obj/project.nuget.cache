@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "GYzh6ckktVk3zhsYiJ6Qb5SDYksFADmKDKGpus5+5kjENdp7GAUxwvfOO7sQoBikwQ1DqQZHCOVAs/7dXtBAzA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\v1.0 Build\\Client\\Client\\Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dylan\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
+    "C:\\Users\\dylan\\.nuget\\packages\\grpc.core.api\\2.59.0\\grpc.core.api.2.59.0.nupkg.sha512",
+    "C:\\Users\\dylan\\.nuget\\packages\\grpc.net.client\\2.59.0\\grpc.net.client.2.59.0.nupkg.sha512",
+    "C:\\Users\\dylan\\.nuget\\packages\\grpc.net.common\\2.59.0\\grpc.net.common.2.59.0.nupkg.sha512",
+    "C:\\Users\\dylan\\.nuget\\packages\\grpc.tools\\2.60.0\\grpc.tools.2.60.0.nupkg.sha512",
+    "C:\\Users\\dylan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\dylan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\dylan\\.nuget\\packages\\winforms.datavisualization\\1.9.1\\winforms.datavisualization.1.9.1.nupkg.sha512"
+  ],
+  "logs": []
+}

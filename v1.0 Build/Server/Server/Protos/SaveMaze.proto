@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+package greet;
+
+service Saver {
+  rpc SaveMaze (SaveRequest) returns (SuccessAck);
+}
+
+message SaveRequest {
+  string mazeName = 1;
+  string mazeType = 2;
+  string mazeJson = 3;
+  int32 userID = 4;
+}
+
+message SuccessAck {
+  bool success = 1;
+}

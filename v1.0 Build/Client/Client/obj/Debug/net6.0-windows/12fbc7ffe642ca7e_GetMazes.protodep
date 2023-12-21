@@ -1,0 +1,2 @@
+obj\Debug\net6.0-windows\Protos/GetMazes.cs \
+obj\Debug\net6.0-windows\Protos/GetMazesGrpc.cs: Protos/GetMazes.proto

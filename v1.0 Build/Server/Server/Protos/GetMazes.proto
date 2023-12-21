@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+package greet;
+
+service GetterMazes {
+  rpc GetMazes (Request) returns (MazesList);
+}
+
+message Request {
+  int32 userID = 1;
+}
+
+message MazesList {
+  string mazes = 1;
+}

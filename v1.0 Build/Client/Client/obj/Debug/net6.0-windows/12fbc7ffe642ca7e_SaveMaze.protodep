@@ -1,0 +1,2 @@
+obj\Debug\net6.0-windows\Protos/SaveMaze.cs \
+obj\Debug\net6.0-windows\Protos/SaveMazeGrpc.cs: Protos/SaveMaze.proto

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+package greet;
+
+service DeleterMazes {
+  rpc DeleteMaze (DeleteRequest) returns (SuccessAcknowledge);
+}
+
+message DeleteRequest {
+  int32 mazeID = 1;
+  int32 userID = 2;
+}
+
+message SuccessAcknowledge {
+  bool success = 1;
+}

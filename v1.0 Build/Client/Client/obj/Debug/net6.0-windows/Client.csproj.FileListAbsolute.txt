@@ -1,0 +1,135 @@
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Core.Api.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Client.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Common.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.GenerateResource.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeClient.resources
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\dylan\OneDrive\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeDisplay.resources
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Core.Api.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Client.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Common.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeClient.resources
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeDisplay.resources
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.GenerateResource.cache
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\thompson7192\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Core.Api.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Common.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Authentication.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Authentication.Cookies.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Http.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Identity.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Identity.Core.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.ObjectPool.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.WebEncoders.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Microsoft.Net.Http.Headers.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeDisplay.resources
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeLogin.resources
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeRegister.resources
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.GenerateResource.cache
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\MVP\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeParams.resources
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Grpc.Core.Api.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Grpc.Net.Common.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeDisplay.resources
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeLogin.resources
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeParams.resources
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.frm_mazeRegister.resources
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.csproj.GenerateResource.cache
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\bin\Debug\net6.0-windows\WinForms.DataVisualization.dll

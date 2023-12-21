@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+package greet;
+
+service LoaderMazes {
+  rpc LoadMaze (LoadRequest) returns (MazeToLoad);
+}
+
+message LoadRequest {
+  int32 userID = 1;
+  int32 mazeID = 2;
+}
+
+message MazeToLoad {
+  string maze = 1;
+  string mazeGenAlg = 2;
+}

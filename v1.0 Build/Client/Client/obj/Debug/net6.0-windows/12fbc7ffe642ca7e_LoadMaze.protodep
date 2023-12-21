@@ -1,0 +1,2 @@
+obj\Debug\net6.0-windows\Protos/LoadMaze.cs \
+obj\Debug\net6.0-windows\Protos/LoadMazeGrpc.cs: Protos/LoadMaze.proto

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.25.1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.59.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.60.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.9.1" />
+  </ItemGroup>
+	
+  <ItemGroup>
+	<Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\BuildMaze.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\SolveMaze.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\Register.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\CheckIfUserExists.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\Login.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\SaveMaze.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\GetMazes.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\LoadMaze.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\DeleteMaze.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+</Project>
