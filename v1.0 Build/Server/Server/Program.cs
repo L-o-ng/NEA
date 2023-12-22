@@ -141,5 +141,6 @@ app.MapGrpcService<LoadMazeService>();
 app.MapGrpcService<DeleteMazeService>();
 app.MapGrpcService<GlobalStatHandlerService>();
 app.MapGrpcService<HandleUserStatsService>();
+app.MapGrpcService<GetStatsService>();
 
 app.Run();

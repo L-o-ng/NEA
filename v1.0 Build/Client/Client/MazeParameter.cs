@@ -42,15 +42,19 @@ namespace Client
                     }
                     catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
                         Invoke(() => {
-                            lbl_connectionError.Text = "Not connected to server!";
-                            lbl_connectionError.ForeColor = Color.Red;
-                            btn_requestMaze.Enabled = false;
+                            HandleServerError();
                         });
                     }
 
                     Thread.Sleep(10000);
                 }
             }, cts.Token);
+        }
+
+        private void HandleServerError() {
+            lbl_connectionError.Text = "Not connected to server!";
+            lbl_connectionError.ForeColor = Color.Red;
+            btn_requestMaze.Enabled = false;
         }
 
         private async void btn_requestMaze_Click(object sender, EventArgs e) {
@@ -172,21 +176,101 @@ namespace Client
             }
         }
 
-        private void btn_displayStats_Click(object sender, EventArgs e) {
+        private async void btn_displayStats_Click(object sender, EventArgs e) {
             if (cbx_statType.Text == string.Empty) return;
 
-            if (cbx_statType.Text == "Mazes Generated" && chbx_globalStats.Checked) {
+            using var channel = GrpcChannel.ForAddress("https://localhost:7178");
+            var client = new StatsGetter.StatsGetterClient(channel);
 
+            if (cbx_statType.Text == "Mazes Generated" && chbx_globalStats.Checked) {
+                try {
+                    var reply = await client.GetGlobalMazesGeneratedAsync(new GetGlobalMazesGeneratedRequest { },
+                        deadline: DateTime.UtcNow.AddSeconds(3));
+
+                    Chart chrt_mazesGenerated = HandleMazesGeneratedStatsView();
+                    Series series = new("Maze Types Generated");
+                    series.ChartType = SeriesChartType.Pie;
+
+                    string[] segmentNames = { "Recursive Backtrack", "Kruskal's", "Wilson's" };
+                    double[] segmentValues = { reply.RecursiveBacktrackMazesGenerated, reply.KruskalsMazesGenerated, reply.WilsonsMazesGenerated };
+                    series.Points.DataBindXY(segmentNames, segmentValues);
+
+                    chrt_mazesGenerated.Series.Add(series);
+                }
+                catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
+                    HandleServerError();
+                }
             }
             else if (cbx_statType.Text == "Mazes Generated" && !chbx_globalStats.Checked) {
+                try {
+                    var reply = await client.GetUserMazesGeneratedAsync(new GetUserMazesGeneratedRequest { UserID = (int)Globals.g_userID },
+                        deadline: DateTime.UtcNow.AddSeconds(3));
 
+                    Chart chrt_mazesGenerated = HandleMazesGeneratedStatsView();
+                    Series series = new("Maze Types Generated");
+                    series.ChartType = SeriesChartType.Pie;
+
+                    string[] segmentNames = { "Recursive Backtrack", "Kruskal's", "Wilson's" };
+                    double[] segmentValues = { reply.RecursiveBacktrackMazesGenerated, reply.KruskalsMazesGenerated, reply.WilsonsMazesGenerated };
+                    series.Points.DataBindXY(segmentNames, segmentValues);
+
+                    chrt_mazesGenerated.Series.Add(series);
+                }
+                catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
+                    HandleServerError();
+                }
             }
             else if (cbx_statType.Text == "Best Times" && chbx_globalStats.Checked) {
+                try {
+                    var reply = await client.GetGlobalTimesAsync(new GetGlobalTimesRequest { },
+                        deadline: DateTime.UtcNow.AddSeconds(3));
 
+                    RichTextBox rtb_times = HandleTimeStatsView();
+                    rtb_times.Text += "Global Best Times\n";
+                    rtb_times.Text += $"1st:  {reply.Time1Username} : {reply.Time1DisplayTime}\n2nd:  {reply.Time2Username} : {reply.Time2DisplayTime}\n3rd:  {reply.Time3Username} : {reply.Time3DisplayTime}\n4th:  {reply.Time4Username} : {reply.Time4DisplayTime}\n5th:  {reply.Time5Username} : {reply.Time5DisplayTime}\n6th:  {reply.Time6Username} : {reply.Time6DisplayTime}\n7th:  {reply.Time7Username} : {reply.Time7DisplayTime}\n8th:  {reply.Time8Username} : {reply.Time8DisplayTime}\n9th:  {reply.Time9Username} : {reply.Time9DisplayTime}\n10th: {reply.Time10Username} : {reply.Time10DisplayTime}";
+                }
+                catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
+                    HandleServerError();
+                }
             }
             else if (cbx_statType.Text == "Best Times" && !chbx_globalStats.Checked) {
+                try {
+                    var reply = await client.GetUserTimesAsync(new GetUserTimesRequest { UserID = (int)Globals.g_userID },
+                        deadline: DateTime.UtcNow.AddSeconds(3));
 
+                    RichTextBox rtb_times = HandleTimeStatsView();
+                    rtb_times.Font = new Font("Calibri", 20, FontStyle.Bold);
+                    rtb_times.Text += "Your Best Times\n";
+                    rtb_times.Font = DefaultFont;
+                    rtb_times.Text += $"1st:  {reply.Time1DisplayTime}\n2nd:  {reply.Time2DisplayTime}\n3rd:  {reply.Time3DisplayTime}\n4th:  {reply.Time4DisplayTime}\n5th:  {reply.Time5DisplayTime}\n6th:  {reply.Time6DisplayTime}\n7th:  {reply.Time7DisplayTime}\n8th:  {reply.Time8DisplayTime}\n9th:  {reply.Time9DisplayTime}\n10th: {reply.Time10DisplayTime}";
+                }
+                catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
+                    HandleServerError();
+                }
             }
+        }
+
+        private RichTextBox HandleTimeStatsView() {
+            RichTextBox rtb_times;
+            pnl_graph.Controls.Clear();
+            pnl_graph.Controls.Add(rtb_times = new());
+
+            rtb_times.Dock = DockStyle.Fill;
+
+            return rtb_times;
+        }
+
+        private Chart HandleMazesGeneratedStatsView() {
+            Chart chrt_generatedStats;
+            pnl_graph.Controls.Clear();
+            pnl_graph.Controls.Add(chrt_generatedStats = new());
+
+            chrt_generatedStats.Dock = DockStyle.Fill;
+            chrt_generatedStats.ChartAreas.Add(new ChartArea("MazeChartArea"));
+            chrt_generatedStats.ChartAreas["MazeChartArea"].Area3DStyle.Enable3D = true;
+
+
+            return chrt_generatedStats;
         }
     }
 }
