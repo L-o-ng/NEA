@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+package greet;
+
+service StatsGetter {
+  rpc GetGlobalTimes (GetGlobalTimesRequest) returns (GlobalTimes);
+  rpc GetUserTimes (GetUserTimesRequest) returns (UserTimes);
+  rpc GetGlobalMazesGenerated (GetGlobalMazesGeneratedRequest) returns (GlobalMazesGenerated);
+  rpc GetUserMazesGenerated (GetUserMazesGeneratedRequest) returns (UserMazesGenerated);
+}
+message GetGlobalTimesRequest {
+
+}
+message GlobalTimes {
+	string time1DisplayTime = 1;
+	string time1Username = 2;
+	string time2DisplayTime = 3;
+	string time2Username = 4;
+	string time3DisplayTime = 5;
+	string time3Username = 6;
+	string time4DisplayTime = 7;
+	string time4Username = 8;
+	string time5DisplayTime = 9;
+	string time5Username = 10;
+	string time6DisplayTime = 11;
+	string time6Username = 12;
+	string time7DisplayTime = 13;
+	string time7Username = 14;
+	string time8DisplayTime = 15;
+	string time8Username = 16;
+	string time9DisplayTime = 17;
+	string time9Username = 18;
+	string time10DisplayTime = 19;
+	string time10Username = 20;
+}
+
+message GetUserTimesRequest {
+	int32 userID = 1;
+}
+message UserTimes {
+	string time1DisplayTime = 1;
+	string time1Username = 2;
+	string time2DisplayTime = 3;
+	string time2Username = 4;
+	string time3DisplayTime = 5;
+	string time3Username = 6;
+	string time4DisplayTime = 7;
+	string time4Username = 8;
+	string time5DisplayTime = 9;
+	string time5Username = 10;
+	string time6DisplayTime = 11;
+	string time6Username = 12;
+	string time7DisplayTime = 13;
+	string time7Username = 14;
+	string time8DisplayTime = 15;
+	string time8Username = 16;
+	string time9DisplayTime = 17;
+	string time9Username = 18;
+	string time10DisplayTime = 19;
+	string time10Username = 20;
+}
+
+message GetGlobalMazesGeneratedRequest {
+
+}
+message GlobalMazesGenerated {
+	int32 recursiveBacktrackMazesGenerated = 1;
+	int32 kruskalsMazesGenerated = 2;
+	int32 wilsonsMazesGenerated = 3;
+}
+
+message GetUserMazesGeneratedRequest {
+	int32 userID = 1;
+}
+message UserMazesGenerated {
+	int32 recursiveBacktrackMazesGenerated = 1;
+	int32 kruskalsMazesGenerated = 2;
+	int32 wilsonsMazesGenerated = 3;
+}

@@ -61,10 +61,11 @@ namespace Client
 
         private async Task<string> RequestMaze() {
             using var channel = GrpcChannel.ForAddress("https://localhost:7178");
-            var client = new MazeBuilder.MazeBuilderClient(channel);
-            BuiltMaze reply;
+
+            var clientBuild = new MazeBuilder.MazeBuilderClient(channel);
+            BuiltMaze replyBuild;
             try {
-                reply = await client.BuildMazeAsync(new MazeRequest {
+                replyBuild = await clientBuild.BuildMazeAsync(new MazeRequest {
                     Algorithm = cbx_algorithm.Text,
                     Width = (int)nud_mazeWidth.Value,
                     Height = (int)nud_mazeHeight.Value,
@@ -78,7 +79,21 @@ namespace Client
                 btn_requestMaze.Enabled = false;
                 return string.Empty;
             }
-            return reply.Maze;
+
+            var clientStatsGlobal = new GlobalStatHandler.GlobalStatHandlerClient(channel);
+            try {
+                var replyStatsGlobal = await clientStatsGlobal.IncrementMazeAsync(new MazeType { MazeType_ = cbx_algorithm.Text }, deadline: DateTime.UtcNow.AddSeconds(3));
+            }
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) { }
+
+            var clientStatsUser = new UserStatHandler.UserStatHandlerClient(channel);
+            try {
+                var replyStatsUser = await clientStatsUser.UserIncrementMazeAsync(new UserMazeType { MazeType = cbx_algorithm.Text, UserID = (int)Globals.g_userID },
+                    deadline: DateTime.UtcNow.AddSeconds(3));
+            }
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) { }
+
+            return replyBuild.Maze;
         }
 
         private void ChangeForm(string maze, string algorithm) {
@@ -116,7 +131,7 @@ namespace Client
             using var channel = GrpcChannel.ForAddress("https://localhost:7178");
             var client = new LoaderMazes.LoaderMazesClient(channel);
             try {
-                var reply = await client.LoadMazeAsync(new LoadRequest { UserID = (int)Globals.g_userID, MazeID = Convert.ToInt32(cbx_loadedMazes.Text.Split(':')[0]) }, 
+                var reply = await client.LoadMazeAsync(new LoadRequest { UserID = (int)Globals.g_userID, MazeID = Convert.ToInt32(cbx_loadedMazes.Text.Split(':')[0]) },
                     deadline: DateTime.UtcNow.AddSeconds(3));
 
 
@@ -145,6 +160,7 @@ namespace Client
                 if (reply.Success) {
                     lbl_loadError.Text = "Deleted maze\nsuccessfully!";
                     cbx_loadedMazes.Items.RemoveAt(cbx_loadedMazes.SelectedIndex);
+                    cbx_loadedMazes.SelectedIndex = -1;
                 }
                 else {
                     lbl_loadError.Text = "Error Deleting\nmaze!";
@@ -153,6 +169,23 @@ namespace Client
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
                 lbl_loadError.Text = "Error Deleting\nmaze!";
+            }
+        }
+
+        private void btn_displayStats_Click(object sender, EventArgs e) {
+            if (cbx_statType.Text == string.Empty) return;
+
+            if (cbx_statType.Text == "Mazes Generated" && chbx_globalStats.Checked) {
+
+            }
+            else if (cbx_statType.Text == "Mazes Generated" && !chbx_globalStats.Checked) {
+
+            }
+            else if (cbx_statType.Text == "Best Times" && chbx_globalStats.Checked) {
+
+            }
+            else if (cbx_statType.Text == "Best Times" && !chbx_globalStats.Checked) {
+
             }
         }
     }

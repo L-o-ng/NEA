@@ -14,8 +14,6 @@ namespace Client
         private List<Coordinate> solution;
         private string mazeType;
 
-
-
         private bool solved = false;
         private bool startedManualSolve = false;
         private Stopwatch sw = new();
@@ -131,12 +129,14 @@ namespace Client
             Close();
         }
 
-        private void CheckSolved() {
+        private async void CheckSolved() {
             if (!startedManualSolve) {
                 startedManualSolve = true;
                 HandleTimer();
             }
+
             if (!player.Equals(maze.MazeExitCoordinate)) return;
+
             solved = true;
             lbl_solved.ForeColor = Color.Green;
             lbl_solved.Text = "Solved!";
@@ -146,6 +146,28 @@ namespace Client
             btn_right.Enabled = false;
             btn_up.Enabled = false;
             btn_down.Enabled = false;
+
+            using var channel = GrpcChannel.ForAddress("https://localhost:7178");
+
+            var clientGlobal = new GlobalStatHandler.GlobalStatHandlerClient(channel);
+            try {
+                var replyGlobal = await clientGlobal.UploadTimeAsync(new Time {
+                    TimeMilliseconds = (int)sw.ElapsedMilliseconds,
+                    Time_ = sw.Elapsed.ToString(),
+                    Username = Globals.g_username
+                });
+            }
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded){ }
+
+            var clientUser = new UserStatHandler.UserStatHandlerClient(channel);
+            try {
+                var replyUser = await clientUser.UserUploadTimeAsync(new UserTime {
+                    TimeMilliseconds = (int)sw.ElapsedMilliseconds,
+                    Time = sw.Elapsed.ToString(),
+                    UserID = (int)Globals.g_userID
+                });
+            }
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) { }
         }
 
         private void HandleTimer() {
@@ -161,7 +183,6 @@ namespace Client
                             else
                                 lbl_timer.Text = string.Empty;
                         });
-
                 }
                 catch { }
             });

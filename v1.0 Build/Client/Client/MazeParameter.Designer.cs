@@ -25,9 +25,6 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mazeParams));
             lbl_title = new Label();
             lbl_algorithm = new Label();
@@ -43,7 +40,6 @@
             cbx_whereExit = new ComboBox();
             lbl_whereExit = new Label();
             pnl_graph = new Panel();
-            chrt_mazeStats = new System.Windows.Forms.DataVisualization.Charting.Chart();
             lbl_connectionError = new Label();
             btn_displayStats = new Button();
             cbx_statType = new ComboBox();
@@ -56,8 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)nud_mazeWidth).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nud_mazeHeight).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nud_removeWalls).BeginInit();
-            pnl_graph.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chrt_mazeStats).BeginInit();
             SuspendLayout();
             // 
             // lbl_title
@@ -66,9 +60,9 @@
             lbl_title.Font = new Font("Calibri", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_title.Location = new Point(12, 9);
             lbl_title.Name = "lbl_title";
-            lbl_title.Size = new Size(170, 33);
+            lbl_title.Size = new Size(213, 33);
             lbl_title.TabIndex = 0;
-            lbl_title.Text = "Maze Options";
+            lbl_title.Text = "Maze Central Hub";
             // 
             // lbl_algorithm
             // 
@@ -182,29 +176,11 @@
             // pnl_graph
             // 
             pnl_graph.BorderStyle = BorderStyle.Fixed3D;
-            pnl_graph.Controls.Add(chrt_mazeStats);
             pnl_graph.Location = new Point(344, 40);
             pnl_graph.Margin = new Padding(3, 2, 3, 2);
             pnl_graph.Name = "pnl_graph";
             pnl_graph.Size = new Size(300, 217);
             pnl_graph.TabIndex = 14;
-            // 
-            // chrt_mazeStats
-            // 
-            chartArea1.Name = "ChartArea1";
-            chrt_mazeStats.ChartAreas.Add(chartArea1);
-            chrt_mazeStats.Dock = DockStyle.Fill;
-            legend1.Name = "Legend1";
-            chrt_mazeStats.Legends.Add(legend1);
-            chrt_mazeStats.Location = new Point(0, 0);
-            chrt_mazeStats.Name = "chrt_mazeStats";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chrt_mazeStats.Series.Add(series1);
-            chrt_mazeStats.Size = new Size(296, 213);
-            chrt_mazeStats.TabIndex = 0;
-            chrt_mazeStats.Text = "chart1";
             // 
             // lbl_connectionError
             // 
@@ -222,10 +198,12 @@
             btn_displayStats.TabIndex = 16;
             btn_displayStats.Text = "Display Stats";
             btn_displayStats.UseVisualStyleBackColor = true;
+            btn_displayStats.Click += btn_displayStats_Click;
             // 
             // cbx_statType
             // 
             cbx_statType.FormattingEnabled = true;
+            cbx_statType.Items.AddRange(new object[] { "Mazes Generated", "Best Times" });
             cbx_statType.Location = new Point(346, 12);
             cbx_statType.Name = "cbx_statType";
             cbx_statType.Size = new Size(121, 23);
@@ -326,8 +304,6 @@
             ((System.ComponentModel.ISupportInitialize)nud_mazeWidth).EndInit();
             ((System.ComponentModel.ISupportInitialize)nud_mazeHeight).EndInit();
             ((System.ComponentModel.ISupportInitialize)nud_removeWalls).EndInit();
-            pnl_graph.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)chrt_mazeStats).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -349,7 +325,6 @@
         private Label lbl_whereExit;
         private Panel pnl_graph;
         private Label lbl_connectionError;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chrt_mazeStats;
         private Button btn_displayStats;
         private ComboBox cbx_statType;
         private CheckBox chbx_globalStats;

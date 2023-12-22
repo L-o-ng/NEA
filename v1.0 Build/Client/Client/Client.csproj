@@ -34,6 +34,8 @@
 	<Protobuf Include="Protos\GetMazes.proto" GrpcServices="Client" />
 	<Protobuf Include="Protos\LoadMaze.proto" GrpcServices="Client" />
 	<Protobuf Include="Protos\DeleteMaze.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\HandleGlobalStats.proto" GrpcServices="Client" />
+	<Protobuf Include="Protos\HandleUserStats.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>

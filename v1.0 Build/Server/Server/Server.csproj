@@ -17,6 +17,9 @@
 	<Protobuf Include="Protos\GetMazes.proto" GrpcServices="Server" />
 	<Protobuf Include="Protos\LoadMaze.proto" GrpcServices="Server" />
 	<Protobuf Include="Protos\DeleteMaze.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\HandleGlobalStats.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\HandleUserStats.proto" GrpcServices="Server" />
+	<Protobuf Include="Protos\GetStats.proto" GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>

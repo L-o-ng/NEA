@@ -16,11 +16,9 @@ namespace Server.Services
                     int rowCount = Convert.ToInt32(cmd.ExecuteScalar());
 
                     if (rowCount > 0) {
-                        Console.WriteLine("user found");
                         return Task.FromResult(new Exists { UserExists = true });
                     }
                     else {
-                        Console.WriteLine("user not found");
                         return Task.FromResult(new Exists { UserExists = false });
                     }
                 }

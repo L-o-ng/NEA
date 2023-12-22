@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "Server";
+
+import "google/protobuf/empty.proto";
+
+package greet;
+
+service GlobalStatHandler {
+  rpc IncrementMaze (MazeType) returns (google.protobuf.Empty);
+  rpc UploadTime (Time) returns (google.protobuf.Empty);
+}
+
+message MazeType {
+	string mazeType = 1;
+}
+
+message Time {
+	string username = 1;
+	string time = 2;
+	int32 timeMilliseconds = 3;
+}
