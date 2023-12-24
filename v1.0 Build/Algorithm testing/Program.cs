@@ -4,7 +4,7 @@ while (true) {
     Maze maze = new DepthFirstGeneration(20, 19);
     maze.InitMaze();
     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
-    maze.CreateEntranceExit();
+    maze.CreateEntranceExit(true);
 
     SolvingAlgorithm solver = new DepthFirstSolve();
     List<Coordinate> solution = solver.SolveMaze(maze);

@@ -2,15 +2,15 @@
 
 namespace Algorithm_testing
 {
-    internal class DepthFirstGeneration : Maze
+    internal class RecursiveBacktrackGeneration : Maze
     {
         [JsonConstructor]
-        public DepthFirstGeneration()
+        public RecursiveBacktrackGeneration()
         {
             
         }
 
-        public DepthFirstGeneration(int cellWidth, int cellHeight){
+        public RecursiveBacktrackGeneration(int cellWidth, int cellHeight){
             MazeCellWidth = cellWidth;
             MazeCellHeight = cellHeight;
             rgen = new();

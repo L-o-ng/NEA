@@ -12,7 +12,7 @@ namespace Server.Services
 
             switch (request.Algorithm) {
                 case "Recursive Backtrack":
-                    maze = new DepthFirstGeneration((int)request.Width, (int)request.Height);
+                    maze = new RecursiveBacktrackGeneration((int)request.Width, (int)request.Height);
                     break;
                     
             }

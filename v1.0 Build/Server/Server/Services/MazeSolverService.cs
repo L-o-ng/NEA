@@ -12,7 +12,7 @@ namespace Server.Services
 
             switch (request.MazeGenerationAlgorithm) {
                 case "Recursive Backtrack":
-                    maze = JsonConvert.DeserializeObject<DepthFirstGeneration>(request.Maze);
+                    maze = JsonConvert.DeserializeObject<RecursiveBacktrackGeneration>(request.Maze);
                     break;
             }
             

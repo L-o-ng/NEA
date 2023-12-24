@@ -35,7 +35,7 @@ namespace Client
 
             switch (mazeType) {
                 case "Recursive Backtrack":
-                    maze = JsonConvert.DeserializeObject<DepthFirstGeneration>(mazeToDisplay);
+                    maze = JsonConvert.DeserializeObject<RecursiveBacktrackGeneration>(mazeToDisplay);
                     break;
             }
 
