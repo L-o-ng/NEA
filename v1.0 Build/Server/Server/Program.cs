@@ -49,7 +49,7 @@ using (SQLiteCommand cmd = conn.CreateCommand()) {
                             Time10Display VARCHAR, 
                             Time10Milliseconds INTEGER,
                             RecursiveBacktrackMazesGenerated INTEGER, 
-                            KruskalsMazesgenerated INTEGER, 
+                            KruskalsMazesGenerated INTEGER, 
                             WilsonsMazesGenerated INTEGER, 
                             FOREIGN KEY(UID) REFERENCES Login(UID)
                         )"; 

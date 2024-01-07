@@ -545,6 +545,7 @@ namespace Client
         }
 
         private void btn_localSave_Click(object sender, EventArgs e) {
+            Coordinate tempPlayer = player;
             player = null;
             tlp_MazeDisplay.Refresh();
 
@@ -560,6 +561,9 @@ namespace Client
             var path = sf.FileName;
 
             mazeToSave.Save(path);
+
+            player = tempPlayer;
+            tlp_MazeDisplay.Refresh();
         }
 
         private async void btn_serverSave_Click(object sender, EventArgs e) {
