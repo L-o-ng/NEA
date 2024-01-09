@@ -66,8 +66,7 @@ namespace Client
         private void HandleAllowSend() {
             if (connected &&
                 algorithmSelected &&
-                exitSelected) 
-            {
+                exitSelected) {
                 btn_requestMaze.Enabled = true;
             }
             else {
@@ -202,8 +201,8 @@ namespace Client
                     Series series = new("Maze Types Generated");
                     series.ChartType = SeriesChartType.Pie;
 
-                    string[] segmentNames = { "Recursive Backtrack", "Kruskal's", "Wilson's" };
-                    double[] segmentValues = { reply.RecursiveBacktrackMazesGenerated, reply.KruskalsMazesGenerated, reply.WilsonsMazesGenerated };
+                    string[] segmentNames = { "Recursive Backtrack", "Growing tree", "Wilson's" };
+                    double[] segmentValues = { reply.RecursiveBacktrackMazesGenerated, reply.GrowingTreeMazesGenerated, reply.WilsonsMazesGenerated };
                     series.Points.DataBindXY(segmentNames, segmentValues);
 
                     chrt_mazesGenerated.Series.Add(series);
@@ -221,8 +220,8 @@ namespace Client
                     Series series = new("Maze Types Generated");
                     series.ChartType = SeriesChartType.Pie;
 
-                    string[] segmentNames = { "Recursive Backtrack", "Kruskal's", "Wilson's" };
-                    double[] segmentValues = { reply.RecursiveBacktrackMazesGenerated, reply.KruskalsMazesGenerated, reply.WilsonsMazesGenerated };
+                    string[] segmentNames = { "Recursive Backtrack", "Growing Tree", "Wilson's" };
+                    double[] segmentValues = { reply.RecursiveBacktrackMazesGenerated, reply.GrowingTreeMazesGenerated, reply.WilsonsMazesGenerated };
                     series.Points.DataBindXY(segmentNames, segmentValues);
 
                     chrt_mazesGenerated.Series.Add(series);

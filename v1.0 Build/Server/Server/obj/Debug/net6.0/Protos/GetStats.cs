@@ -44,21 +44,21 @@ namespace Server {
             "ZRgGIAEoCRIYChB0aW1lN0Rpc3BsYXlUaW1lGAcgASgJEhgKEHRpbWU4RGlz",
             "cGxheVRpbWUYCCABKAkSGAoQdGltZTlEaXNwbGF5VGltZRgJIAEoCRIZChF0",
             "aW1lMTBEaXNwbGF5VGltZRgKIAEoCSIgCh5HZXRHbG9iYWxNYXplc0dlbmVy",
-            "YXRlZFJlcXVlc3QifwoUR2xvYmFsTWF6ZXNHZW5lcmF0ZWQSKAogcmVjdXJz",
-            "aXZlQmFja3RyYWNrTWF6ZXNHZW5lcmF0ZWQYASABKAUSHgoWa3J1c2thbHNN",
-            "YXplc0dlbmVyYXRlZBgCIAEoBRIdChV3aWxzb25zTWF6ZXNHZW5lcmF0ZWQY",
-            "AyABKAUiLgocR2V0VXNlck1hemVzR2VuZXJhdGVkUmVxdWVzdBIOCgZ1c2Vy",
-            "SUQYASABKAUifQoSVXNlck1hemVzR2VuZXJhdGVkEigKIHJlY3Vyc2l2ZUJh",
-            "Y2t0cmFja01hemVzR2VuZXJhdGVkGAEgASgFEh4KFmtydXNrYWxzTWF6ZXNH",
-            "ZW5lcmF0ZWQYAiABKAUSHQoVd2lsc29uc01hemVzR2VuZXJhdGVkGAMgASgF",
-            "MscCCgtTdGF0c0dldHRlchJCCg5HZXRHbG9iYWxUaW1lcxIcLmdyZWV0Lkdl",
-            "dEdsb2JhbFRpbWVzUmVxdWVzdBoSLmdyZWV0Lkdsb2JhbFRpbWVzEjwKDEdl",
-            "dFVzZXJUaW1lcxIaLmdyZWV0LkdldFVzZXJUaW1lc1JlcXVlc3QaEC5ncmVl",
-            "dC5Vc2VyVGltZXMSXQoXR2V0R2xvYmFsTWF6ZXNHZW5lcmF0ZWQSJS5ncmVl",
-            "dC5HZXRHbG9iYWxNYXplc0dlbmVyYXRlZFJlcXVlc3QaGy5ncmVldC5HbG9i",
-            "YWxNYXplc0dlbmVyYXRlZBJXChVHZXRVc2VyTWF6ZXNHZW5lcmF0ZWQSIy5n",
-            "cmVldC5HZXRVc2VyTWF6ZXNHZW5lcmF0ZWRSZXF1ZXN0GhkuZ3JlZXQuVXNl",
-            "ck1hemVzR2VuZXJhdGVkQgmqAgZTZXJ2ZXJiBnByb3RvMw=="));
+            "YXRlZFJlcXVlc3QiggEKFEdsb2JhbE1hemVzR2VuZXJhdGVkEigKIHJlY3Vy",
+            "c2l2ZUJhY2t0cmFja01hemVzR2VuZXJhdGVkGAEgASgFEiEKGWdyb3dpbmdU",
+            "cmVlTWF6ZXNHZW5lcmF0ZWQYAiABKAUSHQoVd2lsc29uc01hemVzR2VuZXJh",
+            "dGVkGAMgASgFIi4KHEdldFVzZXJNYXplc0dlbmVyYXRlZFJlcXVlc3QSDgoG",
+            "dXNlcklEGAEgASgFIoABChJVc2VyTWF6ZXNHZW5lcmF0ZWQSKAogcmVjdXJz",
+            "aXZlQmFja3RyYWNrTWF6ZXNHZW5lcmF0ZWQYASABKAUSIQoZZ3Jvd2luZ1Ry",
+            "ZWVNYXplc0dlbmVyYXRlZBgCIAEoBRIdChV3aWxzb25zTWF6ZXNHZW5lcmF0",
+            "ZWQYAyABKAUyxwIKC1N0YXRzR2V0dGVyEkIKDkdldEdsb2JhbFRpbWVzEhwu",
+            "Z3JlZXQuR2V0R2xvYmFsVGltZXNSZXF1ZXN0GhIuZ3JlZXQuR2xvYmFsVGlt",
+            "ZXMSPAoMR2V0VXNlclRpbWVzEhouZ3JlZXQuR2V0VXNlclRpbWVzUmVxdWVz",
+            "dBoQLmdyZWV0LlVzZXJUaW1lcxJdChdHZXRHbG9iYWxNYXplc0dlbmVyYXRl",
+            "ZBIlLmdyZWV0LkdldEdsb2JhbE1hemVzR2VuZXJhdGVkUmVxdWVzdBobLmdy",
+            "ZWV0Lkdsb2JhbE1hemVzR2VuZXJhdGVkElcKFUdldFVzZXJNYXplc0dlbmVy",
+            "YXRlZBIjLmdyZWV0LkdldFVzZXJNYXplc0dlbmVyYXRlZFJlcXVlc3QaGS5n",
+            "cmVldC5Vc2VyTWF6ZXNHZW5lcmF0ZWRCCaoCBlNlcnZlcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -67,9 +67,9 @@ namespace Server {
             new pbr::GeneratedClrTypeInfo(typeof(global::Server.GetUserTimesRequest), global::Server.GetUserTimesRequest.Parser, new[]{ "UserID" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Server.UserTimes), global::Server.UserTimes.Parser, new[]{ "Time1DisplayTime", "Time2DisplayTime", "Time3DisplayTime", "Time4DisplayTime", "Time5DisplayTime", "Time6DisplayTime", "Time7DisplayTime", "Time8DisplayTime", "Time9DisplayTime", "Time10DisplayTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Server.GetGlobalMazesGeneratedRequest), global::Server.GetGlobalMazesGeneratedRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Server.GlobalMazesGenerated), global::Server.GlobalMazesGenerated.Parser, new[]{ "RecursiveBacktrackMazesGenerated", "KruskalsMazesGenerated", "WilsonsMazesGenerated" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Server.GlobalMazesGenerated), global::Server.GlobalMazesGenerated.Parser, new[]{ "RecursiveBacktrackMazesGenerated", "GrowingTreeMazesGenerated", "WilsonsMazesGenerated" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Server.GetUserMazesGeneratedRequest), global::Server.GetUserMazesGeneratedRequest.Parser, new[]{ "UserID" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Server.UserMazesGenerated), global::Server.UserMazesGenerated.Parser, new[]{ "RecursiveBacktrackMazesGenerated", "KruskalsMazesGenerated", "WilsonsMazesGenerated" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Server.UserMazesGenerated), global::Server.UserMazesGenerated.Parser, new[]{ "RecursiveBacktrackMazesGenerated", "GrowingTreeMazesGenerated", "WilsonsMazesGenerated" }, null, null, null, null)
           }));
     }
     #endregion
@@ -2018,7 +2018,7 @@ namespace Server {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GlobalMazesGenerated(GlobalMazesGenerated other) : this() {
       recursiveBacktrackMazesGenerated_ = other.recursiveBacktrackMazesGenerated_;
-      kruskalsMazesGenerated_ = other.kruskalsMazesGenerated_;
+      growingTreeMazesGenerated_ = other.growingTreeMazesGenerated_;
       wilsonsMazesGenerated_ = other.wilsonsMazesGenerated_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2041,15 +2041,15 @@ namespace Server {
       }
     }
 
-    /// <summary>Field number for the "kruskalsMazesGenerated" field.</summary>
-    public const int KruskalsMazesGeneratedFieldNumber = 2;
-    private int kruskalsMazesGenerated_;
+    /// <summary>Field number for the "growingTreeMazesGenerated" field.</summary>
+    public const int GrowingTreeMazesGeneratedFieldNumber = 2;
+    private int growingTreeMazesGenerated_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int KruskalsMazesGenerated {
-      get { return kruskalsMazesGenerated_; }
+    public int GrowingTreeMazesGenerated {
+      get { return growingTreeMazesGenerated_; }
       set {
-        kruskalsMazesGenerated_ = value;
+        growingTreeMazesGenerated_ = value;
       }
     }
 
@@ -2081,7 +2081,7 @@ namespace Server {
         return true;
       }
       if (RecursiveBacktrackMazesGenerated != other.RecursiveBacktrackMazesGenerated) return false;
-      if (KruskalsMazesGenerated != other.KruskalsMazesGenerated) return false;
+      if (GrowingTreeMazesGenerated != other.GrowingTreeMazesGenerated) return false;
       if (WilsonsMazesGenerated != other.WilsonsMazesGenerated) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2091,7 +2091,7 @@ namespace Server {
     public override int GetHashCode() {
       int hash = 1;
       if (RecursiveBacktrackMazesGenerated != 0) hash ^= RecursiveBacktrackMazesGenerated.GetHashCode();
-      if (KruskalsMazesGenerated != 0) hash ^= KruskalsMazesGenerated.GetHashCode();
+      if (GrowingTreeMazesGenerated != 0) hash ^= GrowingTreeMazesGenerated.GetHashCode();
       if (WilsonsMazesGenerated != 0) hash ^= WilsonsMazesGenerated.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2115,9 +2115,9 @@ namespace Server {
         output.WriteRawTag(8);
         output.WriteInt32(RecursiveBacktrackMazesGenerated);
       }
-      if (KruskalsMazesGenerated != 0) {
+      if (GrowingTreeMazesGenerated != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(KruskalsMazesGenerated);
+        output.WriteInt32(GrowingTreeMazesGenerated);
       }
       if (WilsonsMazesGenerated != 0) {
         output.WriteRawTag(24);
@@ -2137,9 +2137,9 @@ namespace Server {
         output.WriteRawTag(8);
         output.WriteInt32(RecursiveBacktrackMazesGenerated);
       }
-      if (KruskalsMazesGenerated != 0) {
+      if (GrowingTreeMazesGenerated != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(KruskalsMazesGenerated);
+        output.WriteInt32(GrowingTreeMazesGenerated);
       }
       if (WilsonsMazesGenerated != 0) {
         output.WriteRawTag(24);
@@ -2158,8 +2158,8 @@ namespace Server {
       if (RecursiveBacktrackMazesGenerated != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(RecursiveBacktrackMazesGenerated);
       }
-      if (KruskalsMazesGenerated != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(KruskalsMazesGenerated);
+      if (GrowingTreeMazesGenerated != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GrowingTreeMazesGenerated);
       }
       if (WilsonsMazesGenerated != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(WilsonsMazesGenerated);
@@ -2179,8 +2179,8 @@ namespace Server {
       if (other.RecursiveBacktrackMazesGenerated != 0) {
         RecursiveBacktrackMazesGenerated = other.RecursiveBacktrackMazesGenerated;
       }
-      if (other.KruskalsMazesGenerated != 0) {
-        KruskalsMazesGenerated = other.KruskalsMazesGenerated;
+      if (other.GrowingTreeMazesGenerated != 0) {
+        GrowingTreeMazesGenerated = other.GrowingTreeMazesGenerated;
       }
       if (other.WilsonsMazesGenerated != 0) {
         WilsonsMazesGenerated = other.WilsonsMazesGenerated;
@@ -2205,7 +2205,7 @@ namespace Server {
             break;
           }
           case 16: {
-            KruskalsMazesGenerated = input.ReadInt32();
+            GrowingTreeMazesGenerated = input.ReadInt32();
             break;
           }
           case 24: {
@@ -2232,7 +2232,7 @@ namespace Server {
             break;
           }
           case 16: {
-            KruskalsMazesGenerated = input.ReadInt32();
+            GrowingTreeMazesGenerated = input.ReadInt32();
             break;
           }
           case 24: {
@@ -2470,7 +2470,7 @@ namespace Server {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UserMazesGenerated(UserMazesGenerated other) : this() {
       recursiveBacktrackMazesGenerated_ = other.recursiveBacktrackMazesGenerated_;
-      kruskalsMazesGenerated_ = other.kruskalsMazesGenerated_;
+      growingTreeMazesGenerated_ = other.growingTreeMazesGenerated_;
       wilsonsMazesGenerated_ = other.wilsonsMazesGenerated_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2493,15 +2493,15 @@ namespace Server {
       }
     }
 
-    /// <summary>Field number for the "kruskalsMazesGenerated" field.</summary>
-    public const int KruskalsMazesGeneratedFieldNumber = 2;
-    private int kruskalsMazesGenerated_;
+    /// <summary>Field number for the "growingTreeMazesGenerated" field.</summary>
+    public const int GrowingTreeMazesGeneratedFieldNumber = 2;
+    private int growingTreeMazesGenerated_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int KruskalsMazesGenerated {
-      get { return kruskalsMazesGenerated_; }
+    public int GrowingTreeMazesGenerated {
+      get { return growingTreeMazesGenerated_; }
       set {
-        kruskalsMazesGenerated_ = value;
+        growingTreeMazesGenerated_ = value;
       }
     }
 
@@ -2533,7 +2533,7 @@ namespace Server {
         return true;
       }
       if (RecursiveBacktrackMazesGenerated != other.RecursiveBacktrackMazesGenerated) return false;
-      if (KruskalsMazesGenerated != other.KruskalsMazesGenerated) return false;
+      if (GrowingTreeMazesGenerated != other.GrowingTreeMazesGenerated) return false;
       if (WilsonsMazesGenerated != other.WilsonsMazesGenerated) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2543,7 +2543,7 @@ namespace Server {
     public override int GetHashCode() {
       int hash = 1;
       if (RecursiveBacktrackMazesGenerated != 0) hash ^= RecursiveBacktrackMazesGenerated.GetHashCode();
-      if (KruskalsMazesGenerated != 0) hash ^= KruskalsMazesGenerated.GetHashCode();
+      if (GrowingTreeMazesGenerated != 0) hash ^= GrowingTreeMazesGenerated.GetHashCode();
       if (WilsonsMazesGenerated != 0) hash ^= WilsonsMazesGenerated.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2567,9 +2567,9 @@ namespace Server {
         output.WriteRawTag(8);
         output.WriteInt32(RecursiveBacktrackMazesGenerated);
       }
-      if (KruskalsMazesGenerated != 0) {
+      if (GrowingTreeMazesGenerated != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(KruskalsMazesGenerated);
+        output.WriteInt32(GrowingTreeMazesGenerated);
       }
       if (WilsonsMazesGenerated != 0) {
         output.WriteRawTag(24);
@@ -2589,9 +2589,9 @@ namespace Server {
         output.WriteRawTag(8);
         output.WriteInt32(RecursiveBacktrackMazesGenerated);
       }
-      if (KruskalsMazesGenerated != 0) {
+      if (GrowingTreeMazesGenerated != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(KruskalsMazesGenerated);
+        output.WriteInt32(GrowingTreeMazesGenerated);
       }
       if (WilsonsMazesGenerated != 0) {
         output.WriteRawTag(24);
@@ -2610,8 +2610,8 @@ namespace Server {
       if (RecursiveBacktrackMazesGenerated != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(RecursiveBacktrackMazesGenerated);
       }
-      if (KruskalsMazesGenerated != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(KruskalsMazesGenerated);
+      if (GrowingTreeMazesGenerated != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GrowingTreeMazesGenerated);
       }
       if (WilsonsMazesGenerated != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(WilsonsMazesGenerated);
@@ -2631,8 +2631,8 @@ namespace Server {
       if (other.RecursiveBacktrackMazesGenerated != 0) {
         RecursiveBacktrackMazesGenerated = other.RecursiveBacktrackMazesGenerated;
       }
-      if (other.KruskalsMazesGenerated != 0) {
-        KruskalsMazesGenerated = other.KruskalsMazesGenerated;
+      if (other.GrowingTreeMazesGenerated != 0) {
+        GrowingTreeMazesGenerated = other.GrowingTreeMazesGenerated;
       }
       if (other.WilsonsMazesGenerated != 0) {
         WilsonsMazesGenerated = other.WilsonsMazesGenerated;
@@ -2657,7 +2657,7 @@ namespace Server {
             break;
           }
           case 16: {
-            KruskalsMazesGenerated = input.ReadInt32();
+            GrowingTreeMazesGenerated = input.ReadInt32();
             break;
           }
           case 24: {
@@ -2684,7 +2684,7 @@ namespace Server {
             break;
           }
           case 16: {
-            KruskalsMazesGenerated = input.ReadInt32();
+            GrowingTreeMazesGenerated = input.ReadInt32();
             break;
           }
           case 24: {

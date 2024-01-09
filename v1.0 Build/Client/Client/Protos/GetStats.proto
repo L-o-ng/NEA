@@ -57,7 +57,7 @@ message GetGlobalMazesGeneratedRequest {
 }
 message GlobalMazesGenerated {
 	int32 recursiveBacktrackMazesGenerated = 1;
-	int32 kruskalsMazesGenerated = 2;
+	int32 growingTreeMazesGenerated = 2;
 	int32 wilsonsMazesGenerated = 3;
 }
 
@@ -66,6 +66,6 @@ message GetUserMazesGeneratedRequest {
 }
 message UserMazesGenerated {
 	int32 recursiveBacktrackMazesGenerated = 1;
-	int32 kruskalsMazesGenerated = 2;
+	int32 growingTreeMazesGenerated = 2;
 	int32 wilsonsMazesGenerated = 3;
 }

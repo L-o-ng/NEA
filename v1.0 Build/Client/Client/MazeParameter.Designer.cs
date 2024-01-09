@@ -76,7 +76,7 @@
             // cbx_algorithm
             // 
             cbx_algorithm.FormattingEnabled = true;
-            cbx_algorithm.Items.AddRange(new object[] { "Recursive Backtrack", "Wilson's" });
+            cbx_algorithm.Items.AddRange(new object[] { "Recursive Backtrack", "Wilson's", "Growing Tree" });
             cbx_algorithm.Location = new Point(104, 63);
             cbx_algorithm.Name = "cbx_algorithm";
             cbx_algorithm.Size = new Size(132, 23);

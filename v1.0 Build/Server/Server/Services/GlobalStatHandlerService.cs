@@ -19,6 +19,9 @@ namespace Server.Services
                         cmd.CommandText = "UPDATE GlobalStats SET WilsonsMazesGenerated = WilsonsMazesGenerated + 1";
                         cmd.ExecuteNonQuery();
                         break;
+                    case "Growing Tree":
+                        cmd.CommandText = "UPDATE GlobalStats SET GrowingTreeMazesGenerated = GrowingTreeMazesGenerated + 1";
+                        break;
                 }
             }
             return Task.FromResult(new Empty());

@@ -49,7 +49,7 @@ using (SQLiteCommand cmd = conn.CreateCommand()) {
                             Time10Display VARCHAR, 
                             Time10Milliseconds INTEGER,
                             RecursiveBacktrackMazesGenerated INTEGER, 
-                            KruskalsMazesGenerated INTEGER, 
+                            GrowingTreeMazesGenerated INTEGER, 
                             WilsonsMazesGenerated INTEGER, 
                             FOREIGN KEY(UID) REFERENCES Login(UID)
                         )"; 
@@ -99,7 +99,7 @@ using (SQLiteCommand cmd = conn.CreateCommand()) {
                         Time10Name VARCHAR,
                         
                         RecursiveBacktrackMazesGenerated INTEGER,
-                        KruskalsMazesGenerated INTEGER,
+                        GrowingTreeMazesGenerated INTEGER,
                         WilsonsMazesGenerated INTEGER
                     )";
     cmd.ExecuteNonQuery();

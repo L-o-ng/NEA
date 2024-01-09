@@ -40,6 +40,9 @@ namespace Client
                 case "Wilson's":
                     maze = JsonConvert.DeserializeObject<WilsonsGeneration>(mazeToDisplay);
                     break;
+                case "Growing Tree":
+                    maze = JsonConvert.DeserializeObject<GrowingTreeGeneration>(mazeToDisplay);
+                    break;
             }
 
             player = new Coordinate(maze.MazeEntranceCoordinate.Xpos, maze.MazeEntranceCoordinate.Ypos);
@@ -160,7 +163,7 @@ namespace Client
                     Username = Globals.g_username
                 });
             }
-            catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded){ }
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) { }
 
             var clientUser = new UserStatHandler.UserStatHandlerClient(channel);
             try {
@@ -620,8 +623,7 @@ namespace Client
                     Invoke(() => lbl_error.Text = string.Empty);
                 });
             }
+            catch (InvalidOperationException) { }
         }
-
-
     }
 }

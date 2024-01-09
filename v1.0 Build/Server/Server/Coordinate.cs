@@ -49,9 +49,9 @@ namespace Server
         {
             return (xPos + 1, maze.MazeActualHeight - yPos + 1);
         }
-        public float GetManhattanDistance(Coordinate endPoint)
+        public int GetManhattanDistance(Coordinate targetCoordinate)
         {
-            throw new NotImplementedException();
+            return Math.Abs(Xpos - targetCoordinate.Xpos) + Math.Abs(Ypos - targetCoordinate.Ypos);
         }
 
         public bool Equals(Coordinate target)

@@ -17,12 +17,18 @@ namespace Server.Services
                 case "Wilson's":
                     maze = JsonConvert.DeserializeObject<WilsonsGeneration>(request.Maze);
                     break;
+                case "Growing Tree":
+                    maze = JsonConvert.DeserializeObject<GrowingTreeGeneration>(request.Maze);
+                    break;
             }
             
 
             switch (request.Algorithm) {
                 case "Depth First":
                     solver = new DepthFirstSolve();
+                    break;
+                case "Maze Routing":
+                    solver = new MazeRoutingSolve();
                     break;
             }
 

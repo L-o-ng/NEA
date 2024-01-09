@@ -25,6 +25,14 @@ namespace Server.Services
                     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
                     maze.RemoveWalls((int)request.RemoveWalls);
                     break;
+                case "Growing Tree":
+                    maze = new GrowingTreeGeneration((int)request.Width, (int)request.Height);
+                    maze.InitMaze();
+                    maze.BuildMaze(null); //startCoordinate unnecessary for this algorithm
+                    maze.RemoveWalls((int)request.RemoveWalls);
+                    maze.CreateEntranceExit(request.ExitLocation == "Border");
+                    break;
+
                     
             }
 

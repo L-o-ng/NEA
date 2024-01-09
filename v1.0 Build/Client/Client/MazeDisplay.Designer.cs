@@ -141,7 +141,7 @@
             // cbx_solveType
             // 
             cbx_solveType.FormattingEnabled = true;
-            cbx_solveType.Items.AddRange(new object[] { "Depth First" });
+            cbx_solveType.Items.AddRange(new object[] { "Depth First", "Maze Routing" });
             cbx_solveType.Location = new Point(8, 41);
             cbx_solveType.Name = "cbx_solveType";
             cbx_solveType.Size = new Size(97, 23);

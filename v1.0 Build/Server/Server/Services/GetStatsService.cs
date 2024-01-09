@@ -7,25 +7,25 @@ namespace Server.Services
     {
         public override Task<GlobalMazesGenerated> GetGlobalMazesGenerated(GetGlobalMazesGeneratedRequest request, ServerCallContext context) {
             int recursiveBacktrackMazesGenerated = 0;
-            int kruskalsMazesGenerated = 0;
+            int growingTreeMazesGenerated = 0;
             int wilsonsMazesGenerated = 0;
 
             using SQLiteConnection conn = new SQLiteConnection("Data Source=mazeData.db; Version=3; New=True; Compress=True; ");
             conn.Open();
             using SQLiteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"SELECT RecursiveBacktrackMazesGenerated, KruskalsMazesGenerated, WilsonsMazesGenerated
+            cmd.CommandText = @"SELECT RecursiveBacktrackMazesGenerated, GrowingTreeMazesGenerated, WilsonsMazesGenerated
                                 FROM GlobalStats";
             using SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read()) {
                 recursiveBacktrackMazesGenerated = reader.GetInt32(0);
-                kruskalsMazesGenerated = reader.GetInt32(1);
+                growingTreeMazesGenerated = reader.GetInt32(1);
                 wilsonsMazesGenerated = reader.GetInt32(2);
             }
             conn.Close();
 
             return Task.FromResult(new GlobalMazesGenerated {
                 RecursiveBacktrackMazesGenerated = recursiveBacktrackMazesGenerated,
-                KruskalsMazesGenerated = kruskalsMazesGenerated,
+                GrowingTreeMazesGenerated = growingTreeMazesGenerated,
                 WilsonsMazesGenerated = wilsonsMazesGenerated
             });
         }
@@ -110,26 +110,26 @@ namespace Server.Services
 
         public override Task<UserMazesGenerated> GetUserMazesGenerated(GetUserMazesGeneratedRequest request, ServerCallContext context) {
             int recursiveBacktrackMazesGenerated = 0;
-            int kruskalsMazesGenerated = 0;
+            int growingTreeMazesGenerated = 0;
             int wilsonsMazesGenerated = 0;
 
             using SQLiteConnection conn = new("Data Source=mazeData.db; Version=3; New=True; Compress=True; ");
             conn.Open();
             using SQLiteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @$"SELECT RecursiveBacktrackMazesGenerated, KruskalsMazesGenerated, WilsonsMazesGenerated
+            cmd.CommandText = @$"SELECT RecursiveBacktrackMazesGenerated, GrowingTreeMazesGenerated, WilsonsMazesGenerated
                                 FROM UserStats
                                 WHERE UID = {request.UserID}";
             using SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read()) {
                 recursiveBacktrackMazesGenerated = reader.GetInt32(0);
-                kruskalsMazesGenerated = reader.GetInt32(1);
+                growingTreeMazesGenerated = reader.GetInt32(1);
                 wilsonsMazesGenerated = reader.GetInt32(2);
             }
             conn.Close();
 
             return Task.FromResult(new UserMazesGenerated {
                 RecursiveBacktrackMazesGenerated = recursiveBacktrackMazesGenerated,
-                KruskalsMazesGenerated = kruskalsMazesGenerated,
+                GrowingTreeMazesGenerated = growingTreeMazesGenerated,
                 WilsonsMazesGenerated = wilsonsMazesGenerated
             });
         }

@@ -216,8 +216,6 @@ namespace Server
                 
                 MazeExitCoordinate = new Coordinate(centerX, centerY);
             }
-
-            ResetVisited();
         }
 
         public override void InitMaze() {
