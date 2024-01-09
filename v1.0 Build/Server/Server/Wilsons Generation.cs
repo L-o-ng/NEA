@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
-namespace Algorithm_testing
+namespace Server
 {
     internal class WilsonsGeneration : Maze
     {
-        List<Coordinate> cellsInMaze = new();
-        bool exitAtBorder;
+        public List<Coordinate> cellsInMaze = new();
+        public bool exitAtBorder;
 
         [JsonConstructor]
         public WilsonsGeneration() {
@@ -34,14 +34,12 @@ namespace Algorithm_testing
             to account for not just being able to go if !Visited. We will instead redefine unvisited as having all 4 walls and the visited property being true will
             mean being part of the maze. */
 
-
-
             InitialLoopErasedWalk(MazeCoordinates[1, 1],
                 exitAtBorder ? MazeCoordinates[MazeExitCoordinate.Ypos, MazeExitCoordinate.Xpos - 1] : cellsInMaze[(int)(cellsInMaze.Count * 0.5f)]);
             while (cellsInMaze.Count > 0) {
                 LoopErasedWalk(cellsInMaze[rgen.Next(cellsInMaze.Count)]);
             }
-
+            ResetVisited();
         }
 
         private void InitialLoopErasedWalk(Coordinate startCoordinate, Coordinate endCoordinate) {
@@ -240,8 +238,6 @@ namespace Algorithm_testing
                         
                     else
                         MazeWalls[y, x] = true;
-
-                    
                 }
             }
         }

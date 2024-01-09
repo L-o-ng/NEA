@@ -15,6 +15,10 @@ namespace Server.Services
                         cmd.CommandText = "UPDATE GlobalStats SET RecursiveBacktrackMazesGenerated = RecursiveBacktrackMazesGenerated + 1";
                         cmd.ExecuteNonQuery();
                         break;
+                    case "Wilson's":
+                        cmd.CommandText = "UPDATE GlobalStats SET WilsonsMazesGenerated = WilsonsMazesGenerated + 1";
+                        cmd.ExecuteNonQuery();
+                        break;
                 }
             }
             return Task.FromResult(new Empty());

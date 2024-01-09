@@ -18,13 +18,17 @@ namespace Server.Services
                     maze.RemoveWalls((int)request.RemoveWalls);
                     maze.CreateEntranceExit(request.ExitLocation == "Border");
                     break;
+                case "Wilson's":
+                    maze = new WilsonsGeneration((int)request.Width, (int)request.Height, request.ExitLocation == "Border");
+                    maze.InitMaze();
+                    maze.CreateEntranceExit(request.ExitLocation == "Border");
+                    maze.BuildMaze(maze.MazeCoordinates[1, 1]);
+                    maze.RemoveWalls((int)request.RemoveWalls);
+                    break;
                     
             }
 
-           
-
             string jsonMaze = JsonConvert.SerializeObject(maze);
-
             
             return Task.FromResult(new BuiltMaze { Maze = jsonMaze });
         }

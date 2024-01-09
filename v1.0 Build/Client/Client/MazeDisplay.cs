@@ -1,4 +1,4 @@
-﻿using Algorithm_testing;
+﻿using Client_Mazes;
 using Grpc.Core;
 using Grpc.Net.Client;
 using Newtonsoft.Json;
@@ -36,6 +36,9 @@ namespace Client
             switch (mazeType) {
                 case "Recursive Backtrack":
                     maze = JsonConvert.DeserializeObject<RecursiveBacktrackGeneration>(mazeToDisplay);
+                    break;
+                case "Wilson's":
+                    maze = JsonConvert.DeserializeObject<WilsonsGeneration>(mazeToDisplay);
                     break;
             }
 

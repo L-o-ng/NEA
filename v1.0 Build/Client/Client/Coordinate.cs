@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Algorithm_testing
+namespace Client_Mazes
 {
     internal class Coordinate
     {

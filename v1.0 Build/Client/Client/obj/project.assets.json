@@ -406,11 +406,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\v1.0 Build\\Client\\Client\\Client.csproj",
+      "projectUniqueName": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\v1.0 Build\\Client\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\v1.0 Build\\Client\\Client\\Client.csproj",
+      "projectPath": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\v1.0 Build\\Client\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\dylan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\v1.0 Build\\Client\\Client\\obj\\",
+      "outputPath": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\v1.0 Build\\Client\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dylan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -481,7 +481,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

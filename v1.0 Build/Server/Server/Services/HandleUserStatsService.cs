@@ -15,6 +15,10 @@ namespace Server.Services
                         cmd.CommandText = $"UPDATE UserStats SET RecursiveBacktrackMazesGenerated = RecursiveBacktrackMazesGenerated + 1 WHERE UID = {request.UserID}";
                         cmd.ExecuteNonQuery();
                         break;
+                    case "Wilson's":
+                        cmd.CommandText = $"UPDATE UserStats SET WilsonsMazesGenerated = WilsonsMazesGenerated + 1 WHERE UID = {request.UserID}";
+                        cmd.ExecuteNonQuery();
+                        break;
                 }
             }
             return Task.FromResult(new Empty());

@@ -76,11 +76,12 @@
             // cbx_algorithm
             // 
             cbx_algorithm.FormattingEnabled = true;
-            cbx_algorithm.Items.AddRange(new object[] { "Recursive Backtrack" });
+            cbx_algorithm.Items.AddRange(new object[] { "Recursive Backtrack", "Wilson's" });
             cbx_algorithm.Location = new Point(104, 63);
             cbx_algorithm.Name = "cbx_algorithm";
             cbx_algorithm.Size = new Size(132, 23);
             cbx_algorithm.TabIndex = 2;
+            cbx_algorithm.SelectedIndexChanged += cbx_algorithm_SelectedIndexChanged;
             // 
             // lbl_mazeWidth
             // 
@@ -163,6 +164,7 @@
             cbx_whereExit.Name = "cbx_whereExit";
             cbx_whereExit.Size = new Size(132, 23);
             cbx_whereExit.TabIndex = 13;
+            cbx_whereExit.SelectedIndexChanged += cbx_whereExit_SelectedIndexChanged;
             // 
             // lbl_whereExit
             // 

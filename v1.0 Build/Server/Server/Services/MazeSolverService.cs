@@ -14,6 +14,9 @@ namespace Server.Services
                 case "Recursive Backtrack":
                     maze = JsonConvert.DeserializeObject<RecursiveBacktrackGeneration>(request.Maze);
                     break;
+                case "Wilson's":
+                    maze = JsonConvert.DeserializeObject<WilsonsGeneration>(request.Maze);
+                    break;
             }
             
 

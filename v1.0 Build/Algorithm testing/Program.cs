@@ -1,9 +1,9 @@
 ﻿using Algorithm_testing;
 
 while (true) {
-    Maze maze = new WilsonsGeneration(25, 27, true);
+    Maze maze = new WilsonsGeneration(26, 26, false);
     maze.InitMaze();
-    maze.CreateEntranceExit(true);
+    maze.CreateEntranceExit(false);
     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
     
 

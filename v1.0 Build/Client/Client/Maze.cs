@@ -1,4 +1,4 @@
-﻿namespace Algorithm_testing
+﻿namespace Client_Mazes
 { 
     internal abstract class Maze {
         #region Properties

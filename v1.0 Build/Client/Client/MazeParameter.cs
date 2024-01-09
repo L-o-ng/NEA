@@ -1,4 +1,4 @@
-using Algorithm_testing;
+using Client_Mazes;
 using Grpc.Core;
 using Grpc.Net.Client;
 using Newtonsoft.Json;
@@ -10,6 +10,9 @@ namespace Client
     public partial class frm_mazeParams : Form
     {
         private CancellationTokenSource cts = new CancellationTokenSource();
+        private bool connected = false;
+        private bool algorithmSelected = false;
+        private bool exitSelected = false;
 
         public frm_mazeParams() {
             InitializeComponent();
@@ -36,7 +39,8 @@ namespace Client
                         Invoke(() => {
                             lbl_connectionError.Text = "Connected to server!";
                             lbl_connectionError.ForeColor = Color.Green;
-                            btn_requestMaze.Enabled = true;
+                            connected = true;
+                            HandleAllowSend();
                         });
 
                     }
@@ -45,6 +49,7 @@ namespace Client
                             HandleServerError();
                         });
                     }
+                    catch (ObjectDisposedException) { }
 
                     Thread.Sleep(10000);
                 }
@@ -54,7 +59,20 @@ namespace Client
         private void HandleServerError() {
             lbl_connectionError.Text = "Not connected to server!";
             lbl_connectionError.ForeColor = Color.Red;
-            btn_requestMaze.Enabled = false;
+            connected = false;
+            HandleAllowSend();
+        }
+
+        private void HandleAllowSend() {
+            if (connected &&
+                algorithmSelected &&
+                exitSelected) 
+            {
+                btn_requestMaze.Enabled = true;
+            }
+            else {
+                btn_requestMaze.Enabled = false;
+            }
         }
 
         private async void btn_requestMaze_Click(object sender, EventArgs e) {
@@ -80,7 +98,7 @@ namespace Client
             catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
                 lbl_connectionError.Text = "Not connected to server!";
                 lbl_connectionError.ForeColor = Color.Red;
-                btn_requestMaze.Enabled = false;
+                HandleServerError();
                 return string.Empty;
             }
 
@@ -138,15 +156,8 @@ namespace Client
                 var reply = await client.LoadMazeAsync(new LoadRequest { UserID = (int)Globals.g_userID, MazeID = Convert.ToInt32(cbx_loadedMazes.Text.Split(':')[0]) },
                     deadline: DateTime.UtcNow.AddSeconds(3));
 
+                ChangeForm(reply.Maze, reply.MazeGenAlg);
 
-                switch (reply.MazeGenAlg) {
-                    case "Recursive Backtrack":
-                        ChangeForm(reply.Maze, reply.MazeGenAlg);
-                        break;
-                    default:
-                        lbl_loadError.Text = "Error loading\nmazes!";
-                        break;
-                }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
                 lbl_loadError.Text = "Error loading\nmazes!";
@@ -271,6 +282,16 @@ namespace Client
 
 
             return chrt_generatedStats;
+        }
+
+        private void cbx_algorithm_SelectedIndexChanged(object sender, EventArgs e) {
+            algorithmSelected = true;
+            HandleAllowSend();
+        }
+
+        private void cbx_whereExit_SelectedIndexChanged(object sender, EventArgs e) {
+            exitSelected = true;
+            HandleAllowSend();
         }
     }
 }
