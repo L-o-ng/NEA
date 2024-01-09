@@ -11,7 +11,7 @@ namespace Client
         public static string? g_username = null;
         public static int? g_userID = null;
 
-        public const string g_version = "v1.2";
+        public const string g_version = "v1.5";
 
         public const int g_cellWidth = 10;
         public const int g_cellHeight = 10;
