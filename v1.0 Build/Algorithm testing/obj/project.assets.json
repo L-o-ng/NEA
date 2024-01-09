@@ -60,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\v1.0 Build\\Algorithm testing\\Algorithm testing.csproj",
+      "projectUniqueName": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\v1.0 Build\\Algorithm testing\\Algorithm testing.csproj",
       "projectName": "Algorithm testing",
-      "projectPath": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\v1.0 Build\\Algorithm testing\\Algorithm testing.csproj",
+      "projectPath": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\v1.0 Build\\Algorithm testing\\Algorithm testing.csproj",
       "packagesPath": "C:\\Users\\dylan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dylan\\OneDrive\\Documents\\GitHub\\NEA\\v1.0 Build\\Algorithm testing\\obj\\",
+      "outputPath": "C:\\Users\\dylan\\Documents\\GitHub\\NEA\\v1.0 Build\\Algorithm testing\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dylan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -114,7 +114,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

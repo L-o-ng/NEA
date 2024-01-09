@@ -1,7 +1,7 @@
 ﻿using Algorithm_testing;
 
 while (true) {
-    Maze maze = new WilsonsGeneration(4, 4, true);
+    Maze maze = new WilsonsGeneration(25, 27, true);
     maze.InitMaze();
     maze.CreateEntranceExit(true);
     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
