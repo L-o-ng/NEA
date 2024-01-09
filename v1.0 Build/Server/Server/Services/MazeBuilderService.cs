@@ -13,14 +13,15 @@ namespace Server.Services
             switch (request.Algorithm) {
                 case "Recursive Backtrack":
                     maze = new RecursiveBacktrackGeneration((int)request.Width, (int)request.Height);
+                    maze.InitMaze();
+                    maze.BuildMaze(maze.MazeCoordinates[1, 1]);
+                    maze.RemoveWalls((int)request.RemoveWalls);
+                    maze.CreateEntranceExit(request.ExitLocation == "Border");
                     break;
                     
             }
 
-            maze.InitMaze();
-            maze.BuildMaze(maze.MazeCoordinates[1, 1]);
-            maze.RemoveWalls((int)request.RemoveWalls);
-            maze.CreateEntranceExit(request.ExitLocation == "Border");
+           
 
             string jsonMaze = JsonConvert.SerializeObject(maze);
 

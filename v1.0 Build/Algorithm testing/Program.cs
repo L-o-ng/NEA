@@ -1,13 +1,14 @@
 ﻿using Algorithm_testing;
 
 while (true) {
-    Maze maze = new DepthFirstGeneration(20, 19);
+    Maze maze = new WilsonsGeneration(4, 4, true);
     maze.InitMaze();
-    maze.BuildMaze(maze.MazeCoordinates[1, 1]);
     maze.CreateEntranceExit(true);
+    maze.BuildMaze(maze.MazeCoordinates[1, 1]);
+    
 
-    SolvingAlgorithm solver = new DepthFirstSolve();
-    List<Coordinate> solution = solver.SolveMaze(maze);
+    //SolvingAlgorithm solver = new DepthFirstSolve();
+    //List<Coordinate> solution = solver.SolveMaze(maze);
 
     PrintMaze(maze);
 
