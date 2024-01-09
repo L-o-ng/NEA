@@ -8,6 +8,9 @@ namespace Algorithm_testing
 {
     internal class MazeRoutingSolve : SolvingAlgorithm
     {
+        (char direction, int BestMD) bestPath = (' ', 99999999);
+        const int depth = 3;
+
         public override List<Coordinate> SolveMaze(Maze maze) {
             List<Coordinate> solution = new List<Coordinate>();
             Coordinate solver = new Coordinate(maze.MazeEntranceCoordinate.Xpos, maze.MazeEntranceCoordinate.Ypos);
@@ -19,7 +22,7 @@ namespace Algorithm_testing
 
             while (!solver.Equals(maze.MazeExitCoordinate)) {
                 List<(Coordinate coordinate, char direction)> unvisited = GetUnvisitedNeighbours(maze, solver);
-
+                global.PrintMaze(maze, solution);
                 if (unvisited.Count == 0) {
                     do {
                         solution.Remove(solution.Last());
@@ -34,7 +37,7 @@ namespace Algorithm_testing
                     maze.MazeCoordinates[solver.Ypos, solver.Xpos].Visited = true;
                 }
                 else {
-                    char directionToMove = TryPaths(maze, unvisited);
+                    char directionToMove = TryPaths(maze, unvisited, 1);
                     Coordinate cellToMoveTo = null;
                     foreach (var cell in unvisited) {
                         if (cell.direction == directionToMove) {
@@ -52,10 +55,10 @@ namespace Algorithm_testing
             return solution;
         }
 
-        private char TryPaths(Maze maze, List<(Coordinate coordinate, char direction)> paths) {
+        private char TryPaths(Maze maze, List<(Coordinate coordinate, char direction)> paths, uint CurrentDepth) {
+            uint currentDepth = CurrentDepth;
             Coordinate tempSolver;
             List<Coordinate> cellsVisited = new List<Coordinate>();
-            (char direction, int BestMD) bestPath = (' ', 99999999); //could use double.PositiveInfinity, but I dont think I will be generating 99999999999999 length mazes
 
             foreach (var path in paths) {
                 List<(Coordinate coordinate, char direction)> unvisited;
@@ -75,6 +78,8 @@ namespace Algorithm_testing
                         if (MD < bestPath.BestMD) {
                             bestPath = (path.direction, MD);
                         }
+                        if (currentDepth != depth)
+                            TryPaths(maze, unvisited, currentDepth + 1);
                     }
                 } while (unvisited.Count == 1);
             }

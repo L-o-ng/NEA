@@ -61,3 +61,4 @@ C:\Users\dylan\OneDrive\Documents\GitHub\NEA\v1.0 Build\Algorithm testing\obj\De
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\v1.0 Build\Algorithm testing\obj\Debug\net6.0\Algorithm testing.pdb
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\v1.0 Build\Algorithm testing\obj\Debug\net6.0\Algorithm testing.genruntimeconfig.cache
 C:\Users\dylan\OneDrive\Documents\GitHub\NEA\v1.0 Build\Algorithm testing\obj\Debug\net6.0\ref\Algorithm testing.dll
+C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Algorithm testing\obj\Debug\net6.0\Algorithm testing.sourcelink.json
