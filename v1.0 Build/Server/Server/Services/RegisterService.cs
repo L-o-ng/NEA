@@ -12,7 +12,7 @@ namespace Server.Services
                     conn.Open();
 
                     using SQLiteCommand cmd = conn.CreateCommand();
-                    cmd.CommandText = "INSERT INTO Login(Username, Password, Salt) VALUES(@Username, @Password, @Salt)";
+                    cmd.CommandText = "INSERT INTO User(Username, Password, Salt) VALUES(@Username, @Password, @Salt)";
                     cmd.Parameters.AddWithValue("@Username", request.Username);
                     cmd.Parameters.AddWithValue("@Password", request.Password);
                     cmd.Parameters.AddWithValue("@Salt", request.Salt);

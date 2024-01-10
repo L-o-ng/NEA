@@ -8,7 +8,7 @@ using (SQLiteCommand cmd = conn.CreateCommand()) {
     cmd.CommandText = "PRAGMA foreign_keys = ON;";
     cmd.ExecuteNonQuery();
 
-    cmd.CommandText = @"CREATE TABLE IF NOT EXISTS Login(
+    cmd.CommandText = @"CREATE TABLE IF NOT EXISTS User(
                             UID INTEGER PRIMARY KEY, 
                             Username VARCHAR, 
                             Password VARCHAR, 
@@ -22,7 +22,7 @@ using (SQLiteCommand cmd = conn.CreateCommand()) {
                             MazeGenAlg VARCHAR, 
                             MazeName VARCHAR(10), 
                             UID INTEGER, 
-                            FOREIGN KEY(UID) REFERENCES Login(UID)
+                            FOREIGN KEY(UID) REFERENCES User(UID)
                         )";
     cmd.ExecuteNonQuery();
 
@@ -51,7 +51,7 @@ using (SQLiteCommand cmd = conn.CreateCommand()) {
                             RecursiveBacktrackMazesGenerated INTEGER, 
                             GrowingTreeMazesGenerated INTEGER, 
                             WilsonsMazesGenerated INTEGER, 
-                            FOREIGN KEY(UID) REFERENCES Login(UID)
+                            FOREIGN KEY(UID) REFERENCES User(UID)
                         )"; 
     cmd.ExecuteNonQuery();
     //ON DELETE CASCADE deletes the relevent record if the user is deleted
@@ -105,7 +105,7 @@ using (SQLiteCommand cmd = conn.CreateCommand()) {
     cmd.ExecuteNonQuery();
 
     cmd.CommandText = @"CREATE TRIGGER IF NOT EXISTS CreateStatsRecord
-                        AFTER INSERT ON Login 
+                        AFTER INSERT ON User 
                         BEGIN 
                             INSERT INTO UserStats VALUES (NEW.UID, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, 0, 0, 0); 
                         END;";

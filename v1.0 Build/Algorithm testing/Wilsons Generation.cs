@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using System.Dynamic;
+
 namespace Algorithm_testing
 {
     internal class WilsonsGeneration : Maze
@@ -41,7 +43,7 @@ namespace Algorithm_testing
             while (cellsInMaze.Count > 0) {
                 LoopErasedWalk(cellsInMaze[rgen.Next(cellsInMaze.Count)]);
             }
-
+            ResetVisited();
         }
 
         private void InitialLoopErasedWalk(Coordinate startCoordinate, Coordinate endCoordinate) {

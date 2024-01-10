@@ -75,6 +75,7 @@ namespace Client
         }
 
         private async void btn_requestMaze_Click(object sender, EventArgs e) {
+            btn_requestMaze.Enabled = false;
             string mazeToDisplay = await RequestMaze();
             if (mazeToDisplay != string.Empty)
                 ChangeForm(mazeToDisplay, cbx_algorithm.Text);
@@ -119,6 +120,7 @@ namespace Client
 
         private void ChangeForm(string maze, string algorithm) {
             Form mazeDisplay = new frm_mazeDisplay(maze, algorithm);
+            mazeDisplay.FormClosed += (s, args) => HandleAllowSend();
             mazeDisplay.ShowDialog();
             mazeDisplay.Focus();
         }

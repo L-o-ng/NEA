@@ -1,14 +1,18 @@
 ﻿using Algorithm_testing;
+using System.Diagnostics;
 
 while (true) {
-    Maze maze = new DepthFirstGeneration(20, 20);
+    Maze maze = new WilsonsGeneration(20, 20, true);
     maze.InitMaze();
+    maze.CreateEntranceExit(true);
     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
     maze.RemoveWalls(1000);
-    maze.CreateEntranceExit(true);
+    
 
+    Stopwatch sw = Stopwatch.StartNew();
     SolvingAlgorithm solver = new MazeRoutingSolve();
     List<Coordinate> solution = solver.SolveMaze(maze);
+    Console.WriteLine($"Ticks: {sw.ElapsedTicks}\nMilliseconds: {sw.ElapsedMilliseconds}");
 
     global.PrintMaze(maze, solution);
 

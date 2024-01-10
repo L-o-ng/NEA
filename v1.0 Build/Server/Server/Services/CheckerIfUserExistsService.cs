@@ -10,7 +10,7 @@ namespace Server.Services
             conn.Open();
 
             using SQLiteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT COUNT(*) FROM Login WHERE Username = @username";
+            cmd.CommandText = "SELECT COUNT(*) FROM User WHERE Username = @username";
             cmd.Parameters.AddWithValue("@username", request.Username);
 
             int rowCount = Convert.ToInt32(cmd.ExecuteScalar());

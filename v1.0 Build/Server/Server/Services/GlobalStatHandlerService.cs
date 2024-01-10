@@ -21,6 +21,7 @@ namespace Server.Services
                         break;
                     case "Growing Tree":
                         cmd.CommandText = "UPDATE GlobalStats SET GrowingTreeMazesGenerated = GrowingTreeMazesGenerated + 1";
+                        cmd.ExecuteNonQuery();
                         break;
                 }
             }

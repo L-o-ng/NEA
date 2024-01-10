@@ -20,7 +20,7 @@ namespace Server.Services
                 conn.Open();
 
                 using SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = $"SELECT UID, Password, Salt FROM Login WHERE Username = '{request.Username}'";
+                cmd.CommandText = $"SELECT UID, Password, Salt FROM User WHERE Username = '{request.Username}'";
 
                 using SQLiteDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
