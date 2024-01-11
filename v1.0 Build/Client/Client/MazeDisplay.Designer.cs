@@ -50,10 +50,10 @@
             // 
             pnl_mazeContainer.BorderStyle = BorderStyle.Fixed3D;
             pnl_mazeContainer.Controls.Add(tlp_MazeDisplay);
-            pnl_mazeContainer.Location = new Point(8, 99);
+            pnl_mazeContainer.Location = new Point(9, 132);
             pnl_mazeContainer.Margin = new Padding(0);
             pnl_mazeContainer.Name = "pnl_mazeContainer";
-            pnl_mazeContainer.Size = new Size(685, 233);
+            pnl_mazeContainer.Size = new Size(782, 309);
             pnl_mazeContainer.TabIndex = 0;
             // 
             // tlp_MazeDisplay
@@ -68,16 +68,17 @@
             tlp_MazeDisplay.RowCount = 2;
             tlp_MazeDisplay.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlp_MazeDisplay.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlp_MazeDisplay.Size = new Size(681, 229);
+            tlp_MazeDisplay.Size = new Size(778, 305);
             tlp_MazeDisplay.TabIndex = 0;
             tlp_MazeDisplay.CellPaint += tlp_MazeDisplay_CellPaint;
             // 
             // btn_requestSolve
             // 
             btn_requestSolve.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_requestSolve.Location = new Point(8, 12);
+            btn_requestSolve.Location = new Point(9, 16);
+            btn_requestSolve.Margin = new Padding(3, 4, 3, 4);
             btn_requestSolve.Name = "btn_requestSolve";
-            btn_requestSolve.Size = new Size(97, 23);
+            btn_requestSolve.Size = new Size(111, 31);
             btn_requestSolve.TabIndex = 1;
             btn_requestSolve.TabStop = false;
             btn_requestSolve.Text = "Request Solve";
@@ -87,9 +88,10 @@
             // 
             // btn_left
             // 
-            btn_left.Location = new Point(110, 12);
+            btn_left.Location = new Point(126, 16);
+            btn_left.Margin = new Padding(3, 4, 3, 4);
             btn_left.Name = "btn_left";
-            btn_left.Size = new Size(23, 23);
+            btn_left.Size = new Size(26, 31);
             btn_left.TabIndex = 2;
             btn_left.Text = "←";
             btn_left.UseVisualStyleBackColor = true;
@@ -98,9 +100,10 @@
             // 
             // btn_right
             // 
-            btn_right.Location = new Point(140, 12);
+            btn_right.Location = new Point(160, 16);
+            btn_right.Margin = new Padding(3, 4, 3, 4);
             btn_right.Name = "btn_right";
-            btn_right.Size = new Size(23, 23);
+            btn_right.Size = new Size(26, 31);
             btn_right.TabIndex = 3;
             btn_right.Text = "→";
             btn_right.UseVisualStyleBackColor = true;
@@ -109,9 +112,10 @@
             // 
             // btn_up
             // 
-            btn_up.Location = new Point(169, 12);
+            btn_up.Location = new Point(193, 16);
+            btn_up.Margin = new Padding(3, 4, 3, 4);
             btn_up.Name = "btn_up";
-            btn_up.Size = new Size(23, 23);
+            btn_up.Size = new Size(26, 31);
             btn_up.TabIndex = 4;
             btn_up.Text = "↑";
             btn_up.UseVisualStyleBackColor = true;
@@ -120,9 +124,10 @@
             // 
             // btn_down
             // 
-            btn_down.Location = new Point(198, 12);
+            btn_down.Location = new Point(226, 16);
+            btn_down.Margin = new Padding(3, 4, 3, 4);
             btn_down.Name = "btn_down";
-            btn_down.Size = new Size(23, 23);
+            btn_down.Size = new Size(26, 31);
             btn_down.TabIndex = 5;
             btn_down.Text = "↓";
             btn_down.UseVisualStyleBackColor = true;
@@ -132,9 +137,9 @@
             // lbl_notice
             // 
             lbl_notice.AutoSize = true;
-            lbl_notice.Location = new Point(110, 38);
+            lbl_notice.Location = new Point(126, 51);
             lbl_notice.Name = "lbl_notice";
-            lbl_notice.Size = new Size(118, 15);
+            lbl_notice.Size = new Size(148, 20);
             lbl_notice.TabIndex = 6;
             lbl_notice.Text = "Or keyboard controls";
             // 
@@ -142,9 +147,10 @@
             // 
             cbx_solveType.FormattingEnabled = true;
             cbx_solveType.Items.AddRange(new object[] { "Depth First", "Maze Routing" });
-            cbx_solveType.Location = new Point(8, 41);
+            cbx_solveType.Location = new Point(9, 55);
+            cbx_solveType.Margin = new Padding(3, 4, 3, 4);
             cbx_solveType.Name = "cbx_solveType";
-            cbx_solveType.Size = new Size(97, 23);
+            cbx_solveType.Size = new Size(110, 28);
             cbx_solveType.TabIndex = 7;
             cbx_solveType.TabStop = false;
             cbx_solveType.SelectedIndexChanged += cbx_solveType_SelectedIndexChanged;
@@ -153,9 +159,10 @@
             // btn_close
             // 
             btn_close.Enabled = false;
-            btn_close.Location = new Point(227, 12);
+            btn_close.Location = new Point(259, 16);
+            btn_close.Margin = new Padding(3, 4, 3, 4);
             btn_close.Name = "btn_close";
-            btn_close.Size = new Size(75, 23);
+            btn_close.Size = new Size(86, 31);
             btn_close.TabIndex = 8;
             btn_close.Text = "Close";
             btn_close.UseVisualStyleBackColor = true;
@@ -164,24 +171,25 @@
             // lbl_solved
             // 
             lbl_solved.AutoSize = true;
-            lbl_solved.Location = new Point(243, 38);
+            lbl_solved.Location = new Point(278, 51);
             lbl_solved.Name = "lbl_solved";
-            lbl_solved.Size = new Size(0, 15);
+            lbl_solved.Size = new Size(0, 20);
             lbl_solved.TabIndex = 9;
             // 
             // lbl_timer
             // 
             lbl_timer.AutoSize = true;
-            lbl_timer.Location = new Point(111, 53);
+            lbl_timer.Location = new Point(127, 71);
             lbl_timer.Name = "lbl_timer";
-            lbl_timer.Size = new Size(0, 15);
+            lbl_timer.Size = new Size(0, 20);
             lbl_timer.TabIndex = 10;
             // 
             // btn_serverSave
             // 
-            btn_serverSave.Location = new Point(308, 12);
+            btn_serverSave.Location = new Point(352, 16);
+            btn_serverSave.Margin = new Padding(3, 4, 3, 4);
             btn_serverSave.Name = "btn_serverSave";
-            btn_serverSave.Size = new Size(75, 23);
+            btn_serverSave.Size = new Size(86, 31);
             btn_serverSave.TabIndex = 11;
             btn_serverSave.TabStop = false;
             btn_serverSave.Text = "Server Save";
@@ -191,9 +199,10 @@
             // 
             // btn_localSave
             // 
-            btn_localSave.Location = new Point(308, 41);
+            btn_localSave.Location = new Point(352, 55);
+            btn_localSave.Margin = new Padding(3, 4, 3, 4);
             btn_localSave.Name = "btn_localSave";
-            btn_localSave.Size = new Size(75, 23);
+            btn_localSave.Size = new Size(86, 31);
             btn_localSave.TabIndex = 12;
             btn_localSave.TabStop = false;
             btn_localSave.Text = "Local Save";
@@ -204,34 +213,35 @@
             // lbl_error
             // 
             lbl_error.AutoSize = true;
-            lbl_error.Location = new Point(227, 38);
+            lbl_error.Location = new Point(259, 51);
             lbl_error.Name = "lbl_error";
-            lbl_error.Size = new Size(0, 15);
+            lbl_error.Size = new Size(0, 20);
             lbl_error.TabIndex = 13;
             // 
             // txb_mazeName
             // 
-            txb_mazeName.Location = new Point(389, 13);
+            txb_mazeName.Location = new Point(445, 17);
+            txb_mazeName.Margin = new Padding(3, 4, 3, 4);
             txb_mazeName.MaxLength = 10;
             txb_mazeName.Name = "txb_mazeName";
-            txb_mazeName.Size = new Size(100, 23);
+            txb_mazeName.Size = new Size(114, 27);
             txb_mazeName.TabIndex = 14;
             txb_mazeName.TabStop = false;
             // 
             // lbl_mazeName
             // 
             lbl_mazeName.AutoSize = true;
-            lbl_mazeName.Location = new Point(396, 44);
+            lbl_mazeName.Location = new Point(453, 59);
             lbl_mazeName.Name = "lbl_mazeName";
-            lbl_mazeName.Size = new Size(86, 15);
+            lbl_mazeName.Size = new Size(109, 20);
             lbl_mazeName.TabIndex = 15;
             lbl_mazeName.Text = "^Maze Name^";
             // 
             // frm_mazeDisplay
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
             Controls.Add(lbl_mazeName);
             Controls.Add(txb_mazeName);
             Controls.Add(lbl_error);
@@ -248,9 +258,7 @@
             Controls.Add(btn_left);
             Controls.Add(btn_requestSolve);
             Controls.Add(pnl_mazeContainer);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "frm_mazeDisplay";
             Text = "MazeClient v1.0";

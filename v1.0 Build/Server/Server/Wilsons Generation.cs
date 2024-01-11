@@ -1,4 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.VisualBasic;
+using Newtonsoft.Json;
+using System.ComponentModel;
+
+using System.Reflection.Metadata;
+
 namespace Server
 {
     internal class WilsonsGeneration : Maze
@@ -20,19 +25,7 @@ namespace Server
         public override void BuildMaze(Coordinate startCell) {
 
             /*startCoordinate and endCoordinate should be where the algorithm starts and ends, but since these are in the walls, they are
-            inaccessible to the algorithm, so we must pick the neighbouring cells.
-            
-            pick 2 coordinates (might as well use entrance and exit)
-            randomized loop erased walk between them
-            add to maze
-            pick random coordinate not in maze, ie any cell in cellsInMaze
-            randomized loop erased walk from that coordinate until it hits the maze
-            add its path to the maze
-            etc
-            
-            we can handle adding things to the maze with careful management of the 'visited' property. This means we will have to reimplement getUnivisitedNeighbours
-            to account for not just being able to go if !Visited. We will instead redefine unvisited as having all 4 walls and the visited property being true will
-            mean being part of the maze. */
+            inaccessible to the algorithm, so we must pick the neighbouring cells.*/
 
             InitialLoopErasedWalk(MazeCoordinates[1, 1],
                 exitAtBorder ? MazeCoordinates[MazeExitCoordinate.Ypos, MazeExitCoordinate.Xpos - 1] : cellsInMaze[(int)(cellsInMaze.Count * 0.5f)]);
@@ -155,7 +148,9 @@ namespace Server
 
         private List<Coordinate> GetUnvisitedNeighbours(Coordinate cell) {
             List<Coordinate> cells = new List<Coordinate>();
-
+            /*we can handle adding things to the maze with careful management of the 'visited' property.This means we will have to reimplement getUnivisitedNeighbours
+            to account for not just being able to go if !Visited. We will instead redefine unvisited as having all 4 walls and the visited property being true will
+            mean being part of the maze.*/
             if (cell.Ypos - 2 >= 0 &&
                 MazeWalls[cell.Ypos - 2 - 1, cell.Xpos] &&
                 MazeWalls[cell.Ypos - 2, cell.Xpos + 1] &&
