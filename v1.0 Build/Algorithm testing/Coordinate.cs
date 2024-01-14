@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Algorithm_testing
 {
+    [Serializable]
     internal class Coordinate
     {
         [JsonConstructor]
@@ -58,6 +60,8 @@ namespace Algorithm_testing
         {
             return xPos == target.xPos && yPos == target.yPos;
         }
+
+        
         #endregion
     }
 }

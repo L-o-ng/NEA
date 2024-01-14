@@ -30,6 +30,9 @@ namespace Server.Services
                 case "Maze Routing":
                     solver = new MazeRoutingSolve();
                     break;
+                case "Breadth First":
+                    solver = new BreadthFirstSolve();
+                    break;
             }
 
             List<Coordinate> path = solver.SolveMaze(maze);
