@@ -33,7 +33,7 @@ namespace Algorithm_testing
                     if (neighbourCell.Equals(maze.MazeExitCoordinate)) finished = true;
 
                     global.PrintMaze(maze, GetSolution2(paths, maze, neighbourCell));
-                    Thread.Sleep(100);
+                    Thread.Sleep(50);
                 }
 
                 activeCells.RemoveAt(i);
