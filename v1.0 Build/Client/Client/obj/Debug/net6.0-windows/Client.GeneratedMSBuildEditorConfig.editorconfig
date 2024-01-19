@@ -14,6 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Client
-build_property.ProjectDir = C:\Users\dylan\Documents\GitHub\NEA\v1.0 Build\Client\Client\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\thompson7192\Documents\GitHub\NEA\v1.0 Build\Client\Client\
