@@ -1,3 +1,3 @@
 obj\Debug\net6.0-windows\Protos/HandleUserStats.cs \
-obj\Debug\net6.0-windows\Protos/HandleUserStatsGrpc.cs: C:/Users/thompson7192/.nuget/packages/grpc.tools/2.60.0/build/native/include/google/protobuf/empty.proto\
+obj\Debug\net6.0-windows\Protos/HandleUserStatsGrpc.cs: C:/Users/dylan/.nuget/packages/grpc.tools/2.60.0/build/native/include/google/protobuf/empty.proto\
  Protos/HandleUserStats.proto
