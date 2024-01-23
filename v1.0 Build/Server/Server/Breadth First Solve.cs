@@ -21,9 +21,8 @@ namespace Server {
             maze.MazeCoordinates[startCell.Ypos, startCell.Xpos].Visited = true;
 
             bool finished = false;
-
-            for (int i = 0; i < activeCells.Count && !finished; i++) {
-                (Coordinate cell, Coordinate parentCell) = activeCells[i];
+            while(!finished) {
+                (Coordinate cell, Coordinate parentCell) = activeCells[0];
                 List<Coordinate> neighbourCells = GetUnvisitedNeighbours(cell, maze);
 
                 foreach (Coordinate neighbourCell in neighbourCells) {
@@ -33,11 +32,9 @@ namespace Server {
                     if (neighbourCell.Equals(maze.MazeExitCoordinate)) finished = true;
                 }
 
-                activeCells.RemoveAt(i);
-                i--;
+                activeCells.RemoveAt(0);
+                
             }
-
-
 
             return GetSolution(paths, maze);
         }
