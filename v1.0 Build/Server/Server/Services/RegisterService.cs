@@ -8,11 +8,16 @@ namespace Server.Services
     {
         public override Task<Acknowledgement> Register(Account request, ServerCallContext context) {
             try {
-                using (SQLiteConnection conn = new("Data Source= mazeData.db; Version = 3; New = True; Compress = True; ")) {
+                using (SQLiteConnection conn = new(
+                    "Data Source= mazeData.db; " +
+                    "Version = 3; " +
+                    "New = True; " +
+                    "Compress = True; ")) {
                     conn.Open();
 
                     using SQLiteCommand cmd = conn.CreateCommand();
-                    cmd.CommandText = "INSERT INTO User(Username, Password, Salt) VALUES(@Username, @Password, @Salt)";
+                    cmd.CommandText = @"INSERT INTO User(Username, Password, Salt) 
+                                        VALUES(@Username, @Password, @Salt)";
                     cmd.Parameters.AddWithValue("@Username", request.Username);
                     cmd.Parameters.AddWithValue("@Password", request.Password);
                     cmd.Parameters.AddWithValue("@Salt", request.Salt);

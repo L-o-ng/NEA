@@ -10,10 +10,16 @@ namespace Server.Services
             int growingTreeMazesGenerated = 0;
             int wilsonsMazesGenerated = 0;
 
-            using SQLiteConnection conn = new SQLiteConnection("Data Source=mazeData.db; Version=3; New=True; Compress=True; ");
+            using SQLiteConnection conn = new SQLiteConnection(
+                "Data Source=mazeData.db; " +
+                "Version=3; " +
+                "New=True; " +
+                "Compress=True; ");
             conn.Open();
             using SQLiteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"SELECT RecursiveBacktrackMazesGenerated, GrowingTreeMazesGenerated, WilsonsMazesGenerated
+            cmd.CommandText = @"SELECT RecursiveBacktrackMazesGenerated, 
+                                       GrowingTreeMazesGenerated, 
+                                       WilsonsMazesGenerated
                                 FROM GlobalStats";
             using SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read()) {
@@ -53,11 +59,32 @@ namespace Server.Services
             string time9Username = string.Empty;
             string time10Username = string.Empty;
 
-            using SQLiteConnection conn = new("Data Source=mazeData.db; Version=3; New=True; Compress=True; ");
+            using SQLiteConnection conn = new("" +
+                "Data Source=mazeData.db; " +
+                "Version=3; " +
+                "New=True; " +
+                "Compress=True; ");
             conn.Open();
             using SQLiteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"SELECT Time1Display, Time2Display, Time3Display, Time4Display, Time5Display, Time6Display, Time7Display, Time8Display, Time9Display, Time10Display,
-                                       Time1Name, Time2Name, Time3Name, Time4Name, Time5Name, Time6Name, Time7Name, Time8Name, Time9Name, Time10Name
+            cmd.CommandText = @"SELECT Time1Display, 
+                                       Time2Display, 
+                                       Time3Display, 
+                                       Time4Display, 
+                                       Time5Display, 
+                                       Time6Display, 
+                                       Time7Display, 
+                                       Time8Display, 
+                                       Time9Display, 
+                                       Time10Display,                      
+                                       Time1Name, 
+                                       Time2Name, 
+                                       Time3Name, 
+                                       Time4Name, 
+                                       Time6Name, 
+                                       Time7Name, 
+                                       Time8Name, 
+                                       Time9Name, 
+                                       Time10Name
                                 FROM GlobalStats";
             using SQLiteDataReader reader = cmd.ExecuteReader();
             
@@ -113,10 +140,16 @@ namespace Server.Services
             int growingTreeMazesGenerated = 0;
             int wilsonsMazesGenerated = 0;
 
-            using SQLiteConnection conn = new("Data Source=mazeData.db; Version=3; New=True; Compress=True; ");
+            using SQLiteConnection conn = new(
+                "Data Source=mazeData.db; " +
+                "Version=3; " +
+                "New=True; " +
+                "Compress=True; ");
             conn.Open();
             using SQLiteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @$"SELECT RecursiveBacktrackMazesGenerated, GrowingTreeMazesGenerated, WilsonsMazesGenerated
+            cmd.CommandText = @$"SELECT RecursiveBacktrackMazesGenerated, 
+                                        GrowingTreeMazesGenerated, 
+                                        WilsonsMazesGenerated
                                 FROM UserStats
                                 WHERE UID = {request.UserID}";
             using SQLiteDataReader reader = cmd.ExecuteReader();
@@ -147,10 +180,23 @@ namespace Server.Services
             string time9DisplayTime = string.Empty;
             string time10DisplayTime = string.Empty;
 
-            using SQLiteConnection conn = new("Data Source=mazeData.db; Version=3; New=True; Compress=True; ");
+            using SQLiteConnection conn = new("" +
+                "Data Source=mazeData.db; " +
+                "Version=3; " +
+                "New=True; " +
+                "Compress=True; ");
             conn.Open();
             using SQLiteCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @$"SELECT Time1Display, Time2Display, Time3Display, Time4Display, Time5Display, Time6Display, Time7Display, Time8Display, Time9Display, Time10Display
+            cmd.CommandText = @$"SELECT Time1Display, 
+                                        Time2Display, 
+                                        Time3Display, 
+                                        Time4Display, 
+                                        Time5Display, 
+                                        Time6Display, 
+                                        Time7Display, 
+                                        Time8Display,
+                                        Time9Display, 
+                                        Time10Display
                                 FROM UserStats
                                 WHERE UID = {request.UserID}";
             using SQLiteDataReader reader = cmd.ExecuteReader();

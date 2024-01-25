@@ -12,21 +12,30 @@ namespace Server.Services
 
             switch (request.Algorithm) {
                 case "Recursive Backtrack":
-                    maze = new RecursiveBacktrackGeneration((int)request.Width, (int)request.Height);
+                    maze = new RecursiveBacktrackGeneration(
+                        (int)request.Width, 
+                        (int)request.Height);
                     maze.InitMaze();
                     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
                     maze.RemoveWalls((int)request.RemoveWalls);
                     maze.CreateEntranceExit(request.ExitLocation == "Border");
                     break;
                 case "Wilson's":
-                    maze = new WilsonsGeneration((int)request.Width, (int)request.Height, request.ExitLocation == "Border");
+                    maze = new WilsonsGeneration(
+                        (int)request.Width, 
+                        (int)request.Height, 
+                        request.ExitLocation == "Border"); 
+                    //algorithm requires exitlocation initialised before other algorithms
+                    //so it knows where the exit will be for the intial loop erased walk.
                     maze.InitMaze();
                     maze.CreateEntranceExit(request.ExitLocation == "Border");
                     maze.BuildMaze(maze.MazeCoordinates[1, 1]);
                     maze.RemoveWalls((int)request.RemoveWalls);
                     break;
                 case "Growing Tree":
-                    maze = new GrowingTreeGeneration((int)request.Width, (int)request.Height);
+                    maze = new GrowingTreeGeneration(
+                        (int)request.Width, 
+                        (int)request.Height);
                     maze.InitMaze();
                     maze.BuildMaze(null); //startCoordinate unnecessary for this algorithm
                     maze.RemoveWalls((int)request.RemoveWalls);

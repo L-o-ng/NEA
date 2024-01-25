@@ -1,8 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using Newtonsoft.Json;
-using System.ComponentModel;
-
-using System.Reflection.Metadata;
+﻿using Newtonsoft.Json;
 
 namespace Server
 {
@@ -29,6 +25,7 @@ namespace Server
 
             InitialLoopErasedWalk(MazeCoordinates[1, 1],
                 exitAtBorder ? MazeCoordinates[MazeExitCoordinate.Ypos, MazeExitCoordinate.Xpos - 1] : cellsInMaze[(int)(cellsInMaze.Count * 0.5f)]);
+            //if the exit is in the centre, we can find the cell by finding the middle element of the cellsInMaze list
             while (cellsInMaze.Count > 0) {
                 LoopErasedWalk(cellsInMaze[rgen.Next(cellsInMaze.Count)]);
             }
@@ -52,7 +49,9 @@ namespace Server
                 } while (path.Contains(targetCell));
 
 
-                if (!path.Contains(targetCell)) { // keep walking, we will destroy all walls after the walk. We cannot do this dynamically as we have to backtrack sometimes
+                if (!path.Contains(targetCell)) { 
+                    // keep walking, we will destroy all walls after the walk.
+                    // We cannot do this dynamically as we have to backtrack sometimes
                     ctor = new Coordinate(targetCell.Xpos, targetCell.Ypos);
                     path.Add(MazeCoordinates[ctor.Ypos, ctor.Xpos]);
                     MazeCoordinates[ctor.Ypos, ctor.Xpos].Visited = true;
@@ -118,7 +117,9 @@ namespace Server
                 } while (path.Contains(targetCell));
 
 
-                if (!path.Contains(targetCell)) { // keep walking, we will destroy all walls after the walk. We cannot do this dynamically as we have to backtrack sometimes
+                if (!path.Contains(targetCell)) { 
+                    // keep walking, we will destroy all walls after the walk.
+                    // We cannot do this dynamically as we have to backtrack sometimes
                     ctor = new Coordinate(targetCell.Xpos, targetCell.Ypos);
                     path.Add(MazeCoordinates[ctor.Ypos, ctor.Xpos]);
                     MazeCoordinates[ctor.Ypos, ctor.Xpos].Visited = true;
@@ -148,9 +149,12 @@ namespace Server
 
         private List<Coordinate> GetUnvisitedNeighbours(Coordinate cell) {
             List<Coordinate> cells = new List<Coordinate>();
-            /*we can handle adding things to the maze with careful management of the 'visited' property.This means we will have to reimplement getUnivisitedNeighbours
-            to account for not just being able to go if !Visited. We will instead redefine unvisited as having all 4 walls and the visited property being true will
-            mean being part of the maze.*/
+            //we can handle adding things to the maze with careful management of the 'visited' property.
+            //This means we will have to reimplement getUnivisitedNeighbours
+            //to account for not just being able to go if !Visited.
+            //We will instead redefine unvisited as having all 4 walls and the visited property being true will
+            //mean being part of the maze.
+            //The following checks if all adjacent cells have all 4 walls intact.
             if (cell.Ypos - 2 >= 0 &&
                 MazeWalls[cell.Ypos - 2 - 1, cell.Xpos] &&
                 MazeWalls[cell.Ypos - 2, cell.Xpos + 1] &&

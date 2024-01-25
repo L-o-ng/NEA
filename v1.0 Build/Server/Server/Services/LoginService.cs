@@ -16,11 +16,18 @@ namespace Server.Services
             string salt;
             int userID;
 
-            using (SQLiteConnection conn = new("Data Source= mazeData.db; Version = 3; New = True; Compress = True; ")) {
+            using (SQLiteConnection conn = new(
+                "Data Source= mazeData.db; " +
+                "Version = 3; " +
+                "New = True; " +
+                "Compress = True; ")) {
                 conn.Open();
 
                 using SQLiteCommand cmd = conn.CreateCommand();
-                cmd.CommandText = $"SELECT UID, Password, Salt FROM User WHERE Username = '{request.Username}'";
+                cmd.CommandText = $@"SELECT UID, Password, Salt 
+                                     FROM User 
+                                     WHERE Username = @username";
+                cmd.Parameters.AddWithValue("@username", request.Username);
 
                 using SQLiteDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
@@ -41,7 +48,12 @@ namespace Server.Services
 
         // SOURCE: https://code-maze.com/csharp-hashing-salting-passwords-best-practices/
         bool VerifyPassword(string password, string hash, byte[] salt) {
-            var hashToCompare = Rfc2898DeriveBytes.Pbkdf2(password, salt, iterations, hashAlgorithm, keySize);
+            var hashToCompare = Rfc2898DeriveBytes.Pbkdf2(
+                password, 
+                salt, 
+                iterations, 
+                hashAlgorithm, 
+                keySize);
             return CryptographicOperations.FixedTimeEquals(hashToCompare, Convert.FromHexString(hash));
         }
     }

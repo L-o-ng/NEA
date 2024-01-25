@@ -34,7 +34,9 @@ namespace Client
                     using var channel = GrpcChannel.ForAddress("https://localhost:7178");
                     var client = new Greeter.GreeterClient(channel);
                     try {
-                        var reply = await client.SayHelloAsync(new HelloRequest { Name = Environment.MachineName },
+                        var reply = await client.SayHelloAsync(new HelloRequest { 
+                            Name = Environment.MachineName 
+                        },
                             deadline: DateTime.UtcNow.AddSeconds(3));
                         Invoke(() => {
                             lbl_connectionError.Text = "Connected to server!";
@@ -104,13 +106,18 @@ namespace Client
 
             var clientStatsGlobal = new GlobalStatHandler.GlobalStatHandlerClient(channel);
             try {
-                var replyStatsGlobal = await clientStatsGlobal.IncrementMazeAsync(new MazeType { MazeType_ = cbx_algorithm.Text }, deadline: DateTime.UtcNow.AddSeconds(3));
+                var replyStatsGlobal = await clientStatsGlobal.IncrementMazeAsync(new MazeType { 
+                    MazeType_ = cbx_algorithm.Text 
+                }, deadline: DateTime.UtcNow.AddSeconds(3));
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) { }
 
             var clientStatsUser = new UserStatHandler.UserStatHandlerClient(channel);
             try {
-                var replyStatsUser = await clientStatsUser.UserIncrementMazeAsync(new UserMazeType { MazeType = cbx_algorithm.Text, UserID = (int)Globals.g_userID },
+                var replyStatsUser = await clientStatsUser.UserIncrementMazeAsync(new UserMazeType { 
+                    MazeType = cbx_algorithm.Text, 
+                    UserID = (int)Globals.g_userID 
+                },
                     deadline: DateTime.UtcNow.AddSeconds(3));
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) { }
@@ -136,8 +143,10 @@ namespace Client
             using var channel = GrpcChannel.ForAddress("https://localhost:7178");
             var client = new GetterMazes.GetterMazesClient(channel);
             try {
-                var reply = await client.GetMazesAsync(new Request { UserID = (int)Globals.g_userID }, deadline: DateTime.UtcNow.AddSeconds(3));
-                List<(int mazeID, string mazeName)> mazes = JsonConvert.DeserializeObject<List<(int mazeID, string mazeName)>>(reply.Mazes);
+                var reply = await client.GetMazesAsync(new Request { 
+                    UserID = (int)Globals.g_userID 
+                }, deadline: DateTime.UtcNow.AddSeconds(3));
+                var mazes = JsonConvert.DeserializeObject<List<(int mazeID,string mazeName)>>(reply.Mazes);
                 foreach (var maze in mazes) {
                     cbx_loadedMazes.Items.Add($"{maze.mazeID}: {maze.mazeName}");
                 }
@@ -154,7 +163,10 @@ namespace Client
             using var channel = GrpcChannel.ForAddress("https://localhost:7178");
             var client = new LoaderMazes.LoaderMazesClient(channel);
             try {
-                var reply = await client.LoadMazeAsync(new LoadRequest { UserID = (int)Globals.g_userID, MazeID = Convert.ToInt32(cbx_loadedMazes.Text.Split(':')[0]) },
+                var reply = await client.LoadMazeAsync(new LoadRequest { 
+                    UserID = (int)Globals.g_userID, 
+                    MazeID = Convert.ToInt32(cbx_loadedMazes.Text.Split(':')[0]) 
+                },
                     deadline: DateTime.UtcNow.AddSeconds(3));
 
                 ChangeForm(reply.Maze, reply.MazeGenAlg);
@@ -171,7 +183,10 @@ namespace Client
             using var channel = GrpcChannel.ForAddress("https://localhost:7178");
             var client = new DeleterMazes.DeleterMazesClient(channel);
             try {
-                var reply = await client.DeleteMazeAsync(new DeleteRequest { UserID = (int)Globals.g_userID, MazeID = Convert.ToInt32(cbx_loadedMazes.Text.Split(':')[0]) },
+                var reply = await client.DeleteMazeAsync(new DeleteRequest { 
+                    UserID = (int)Globals.g_userID, 
+                    MazeID = Convert.ToInt32(cbx_loadedMazes.Text.Split(':')[0]) 
+                },
                     deadline: DateTime.UtcNow.AddSeconds(3));
                 if (reply.Success) {
                     lbl_loadError.Text = "Deleted maze\nsuccessfully!";
@@ -196,15 +211,24 @@ namespace Client
 
             if (cbx_statType.Text == "Mazes Generated" && chbx_globalStats.Checked) {
                 try {
-                    var reply = await client.GetGlobalMazesGeneratedAsync(new GetGlobalMazesGeneratedRequest { },
+                    var reply = await client.GetGlobalMazesGeneratedAsync(
+                        new GetGlobalMazesGeneratedRequest { },
                         deadline: DateTime.UtcNow.AddSeconds(3));
 
                     Chart chrt_mazesGenerated = HandleMazesGeneratedStatsView();
                     Series series = new("Maze Types Generated");
                     series.ChartType = SeriesChartType.Pie;
 
-                    string[] segmentNames = { "Recursive Backtrack", "Growing tree", "Wilson's" };
-                    double[] segmentValues = { reply.RecursiveBacktrackMazesGenerated, reply.GrowingTreeMazesGenerated, reply.WilsonsMazesGenerated };
+                    string[] segmentNames = { 
+                        "Recursive Backtrack", 
+                        "Growing tree", 
+                        "Wilson's" 
+                    };
+                    double[] segmentValues = { 
+                        reply.RecursiveBacktrackMazesGenerated, 
+                        reply.GrowingTreeMazesGenerated, 
+                        reply.WilsonsMazesGenerated 
+                    };
                     series.Points.DataBindXY(segmentNames, segmentValues);
 
                     chrt_mazesGenerated.Series.Add(series);
@@ -215,15 +239,25 @@ namespace Client
             }
             else if (cbx_statType.Text == "Mazes Generated" && !chbx_globalStats.Checked) {
                 try {
-                    var reply = await client.GetUserMazesGeneratedAsync(new GetUserMazesGeneratedRequest { UserID = (int)Globals.g_userID },
+                    var reply = await client.GetUserMazesGeneratedAsync(new GetUserMazesGeneratedRequest { 
+                        UserID = (int)Globals.g_userID 
+                    },
                         deadline: DateTime.UtcNow.AddSeconds(3));
 
                     Chart chrt_mazesGenerated = HandleMazesGeneratedStatsView();
                     Series series = new("Maze Types Generated");
                     series.ChartType = SeriesChartType.Pie;
 
-                    string[] segmentNames = { "Recursive Backtrack", "Growing Tree", "Wilson's" };
-                    double[] segmentValues = { reply.RecursiveBacktrackMazesGenerated, reply.GrowingTreeMazesGenerated, reply.WilsonsMazesGenerated };
+                    string[] segmentNames = { 
+                        "Recursive Backtrack", 
+                        "Growing Tree", 
+                        "Wilson's" 
+                    };
+                    double[] segmentValues = { 
+                        reply.RecursiveBacktrackMazesGenerated, 
+                        reply.GrowingTreeMazesGenerated, 
+                        reply.WilsonsMazesGenerated 
+                    };
                     series.Points.DataBindXY(segmentNames, segmentValues);
 
                     chrt_mazesGenerated.Series.Add(series);
@@ -239,7 +273,16 @@ namespace Client
 
                     RichTextBox rtb_times = HandleTimeStatsView();
                     rtb_times.Text += "Global Best Times\n";
-                    rtb_times.Text += $"1st:  {reply.Time1Username} : {reply.Time1DisplayTime}\n2nd:  {reply.Time2Username} : {reply.Time2DisplayTime}\n3rd:  {reply.Time3Username} : {reply.Time3DisplayTime}\n4th:  {reply.Time4Username} : {reply.Time4DisplayTime}\n5th:  {reply.Time5Username} : {reply.Time5DisplayTime}\n6th:  {reply.Time6Username} : {reply.Time6DisplayTime}\n7th:  {reply.Time7Username} : {reply.Time7DisplayTime}\n8th:  {reply.Time8Username} : {reply.Time8DisplayTime}\n9th:  {reply.Time9Username} : {reply.Time9DisplayTime}\n10th: {reply.Time10Username} : {reply.Time10DisplayTime}";
+                    rtb_times.Text += $"1st:  {reply.Time1Username} : {reply.Time1DisplayTime}\n" +
+                        $"2nd:  {reply.Time2Username} : {reply.Time2DisplayTime}\n" +
+                        $"3rd:  {reply.Time3Username} : {reply.Time3DisplayTime}\n" +
+                        $"4th:  {reply.Time4Username} : {reply.Time4DisplayTime}\n" +
+                        $"5th:  {reply.Time5Username} : {reply.Time5DisplayTime}\n" +
+                        $"6th:  {reply.Time6Username} : {reply.Time6DisplayTime}\n" +
+                        $"7th:  {reply.Time7Username} : {reply.Time7DisplayTime}\n" +
+                        $"8th:  {reply.Time8Username} : {reply.Time8DisplayTime}\n" +
+                        $"9th:  {reply.Time9Username} : {reply.Time9DisplayTime}\n" +
+                        $"10th: {reply.Time10Username} : {reply.Time10DisplayTime}";
                 }
                 catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
                     HandleServerError();
@@ -247,14 +290,25 @@ namespace Client
             }
             else if (cbx_statType.Text == "Best Times" && !chbx_globalStats.Checked) {
                 try {
-                    var reply = await client.GetUserTimesAsync(new GetUserTimesRequest { UserID = (int)Globals.g_userID },
+                    var reply = await client.GetUserTimesAsync(new GetUserTimesRequest { 
+                        UserID = (int)Globals.g_userID 
+                    },
                         deadline: DateTime.UtcNow.AddSeconds(3));
 
                     RichTextBox rtb_times = HandleTimeStatsView();
                     rtb_times.Font = new Font("Calibri", 20, FontStyle.Bold);
                     rtb_times.Text += "Your Best Times\n";
                     rtb_times.Font = DefaultFont;
-                    rtb_times.Text += $"1st:  {reply.Time1DisplayTime}\n2nd:  {reply.Time2DisplayTime}\n3rd:  {reply.Time3DisplayTime}\n4th:  {reply.Time4DisplayTime}\n5th:  {reply.Time5DisplayTime}\n6th:  {reply.Time6DisplayTime}\n7th:  {reply.Time7DisplayTime}\n8th:  {reply.Time8DisplayTime}\n9th:  {reply.Time9DisplayTime}\n10th: {reply.Time10DisplayTime}";
+                    rtb_times.Text += $"1st:  {reply.Time1DisplayTime}\n" +
+                        $"2nd:  {reply.Time2DisplayTime}\n" +
+                        $"3rd:  {reply.Time3DisplayTime}\n" +
+                        $"4th:  {reply.Time4DisplayTime}\n" +
+                        $"5th:  {reply.Time5DisplayTime}\n" +
+                        $"6th:  {reply.Time6DisplayTime}\n" +
+                        $"7th:  {reply.Time7DisplayTime}\n" +
+                        $"8th:  {reply.Time8DisplayTime}\n" +
+                        $"9th:  {reply.Time9DisplayTime}\n" +
+                        $"10th: {reply.Time10DisplayTime}";
                 }
                 catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
                     HandleServerError();

@@ -25,7 +25,8 @@ namespace Client
 
             var clientGreet = new Greeter.GreeterClient(channel);
             try {
-                var replyGreet = await clientGreet.SayHelloAsync(new HelloRequest { Name = Environment.MachineName },
+                var replyGreet = await clientGreet.SayHelloAsync(new HelloRequest 
+                { Name = Environment.MachineName },
                     deadline: DateTime.UtcNow.AddSeconds(3));
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {

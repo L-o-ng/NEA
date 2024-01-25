@@ -28,16 +28,24 @@
 
             List<Coordinate> cells = new();
 
-            if (cell.Ypos - 1 >= 0 && !maze.MazeCoordinates[cell.Ypos - 1, cell.Xpos].Visited && !maze.MazeWalls[cell.Ypos - 1, cell.Xpos])
+            if (cell.Ypos - 1 >= 0 
+                && !maze.MazeCoordinates[cell.Ypos - 1, cell.Xpos].Visited 
+                && !maze.MazeWalls[cell.Ypos - 1, cell.Xpos])
                 cells.Add(maze.MazeCoordinates[cell.Ypos - 1, cell.Xpos]);
 
-            if (cell.Xpos + 1 < maze.MazeActualWidth && !maze.MazeCoordinates[cell.Ypos, cell.Xpos + 1].Visited && !maze.MazeWalls[cell.Ypos, cell.Xpos + 1])
+            if (cell.Xpos + 1 < maze.MazeActualWidth 
+                && !maze.MazeCoordinates[cell.Ypos, cell.Xpos + 1].Visited 
+                && !maze.MazeWalls[cell.Ypos, cell.Xpos + 1])
                 cells.Add(maze.MazeCoordinates[cell.Ypos, cell.Xpos + 1]);
 
-            if (cell.Ypos + 1 < maze.MazeActualHeight && !maze.MazeCoordinates[cell.Ypos + 1, cell.Xpos].Visited && !maze.MazeWalls[cell.Ypos + 1, cell.Xpos])
+            if (cell.Ypos + 1 < maze.MazeActualHeight 
+                && !maze.MazeCoordinates[cell.Ypos + 1, cell.Xpos].Visited 
+                && !maze.MazeWalls[cell.Ypos + 1, cell.Xpos])
                 cells.Add(maze.MazeCoordinates[cell.Ypos + 1, cell.Xpos]);
 
-            if (cell.Xpos - 1 >= 0 && !maze.MazeCoordinates[cell.Ypos, cell.Xpos - 1].Visited && !maze.MazeWalls[cell.Ypos, cell.Xpos - 1])
+            if (cell.Xpos - 1 >= 0 
+                && !maze.MazeCoordinates[cell.Ypos, cell.Xpos - 1].Visited 
+                && !maze.MazeWalls[cell.Ypos, cell.Xpos - 1])
                 cells.Add(maze.MazeCoordinates[cell.Ypos, cell.Xpos - 1]);
 
             return cells;

@@ -21,9 +21,9 @@ namespace Client
         //forces form to fully render before displaying, removing flickering.
         protected override CreateParams CreateParams {
             get {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x2000000;
-                return cp;
+                CreateParams @params = base.CreateParams;
+                @params.ExStyle |= 0x2000000;
+                return @params;
             }
         }
 
@@ -205,39 +205,7 @@ namespace Client
             }
             catch { return false; }
         }
-        private void frm_mazeDisplay_KeyDown(object sender, KeyEventArgs e) {
-            if (solved) return;
-
-            switch (e.KeyCode) {
-                case Keys.W:
-                    if (IsWall(player, "Up"))
-                        player = new Coordinate(player.Xpos, player.Ypos - 1);
-                    break;
-
-                case Keys.S:
-                    if (IsWall(player, "Down"))
-                        player = new Coordinate(player.Xpos, player.Ypos + 1);
-                    break;
-
-                case Keys.A:
-                    if (IsWall(player, "Left"))
-                        player = new Coordinate(player.Xpos - 1, player.Ypos);
-                    break;
-
-                case Keys.D:
-                    if (IsWall(player, "Right"))
-                        player = new Coordinate(player.Xpos + 1, player.Ypos);
-                    break;
-
-                default:
-                    break;
-            }
-
-            if (new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode)) {
-                tlp_MazeDisplay.Refresh();
-                CheckSolved();
-            }
-        }
+        
 
         private void btn_left_Click(object sender, EventArgs e) {
             if (solved) return;
@@ -275,239 +243,55 @@ namespace Client
             CheckSolved();
         }
 
-        #region Extra WASD input listeners
+        #region WASD input listeners
+        private void frm_mazeDisplay_KeyDown(object sender, KeyEventArgs e) {
+            if (solved) return;
+            HandleKeyDown(e);
+        }
+
         private void btn_left_KeyDown(object sender, KeyEventArgs e) {
             if (solved) return;
-
-            switch (e.KeyCode) {
-                case Keys.W:
-                    if (IsWall(player, "Up"))
-                        player = new Coordinate(player.Xpos, player.Ypos - 1);
-                    break;
-
-                case Keys.S:
-                    if (IsWall(player, "Down"))
-                        player = new Coordinate(player.Xpos, player.Ypos + 1);
-                    break;
-
-                case Keys.A:
-                    if (IsWall(player, "Left"))
-                        player = new Coordinate(player.Xpos - 1, player.Ypos);
-                    break;
-
-                case Keys.D:
-                    if (IsWall(player, "Right"))
-                        player = new Coordinate(player.Xpos + 1, player.Ypos);
-                    break;
-
-                default:
-                    break;
-            }
-            if (new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode)) {
-                tlp_MazeDisplay.Refresh();
-                CheckSolved();
-            }
+            HandleKeyDown(e);
         }
 
         private void btn_right_KeyDown(object sender, KeyEventArgs e) {
             if (solved) return;
-
-            switch (e.KeyCode) {
-                case Keys.W:
-                    if (IsWall(player, "Up"))
-                        player = new Coordinate(player.Xpos, player.Ypos - 1);
-                    break;
-
-                case Keys.S:
-                    if (IsWall(player, "Down"))
-                        player = new Coordinate(player.Xpos, player.Ypos + 1);
-                    break;
-
-                case Keys.A:
-                    if (IsWall(player, "Left"))
-                        player = new Coordinate(player.Xpos - 1, player.Ypos);
-                    break;
-
-                case Keys.D:
-                    if (IsWall(player, "Right"))
-                        player = new Coordinate(player.Xpos + 1, player.Ypos);
-                    break;
-
-                default:
-                    break;
-            }
-            if (new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode)) {
-                tlp_MazeDisplay.Refresh();
-                CheckSolved();
-            }
+            HandleKeyDown(e);
         }
 
         private void btn_up_KeyDown(object sender, KeyEventArgs e) {
             if (solved) return;
-
-            switch (e.KeyCode) {
-                case Keys.W:
-                    if (IsWall(player, "Up"))
-                        player = new Coordinate(player.Xpos, player.Ypos - 1);
-                    break;
-
-                case Keys.S:
-                    if (IsWall(player, "Down"))
-                        player = new Coordinate(player.Xpos, player.Ypos + 1);
-                    break;
-
-                case Keys.A:
-                    if (IsWall(player, "Left"))
-                        player = new Coordinate(player.Xpos - 1, player.Ypos);
-                    break;
-
-                case Keys.D:
-                    if (IsWall(player, "Right"))
-                        player = new Coordinate(player.Xpos + 1, player.Ypos);
-                    break;
-
-                default:
-                    break;
-            }
-            if (new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode)) {
-                tlp_MazeDisplay.Refresh();
-                CheckSolved();
-            }
+            HandleKeyDown(e);
         }
 
         private void btn_down_KeyDown(object sender, KeyEventArgs e) {
             if (solved) return;
-
-            switch (e.KeyCode) {
-                case Keys.W:
-                    if (IsWall(player, "Up"))
-                        player = new Coordinate(player.Xpos, player.Ypos - 1);
-                    break;
-
-                case Keys.S:
-                    if (IsWall(player, "Down"))
-                        player = new Coordinate(player.Xpos, player.Ypos + 1);
-                    break;
-
-                case Keys.A:
-                    if (IsWall(player, "Left"))
-                        player = new Coordinate(player.Xpos - 1, player.Ypos);
-                    break;
-
-                case Keys.D:
-                    if (IsWall(player, "Right"))
-                        player = new Coordinate(player.Xpos + 1, player.Ypos);
-                    break;
-
-                default:
-                    break;
-            }
-            if (new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode)) {
-                tlp_MazeDisplay.Refresh();
-                CheckSolved();
-            }
+            HandleKeyDown(e);
         }
+
         private void btn_requestSolve_KeyDown(object sender, KeyEventArgs e) {
             if (solved) return;
-
-            switch (e.KeyCode) {
-                case Keys.W:
-                    if (IsWall(player, "Up"))
-                        player = new Coordinate(player.Xpos, player.Ypos - 1);
-                    break;
-
-                case Keys.S:
-                    if (IsWall(player, "Down"))
-                        player = new Coordinate(player.Xpos, player.Ypos + 1);
-                    break;
-
-                case Keys.A:
-                    if (IsWall(player, "Left"))
-                        player = new Coordinate(player.Xpos - 1, player.Ypos);
-                    break;
-
-                case Keys.D:
-                    if (IsWall(player, "Right"))
-                        player = new Coordinate(player.Xpos + 1, player.Ypos);
-                    break;
-
-                default:
-                    break;
-            }
-            if (new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode)) {
-                tlp_MazeDisplay.Refresh();
-                CheckSolved();
-            }
+            HandleKeyDown(e);
         }
 
         private void cbx_solveType_KeyDown(object sender, KeyEventArgs e) {
             if (solved) return;
-
-            switch (e.KeyCode) {
-                case Keys.W:
-                    if (IsWall(player, "Up"))
-                        player = new Coordinate(player.Xpos, player.Ypos - 1);
-                    break;
-
-                case Keys.S:
-                    if (IsWall(player, "Down"))
-                        player = new Coordinate(player.Xpos, player.Ypos + 1);
-                    break;
-
-                case Keys.A:
-                    if (IsWall(player, "Left"))
-                        player = new Coordinate(player.Xpos - 1, player.Ypos);
-                    break;
-
-                case Keys.D:
-                    if (IsWall(player, "Right"))
-                        player = new Coordinate(player.Xpos + 1, player.Ypos);
-                    break;
-
-                default:
-                    break;
-            }
-            if (new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode)) {
-                tlp_MazeDisplay.Refresh();
-                CheckSolved();
-            }
+            HandleKeyDown(e);
         }
+
         private void btn_serverSave_KeyDown(object sender, KeyEventArgs e) {
             if (solved) return;
-
-            switch (e.KeyCode) {
-                case Keys.W:
-                    if (IsWall(player, "Up"))
-                        player = new Coordinate(player.Xpos, player.Ypos - 1);
-                    break;
-
-                case Keys.S:
-                    if (IsWall(player, "Down"))
-                        player = new Coordinate(player.Xpos, player.Ypos + 1);
-                    break;
-
-                case Keys.A:
-                    if (IsWall(player, "Left"))
-                        player = new Coordinate(player.Xpos - 1, player.Ypos);
-                    break;
-
-                case Keys.D:
-                    if (IsWall(player, "Right"))
-                        player = new Coordinate(player.Xpos + 1, player.Ypos);
-                    break;
-
-                default:
-                    break;
-            }
-            if (new Keys[] { Keys.W, Keys.A, Keys.S, Keys.D }.Contains(e.KeyCode)) {
-                tlp_MazeDisplay.Refresh();
-                CheckSolved();
-            }
+            HandleKeyDown(e);
         }
 
         private void btn_localSave_KeyDown(object sender, KeyEventArgs e) {
             if (solved) return;
+            HandleKeyDown(e);
+        }
 
+        #endregion
+
+        private void HandleKeyDown(KeyEventArgs e) {
             switch (e.KeyCode) {
                 case Keys.W:
                     if (IsWall(player, "Up"))
@@ -537,8 +321,6 @@ namespace Client
                 CheckSolved();
             }
         }
-
-        #endregion
 
         private void cbx_solveType_SelectedIndexChanged(object sender, EventArgs e) {
             if (cbx_solveType.Text != string.Empty) {

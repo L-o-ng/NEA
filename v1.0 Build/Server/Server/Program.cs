@@ -2,7 +2,11 @@ using Server.Services;
 using System.Data.SQLite;
 
 //initialize database
-SQLiteConnection conn = new("Data Source= mazeData.db; Version = 3; New = True; Compress = True; ");
+SQLiteConnection conn = new(
+    "Data Source= mazeData.db; " +
+    "Version = 3; " +
+    "New = True; " +
+    "Compress = True; ");
 conn.Open();
 using (SQLiteCommand cmd = conn.CreateCommand()) {
     cmd.CommandText = "PRAGMA foreign_keys = ON;";
@@ -107,14 +111,71 @@ using (SQLiteCommand cmd = conn.CreateCommand()) {
     cmd.CommandText = @"CREATE TRIGGER IF NOT EXISTS CreateStatsRecord
                         AFTER INSERT ON User 
                         BEGIN 
-                            INSERT INTO UserStats VALUES (NEW.UID, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, '', -1, 0, 0, 0); 
+                            INSERT INTO UserStats 
+                            VALUES (NEW.UID, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    '', 
+                                    -1, 
+                                    0, 
+                                    0, 
+                                    0); 
                         END;";
     cmd.ExecuteNonQuery();
 
     cmd.CommandText = "SELECT COUNT(*) FROM GlobalStats";
     int rowCount = Convert.ToInt32(cmd.ExecuteScalar());
     if (rowCount == 0) {
-        cmd.CommandText = "INSERT INTO GlobalStats Values('', -1, '', '', -1, '', '', -1, '', '', -1, '', '', -1, '', '', -1, '', '', -1, '', '', -1, '', '', -1, '', '', -1, '', 0, 0, 0)";
+        cmd.CommandText = @"INSERT INTO GlobalStats 
+                            VALUES('', 
+                                   -1, 
+                                   '', 
+                                   '', 
+                                   -1, 
+                                   '', 
+                                   '', 
+                                   -1, 
+                                   '', 
+                                   '', 
+                                   -1,
+                                   '', 
+                                   '', 
+                                   -1, 
+                                   '', 
+                                   '', 
+                                   -1, 
+                                   '',
+                                   '', 
+                                   -1, 
+                                   '', 
+                                   '', 
+                                   -1, 
+                                   '', 
+                                   '', 
+                                   -1, 
+                                   '',
+                                   '', 
+                                   -1,
+                                   '',
+                                   0, 
+                                   0, 
+                                   0)";
         cmd.ExecuteNonQuery();
     }
 }

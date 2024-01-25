@@ -7,11 +7,17 @@ namespace Server.Services
     {
         public override Task<SuccessAcknowledge> DeleteMaze(DeleteRequest request, ServerCallContext context) {
             try {
-                using (SQLiteConnection conn = new("Data Source= mazeData.db; Version = 3; New = True; Compress = True; ")) {
+                using (SQLiteConnection conn = new(
+                    "Data Source= mazeData.db; " +
+                    "Version = 3; " +
+                    "New = True; " +
+                    "Compress = True; ")) {
                     conn.Open();
                     using SQLiteCommand cmd = conn.CreateCommand();
 
-                    cmd.CommandText = "DELETE FROM Mazes WHERE @MazeID = MazeID AND @UserID = UID";
+                    cmd.CommandText = @"DELETE FROM Mazes 
+                                        WHERE @MazeID = MazeID 
+                                        AND @UserID = UID";
                     cmd.Parameters.AddWithValue("@MazeID", request.MazeID);
                     cmd.Parameters.AddWithValue("@UserID", request.UserID);
                     cmd.ExecuteNonQuery();

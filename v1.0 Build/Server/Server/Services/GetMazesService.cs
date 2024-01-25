@@ -9,7 +9,11 @@ namespace Server.Services
         public override Task<MazesList> GetMazes(Request request, ServerCallContext context) {
             List<(int mazeID, string mazeName)> mazes = new();
 
-            using (SQLiteConnection conn = new("Data Source= mazeData.db; Version = 3; New = True; Compress = True; ")) {
+            using (SQLiteConnection conn = new(
+                "Data Source= mazeData.db; " +
+                "Version = 3; " +
+                "New = True; " +
+                "Compress = True; ")) {
                 conn.Open();
 
                 using SQLiteCommand cmd = conn.CreateCommand();
@@ -21,7 +25,9 @@ namespace Server.Services
                 }
             }
 
-            return Task.FromResult(new MazesList { Mazes = JsonConvert.SerializeObject(mazes) });
+            return Task.FromResult(new MazesList { 
+                Mazes = JsonConvert.SerializeObject(mazes) 
+            });
         }
     }
 }

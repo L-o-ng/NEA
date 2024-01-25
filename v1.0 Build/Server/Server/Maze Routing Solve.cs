@@ -55,7 +55,7 @@ namespace Server
         private char TryPaths(Maze maze, List<(Coordinate coordinate, char direction)> paths) {
             Coordinate tempSolver;
             List<Coordinate> cellsVisited = new List<Coordinate>();
-            (char direction, int BestMD) bestPath = (' ', 99999999); //could use double.PositiveInfinity, but I dont think I will be generating 99999999999999 length mazes
+            (char direction, int BestMD) bestPath = (' ', 99999999); //effectively infinity for these mazes
 
             foreach (var path in paths) {
                 List<(Coordinate coordinate, char direction)> unvisited;
@@ -89,16 +89,24 @@ namespace Server
         private List<(Coordinate coordinate, char direction)> GetUnvisitedNeighbours(Maze maze, Coordinate cell) {
             List<(Coordinate coordinate, char direction)> cells = new();
 
-            if (cell.Ypos - 1 >= 0 && !maze.MazeCoordinates[cell.Ypos - 1, cell.Xpos].Visited && !maze.MazeWalls[cell.Ypos - 1, cell.Xpos])
+            if (cell.Ypos - 1 >= 0 
+                && !maze.MazeCoordinates[cell.Ypos - 1, cell.Xpos].Visited 
+                && !maze.MazeWalls[cell.Ypos - 1, cell.Xpos])
                 cells.Add((maze.MazeCoordinates[cell.Ypos - 1, cell.Xpos], 'N'));
 
-            if (cell.Xpos + 1 < maze.MazeActualWidth && !maze.MazeCoordinates[cell.Ypos, cell.Xpos + 1].Visited && !maze.MazeWalls[cell.Ypos, cell.Xpos + 1])
+            if (cell.Xpos + 1 < maze.MazeActualWidth 
+                && !maze.MazeCoordinates[cell.Ypos, cell.Xpos + 1].Visited 
+                && !maze.MazeWalls[cell.Ypos, cell.Xpos + 1])
                 cells.Add((maze.MazeCoordinates[cell.Ypos, cell.Xpos + 1], 'E'));
 
-            if (cell.Ypos + 1 < maze.MazeActualHeight && !maze.MazeCoordinates[cell.Ypos + 1, cell.Xpos].Visited && !maze.MazeWalls[cell.Ypos + 1, cell.Xpos])
+            if (cell.Ypos + 1 < maze.MazeActualHeight 
+                && !maze.MazeCoordinates[cell.Ypos + 1, cell.Xpos].Visited 
+                && !maze.MazeWalls[cell.Ypos + 1, cell.Xpos])
                 cells.Add((maze.MazeCoordinates[cell.Ypos + 1, cell.Xpos], 'S'));
 
-            if (cell.Xpos - 1 >= 0 && !maze.MazeCoordinates[cell.Ypos, cell.Xpos - 1].Visited && !maze.MazeWalls[cell.Ypos, cell.Xpos - 1])
+            if (cell.Xpos - 1 >= 0 
+                && !maze.MazeCoordinates[cell.Ypos, cell.Xpos - 1].Visited 
+                && !maze.MazeWalls[cell.Ypos, cell.Xpos - 1])
                 cells.Add((maze.MazeCoordinates[cell.Ypos, cell.Xpos - 1], 'W'));
 
             return cells;

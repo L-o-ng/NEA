@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using System.Text;
 using Server;
-using System.Diagnostics;
 using Grpc.Core;
 
 namespace Client
@@ -24,7 +23,9 @@ namespace Client
             using var channel = GrpcChannel.ForAddress("https://localhost:7178");
             var clientGreet = new Greeter.GreeterClient(channel);
             try {
-                var replyGreet = await clientGreet.SayHelloAsync(new HelloRequest { Name = Environment.MachineName },
+                var replyGreet = await clientGreet.SayHelloAsync(new HelloRequest {
+                    Name = Environment.MachineName 
+                },
                     deadline: DateTime.UtcNow.AddSeconds(3));
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded) {
@@ -66,7 +67,9 @@ namespace Client
         private async Task<bool> CheckCrendentials() {
             using var channel = GrpcChannel.ForAddress("https://localhost:7178");
             var client = new CheckerIfUserExists.CheckerIfUserExistsClient(channel);
-            var reply = await client.CheckUserAsync(new Query { Username = txb_username.Text });
+            var reply = await client.CheckUserAsync(new Query { 
+                Username = txb_username.Text 
+            });
 
             if (reply.UserExists) {
                 lbl_error.Text = "Username already taken!";
