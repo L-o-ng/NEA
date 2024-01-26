@@ -19,6 +19,7 @@ namespace Server.Services
                 using SQLiteCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "SELECT MazeID, MazeName FROM Mazes WHERE @UID = UID";
                 cmd.Parameters.AddWithValue("@UID", request.UserID);
+
                 using SQLiteDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
                     mazes.Add((reader.GetInt32(0), reader.GetString(1)));
