@@ -9,7 +9,7 @@ namespace Server {
     internal class BreadthFirstSolve : SolvingAlgorithm
     {
         List<(Coordinate cell, Coordinate parentCell)> paths = new List<(Coordinate cell, Coordinate parentCell)>();
-        List<(Coordinate cell, Coordinate parentCell)> activeCells = new List<(Coordinate cell, Coordinate parentCell)>();
+        _Queue<(Coordinate cell, Coordinate parentCell)> activeCells = new _Queue<(Coordinate cell, Coordinate parentCell)>(100);
 
         public override List<Coordinate> SolveMaze(Maze maze) {
             
@@ -17,22 +17,22 @@ namespace Server {
             List<Coordinate> cellsNeighbouringEntrance = GetUnvisitedNeighbours(maze.MazeEntranceCoordinate, maze);
             Coordinate startCell = new Coordinate(cellsNeighbouringEntrance[0].Xpos, cellsNeighbouringEntrance[0].Ypos);
             paths.Add((maze.MazeCoordinates[startCell.Ypos, startCell.Xpos], maze.MazeEntranceCoordinate));
-            activeCells.Add((maze.MazeCoordinates[startCell.Ypos, startCell.Xpos], maze.MazeEntranceCoordinate));
+            activeCells.Enqueue((maze.MazeCoordinates[startCell.Ypos, startCell.Xpos], maze.MazeEntranceCoordinate));
             maze.MazeCoordinates[startCell.Ypos, startCell.Xpos].Visited = true;
 
             bool finished = false;
             while(!finished) {
-                (Coordinate cell, Coordinate parentCell) = activeCells[0];
+                (Coordinate cell, Coordinate parentCell) = activeCells.Peek();
                 List<Coordinate> neighbourCells = GetUnvisitedNeighbours(cell, maze);
 
                 foreach (Coordinate neighbourCell in neighbourCells) {
                     paths.Add((maze.MazeCoordinates[neighbourCell.Ypos, neighbourCell.Xpos], maze.MazeCoordinates[cell.Ypos, cell.Xpos]));
-                    activeCells.Add((maze.MazeCoordinates[neighbourCell.Ypos, neighbourCell.Xpos], maze.MazeCoordinates[cell.Ypos, cell.Xpos]));
+                    activeCells.Enqueue((maze.MazeCoordinates[neighbourCell.Ypos, neighbourCell.Xpos], maze.MazeCoordinates[cell.Ypos, cell.Xpos]));
                     maze.MazeCoordinates[neighbourCell.Ypos, neighbourCell.Xpos].Visited = true;
                     if (neighbourCell.Equals(maze.MazeExitCoordinate)) finished = true;
                 }
 
-                activeCells.RemoveAt(0);
+                activeCells.Dequeue();
                 
             }
 

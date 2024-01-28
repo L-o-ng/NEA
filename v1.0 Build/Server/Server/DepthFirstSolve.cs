@@ -9,7 +9,7 @@
             maze.MazeCoordinates[solver.Ypos, solver.Xpos].Visited = true;
 
             while (!solver.Equals(maze.MazeExitCoordinate)) {
-                List<Coordinate> unvisitedNeighbours = GetUnvisitedNeighbours(solver, maze);
+                _List<Coordinate> unvisitedNeighbours = GetUnvisitedNeighbours(solver, maze);
 
                 if (unvisitedNeighbours.Count > 0) { //if paths exist, take the first one.
                     solver = new(unvisitedNeighbours[0].Xpos, unvisitedNeighbours[0].Ypos);
@@ -24,9 +24,9 @@
 
             return path;
         }
-        private List<Coordinate> GetUnvisitedNeighbours(Coordinate cell, Maze maze) {
+        private _List<Coordinate> GetUnvisitedNeighbours(Coordinate cell, Maze maze) {
 
-            List<Coordinate> cells = new();
+            _List<Coordinate> cells = new();
 
             if (cell.Ypos - 1 >= 0 
                 && !maze.MazeCoordinates[cell.Ypos - 1, cell.Xpos].Visited 
